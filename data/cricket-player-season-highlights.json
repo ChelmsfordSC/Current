@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T23:32:36.463Z",
+  "generated_at": "2026-09-06T09:47:13.277Z",
   "season": "2026",
   "centuries": [
     {
@@ -762,6 +762,17 @@
       "opposition": "Wivenhoe Town CC Sunday XI",
       "date": "02/08/2026",
       "match_id": 7510284
+    },
+    {
+      "player": "Micky Burns",
+      "runs": 62,
+      "score": "62",
+      "not_out": false,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Loughton CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7462177
     },
     {
       "player": "Richard Goodey",
@@ -2002,6 +2013,30 @@
       "match_id": 7462169
     },
     {
+      "player": "Miles Curtis",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Loughton CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7462177
+    },
+    {
+      "player": "Basil Samson",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Loughton CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7462177
+    },
+    {
+      "player": "Daniel Purchase",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Loughton CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7462177
+    },
+    {
       "player": "Chetan Shetty",
       "team": "Sat 5th XI",
       "team_id": 45348,
@@ -2386,6 +2421,44 @@
       ]
     },
     {
+      "player": "Daniel Purchase",
+      "count": 4,
+      "ducks": [
+        {
+          "player": "Daniel Purchase",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Harold Wood CC 4th XI",
+          "date": "02/05/2026",
+          "match_id": 7262197
+        },
+        {
+          "player": "Daniel Purchase",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Oakfield Parkonians CC, Essex 4th XI",
+          "date": "16/05/2026",
+          "match_id": 7462100
+        },
+        {
+          "player": "Daniel Purchase",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Frenford CC 4th XI",
+          "date": "30/05/2026",
+          "match_id": 7462109
+        },
+        {
+          "player": "Daniel Purchase",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Loughton CC 3rd XI",
+          "date": "05/09/2026",
+          "match_id": 7462177
+        }
+      ]
+    },
+    {
       "player": "Elliot Wenzel",
       "count": 4,
       "ducks": [
@@ -2518,36 +2591,6 @@
           "opposition": "Brentwood CC 1st XI",
           "date": "05/09/2026",
           "match_id": 7325338
-        }
-      ]
-    },
-    {
-      "player": "Daniel Purchase",
-      "count": 3,
-      "ducks": [
-        {
-          "player": "Daniel Purchase",
-          "team": "Sat 4th XI",
-          "team_id": 30461,
-          "opposition": "Harold Wood CC 4th XI",
-          "date": "02/05/2026",
-          "match_id": 7262197
-        },
-        {
-          "player": "Daniel Purchase",
-          "team": "Sat 4th XI",
-          "team_id": 30461,
-          "opposition": "Oakfield Parkonians CC, Essex 4th XI",
-          "date": "16/05/2026",
-          "match_id": 7462100
-        },
-        {
-          "player": "Daniel Purchase",
-          "team": "Sat 4th XI",
-          "team_id": 30461,
-          "opposition": "Frenford CC 4th XI",
-          "date": "30/05/2026",
-          "match_id": 7462109
         }
       ]
     },
@@ -2690,6 +2733,28 @@
           "opposition": "Galleywood CC Womens 1st XI",
           "date": "19/06/2026",
           "match_id": 7399548
+        }
+      ]
+    },
+    {
+      "player": "Basil Samson",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Basil Samson",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Stanford Le Hope CC 3rd XI",
+          "date": "25/07/2026",
+          "match_id": 7462146
+        },
+        {
+          "player": "Basil Samson",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Loughton CC 3rd XI",
+          "date": "05/09/2026",
+          "match_id": 7462177
         }
       ]
     },
@@ -3094,20 +3159,6 @@
       ]
     },
     {
-      "player": "Basil Samson",
-      "count": 1,
-      "ducks": [
-        {
-          "player": "Basil Samson",
-          "team": "Sat 4th XI",
-          "team_id": 30461,
-          "opposition": "Stanford Le Hope CC 3rd XI",
-          "date": "25/07/2026",
-          "match_id": 7462146
-        }
-      ]
-    },
-    {
       "player": "Ben Lawrence",
       "count": 1,
       "ducks": [
@@ -3356,6 +3407,20 @@
           "opposition": "Brentwood CC 2nd XI",
           "date": "13/06/2026",
           "match_id": 7325728
+        }
+      ]
+    },
+    {
+      "player": "Miles Curtis",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Miles Curtis",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Loughton CC 3rd XI",
+          "date": "05/09/2026",
+          "match_id": 7462177
         }
       ]
     },
