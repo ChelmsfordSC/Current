@@ -5,7 +5,7 @@
       "team_id": 24293,
       "division_id": "135282",
       "season": "2026",
-      "fetched_at": "2026-09-06T18:43:09.529Z"
+      "fetched_at": "2026-09-06T23:26:53.159Z"
     },
     "data": {
       "id": 135282,
@@ -272,7 +272,7 @@
       "team_id": 24294,
       "division_id": "135299",
       "season": "2026",
-      "fetched_at": "2026-09-06T18:43:10.997Z"
+      "fetched_at": "2026-09-06T23:26:54.513Z"
     },
     "data": {
       "id": 135299,
@@ -528,7 +528,7 @@
       "team_id": 24295,
       "division_id": "135312",
       "season": "2026",
-      "fetched_at": "2026-09-06T18:43:12.173Z"
+      "fetched_at": "2026-09-06T23:26:55.729Z"
     },
     "data": {
       "id": 135312,
@@ -784,7 +784,7 @@
       "team_id": 30461,
       "division_id": "135330",
       "season": "2026",
-      "fetched_at": "2026-09-06T18:43:13.103Z"
+      "fetched_at": "2026-09-06T23:26:57.170Z"
     },
     "data": {
       "id": 135330,
@@ -893,10 +893,10 @@
           "column_12": "0",
           "column_13": "0",
           "column_14": "0",
-          "column_15": "49",
+          "column_15": "50",
           "column_16": "0",
           "column_17": "6",
-          "column_18": "191"
+          "column_18": "192"
         },
         {
           "position": "5",
@@ -1018,7 +1018,7 @@
       "team_id": 45348,
       "division_id": "135332",
       "season": "2026",
-      "fetched_at": "2026-09-06T18:43:13.723Z"
+      "fetched_at": "2026-09-06T23:26:58.005Z"
     },
     "data": {
       "id": 135332,
@@ -1302,7 +1302,7 @@
       "team_id": 324716,
       "division_id": "134513",
       "season": "2026",
-      "fetched_at": "2026-09-06T18:43:15.147Z"
+      "fetched_at": "2026-09-06T23:26:59.547Z"
     },
     "data": {
       "id": 134513,
@@ -1362,6 +1362,24 @@
         },
         {
           "position": "3",
+          "team_id": "37504",
+          "column_1": "Mistley CC",
+          "column_2": "19",
+          "column_3": "9",
+          "column_4": "9",
+          "column_5": "0",
+          "column_6": "0",
+          "column_7": "0",
+          "column_8": "0",
+          "column_9": "1",
+          "column_10": "36",
+          "column_11": "67",
+          "column_12": "0",
+          "column_13": "243",
+          "column_14": "-0.09"
+        },
+        {
+          "position": "4",
           "team_id": "348717",
           "column_1": "IPSCOL CC",
           "column_2": "18",
@@ -1379,7 +1397,7 @@
           "column_14": "-0.28"
         },
         {
-          "position": "4",
+          "position": "5",
           "team_id": "207268",
           "column_1": "Wivenhoe Town CC",
           "column_2": "20",
@@ -1397,7 +1415,7 @@
           "column_14": "-0.55"
         },
         {
-          "position": "5",
+          "position": "6",
           "team_id": "70131",
           "column_1": "Ardleigh CC",
           "column_2": "19",
@@ -1413,24 +1431,6 @@
           "column_12": "0",
           "column_13": "230",
           "column_14": "0.09"
-        },
-        {
-          "position": "6",
-          "team_id": "37504",
-          "column_1": "Mistley CC",
-          "column_2": "18",
-          "column_3": "8",
-          "column_4": "9",
-          "column_5": "0",
-          "column_6": "0",
-          "column_7": "0",
-          "column_8": "0",
-          "column_9": "1",
-          "column_10": "36",
-          "column_11": "67",
-          "column_12": "0",
-          "column_13": "228",
-          "column_14": "-0.26"
         },
         {
           "position": "7",
@@ -1490,9 +1490,9 @@
           "position": "10",
           "team_id": "351841",
           "column_1": "Kirby CC",
-          "column_2": "17",
+          "column_2": "18",
           "column_3": "6",
-          "column_4": "11",
+          "column_4": "12",
           "column_5": "0",
           "column_6": "0",
           "column_7": "0",
@@ -1502,7 +1502,7 @@
           "column_11": "58",
           "column_12": "0",
           "column_13": "193",
-          "column_14": "-0.36"
+          "column_14": "-0.5"
         },
         {
           "position": "11",
@@ -1532,7 +1532,7 @@
       "team_id": 213007,
       "division_id": "137056",
       "season": "2026",
-      "fetched_at": "2026-09-06T18:43:16.752Z"
+      "fetched_at": "2026-09-06T23:27:01.232Z"
     },
     "data": {
       "id": 137056,
