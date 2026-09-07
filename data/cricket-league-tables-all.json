@@ -5,7 +5,7 @@
       "team_id": 24293,
       "division_id": "135282",
       "season": "2026",
-      "fetched_at": "2026-09-06T23:26:53.159Z"
+      "fetched_at": "2026-09-07T10:50:30.966Z"
     },
     "data": {
       "id": 135282,
@@ -272,7 +272,7 @@
       "team_id": 24294,
       "division_id": "135299",
       "season": "2026",
-      "fetched_at": "2026-09-06T23:26:54.513Z"
+      "fetched_at": "2026-09-07T10:50:32.246Z"
     },
     "data": {
       "id": 135299,
@@ -528,7 +528,7 @@
       "team_id": 24295,
       "division_id": "135312",
       "season": "2026",
-      "fetched_at": "2026-09-06T23:26:55.729Z"
+      "fetched_at": "2026-09-07T10:50:33.666Z"
     },
     "data": {
       "id": 135312,
@@ -784,7 +784,7 @@
       "team_id": 30461,
       "division_id": "135330",
       "season": "2026",
-      "fetched_at": "2026-09-06T23:26:57.170Z"
+      "fetched_at": "2026-09-07T10:50:35.386Z"
     },
     "data": {
       "id": 135330,
@@ -1018,7 +1018,7 @@
       "team_id": 45348,
       "division_id": "135332",
       "season": "2026",
-      "fetched_at": "2026-09-06T23:26:58.005Z"
+      "fetched_at": "2026-09-07T10:50:36.965Z"
     },
     "data": {
       "id": 135332,
@@ -1302,7 +1302,7 @@
       "team_id": 324716,
       "division_id": "134513",
       "season": "2026",
-      "fetched_at": "2026-09-06T23:26:59.547Z"
+      "fetched_at": "2026-09-07T10:50:38.499Z"
     },
     "data": {
       "id": 134513,
@@ -1416,6 +1416,42 @@
         },
         {
           "position": "6",
+          "team_id": "207266",
+          "column_1": "Frinton On Sea CC",
+          "column_2": "19",
+          "column_3": "9",
+          "column_4": "10",
+          "column_5": "0",
+          "column_6": "0",
+          "column_7": "0",
+          "column_8": "0",
+          "column_9": "0",
+          "column_10": "31",
+          "column_11": "65",
+          "column_12": "0",
+          "column_13": "231",
+          "column_14": "-0.42"
+        },
+        {
+          "position": "7",
+          "team_id": "45577",
+          "column_1": "Great Bentley CC",
+          "column_2": "18",
+          "column_3": "9",
+          "column_4": "9",
+          "column_5": "0",
+          "column_6": "0",
+          "column_7": "0",
+          "column_8": "0",
+          "column_9": "0",
+          "column_10": "35",
+          "column_11": "60",
+          "column_12": "0",
+          "column_13": "230",
+          "column_14": "0.28"
+        },
+        {
+          "position": "8",
           "team_id": "70131",
           "column_1": "Ardleigh CC",
           "column_2": "19",
@@ -1431,42 +1467,6 @@
           "column_12": "0",
           "column_13": "230",
           "column_14": "0.09"
-        },
-        {
-          "position": "7",
-          "team_id": "45577",
-          "column_1": "Great Bentley CC",
-          "column_2": "17",
-          "column_3": "9",
-          "column_4": "8",
-          "column_5": "0",
-          "column_6": "0",
-          "column_7": "0",
-          "column_8": "0",
-          "column_9": "0",
-          "column_10": "30",
-          "column_11": "58",
-          "column_12": "0",
-          "column_13": "223",
-          "column_14": "0.36"
-        },
-        {
-          "position": "8",
-          "team_id": "207266",
-          "column_1": "Frinton On Sea CC",
-          "column_2": "18",
-          "column_3": "8",
-          "column_4": "10",
-          "column_5": "0",
-          "column_6": "0",
-          "column_7": "0",
-          "column_8": "0",
-          "column_9": "0",
-          "column_10": "31",
-          "column_11": "65",
-          "column_12": "0",
-          "column_13": "216",
-          "column_14": "-0.49"
         },
         {
           "position": "9",
@@ -1532,7 +1532,7 @@
       "team_id": 213007,
       "division_id": "137056",
       "season": "2026",
-      "fetched_at": "2026-09-06T23:27:01.232Z"
+      "fetched_at": "2026-09-07T10:50:39.973Z"
     },
     "data": {
       "id": 137056,
