@@ -8,7 +8,7 @@
       "id": 7325338,
       "status": "New",
       "published": "Yes",
-      "last_updated": "05/09/2026",
+      "last_updated": "08/09/2026",
       "league_name": "Essex League",
       "league_id": "7300",
       "competition_name": "Division 01 - 1st XI Premier Division",
@@ -52,8 +52,8 @@
       "result_applied_to": "24293",
       "home_confirmed": "true",
       "away_confirmed": "true",
-      "result_locked": "false",
-      "scorecard_locked": "false",
+      "result_locked": "true",
+      "scorecard_locked": "true",
       "match_notes": "<b>Brentwood CC 1st XI Innings</b><br/>\n10.1 Brentwood CC 1st XI: 50 runs in 10.0 overs, 43 minutes, 7 extras<br/>13.2 4th Wicket: 50 runs in 48 balls, 31 minutes, Edward Ballard 9 (19), Danal DiLmith Hemananda Gawasin Arachchige 38 (29), 3 extras<br/>20.4 Brentwood CC 1st XI: 100 runs in 20.4 overs, 82 minutes, 14 extras<br/>37.1 Brentwood CC 1st XI: 150 runs in 37.1 overs, 134 minutes, 23 extras\n<br/>\n<br/>\n<b>Chelmsford CC Sat 1st XI Innings</b><br/>\n10.6 Chelmsford CC Sat 1st XI: 50 runs in 10.5 overs, 57 minutes, 11 extras<br/>13.4 3rd Wicket: 50 runs in 56 balls, 45 minutes, Jack Sterland 26 (35), Rishabh Upadhyay 20 (21), 6 extras<br/>24.3 Chelmsford CC Sat 1st XI: 100 runs in 24.3 overs, 104 minutes, 14 extras<br/>31.6 6th Wicket: 50 runs in 76 balls, 39 minutes, James Clifford 26 (44), Brad Green 25 (32), 0 extras<br/>38.3 Chelmsford CC Sat 1st XI: 150 runs in 38.3 overs, 149 minutes, 14 extras<br/>42.1 James Clifford: 50 runs in 85 balls, 90 minutes (9x4)\n<br/>\n",
       "points": [
         {
@@ -535,7 +535,7 @@
         "id": 7325338,
         "status": "New",
         "published": "Yes",
-        "last_updated": "05/09/2026",
+        "last_updated": "08/09/2026",
         "league_name": "Essex League",
         "league_id": "7300",
         "competition_name": "Division 01 - 1st XI Premier Division",
@@ -579,8 +579,8 @@
         "result_applied_to": "24293",
         "home_confirmed": "true",
         "away_confirmed": "true",
-        "result_locked": "false",
-        "scorecard_locked": "false",
+        "result_locked": "true",
+        "scorecard_locked": "true",
         "match_notes": "<b>Brentwood CC 1st XI Innings</b><br/>\n10.1 Brentwood CC 1st XI: 50 runs in 10.0 overs, 43 minutes, 7 extras<br/>13.2 4th Wicket: 50 runs in 48 balls, 31 minutes, Edward Ballard 9 (19), Danal DiLmith Hemananda Gawasin Arachchige 38 (29), 3 extras<br/>20.4 Brentwood CC 1st XI: 100 runs in 20.4 overs, 82 minutes, 14 extras<br/>37.1 Brentwood CC 1st XI: 150 runs in 37.1 overs, 134 minutes, 23 extras\n<br/>\n<br/>\n<b>Chelmsford CC Sat 1st XI Innings</b><br/>\n10.6 Chelmsford CC Sat 1st XI: 50 runs in 10.5 overs, 57 minutes, 11 extras<br/>13.4 3rd Wicket: 50 runs in 56 balls, 45 minutes, Jack Sterland 26 (35), Rishabh Upadhyay 20 (21), 6 extras<br/>24.3 Chelmsford CC Sat 1st XI: 100 runs in 24.3 overs, 104 minutes, 14 extras<br/>31.6 6th Wicket: 50 runs in 76 balls, 39 minutes, James Clifford 26 (44), Brad Green 25 (32), 0 extras<br/>38.3 Chelmsford CC Sat 1st XI: 150 runs in 38.3 overs, 149 minutes, 14 extras<br/>42.1 James Clifford: 50 runs in 85 balls, 90 minutes (9x4)\n<br/>\n",
         "points": [
           {
@@ -646,7 +646,7 @@
         ]
       }
     ],
-    "fetched_at": "2026-09-08T05:13:36.987Z"
+    "fetched_at": "2026-09-08T09:49:27.416Z"
   },
   {
     "team": {
@@ -657,7 +657,7 @@
       "id": 7325784,
       "status": "New",
       "published": "Yes",
-      "last_updated": "05/09/2026",
+      "last_updated": "08/09/2026",
       "league_name": "Essex League",
       "league_id": "7300",
       "competition_name": "Division 06 - 2nd XI Premier Division",
@@ -699,10 +699,10 @@
       "result": "W",
       "result_description": "Hutton CC - 2nd XI - Overs Win",
       "result_applied_to": "21950",
-      "home_confirmed": "false",
-      "away_confirmed": "false",
-      "result_locked": "false",
-      "scorecard_locked": "false",
+      "home_confirmed": "true",
+      "away_confirmed": "true",
+      "result_locked": "true",
+      "scorecard_locked": "true",
       "match_notes": "<b>Hutton CC 2nd XI Innings</b><br/>\n8.3 Hutton CC 2nd XI: 50 runs in 8.3 overs, 33 minutes, 2 extras<br/>9.3 2nd Wicket: 50 runs in 54 balls, 31 minutes, Adam Holdgate 31 (28), Oscar Hunwick 19 (26), 2 extras<br/>17.4 Hutton CC 2nd XI: 100 runs in 17.4 overs, 67 minutes, 7 extras<br/>24.4 4th Wicket: 50 runs in 48 balls, 34 minutes, Andrew Mascall 38 (32), Daniel Payne 9 (16), 3 extras<br/>26.5 Hutton CC 2nd XI: 150 runs in 26.4 overs, 105 minutes, 11 extras<br/>26.7 Andrew Mascall: 50 runs in 43 balls, 49 minutes (7x4, 2x6)<br/>35.3 Hutton CC 2nd XI: 200 runs in 35.3 overs, 134 minutes, 16 extras<br/>37.1 6th Wicket: 50 runs in 59 balls, 31 minutes, Henry Hunwick 31 (32), Louis Poynter 14 (27), 6 extras<br/>43.1 Hutton CC 2nd XI: 250 runs in 43.1 overs, 167 minutes, 21 extras\n<br/>\n<br/>\n<b>Chelmsford CC Sat 2nd XI Innings</b><br/>\n10.6 1st Wicket: 50 runs in 66 balls, 41 minutes, Harry Jacobs 22 (39), Dan Hagen 22 (27), 6 extras<br/>10.6 Chelmsford CC Sat 2nd XI: 50 runs in 11.0 overs, 41 minutes, 6 extras<br/>16.6 Dan Hagen: 50 runs in 42 balls, 62 minutes (9x4)<br/>17.2 1st Wicket: 100 runs in 104 balls, 64 minutes, Harry Jacobs 41 (61), Dan Hagen 52 (43), 7 extras<br/>17.2 Chelmsford CC Sat 2nd XI: 100 runs in 17.2 overs, 64 minutes, 7 extras<br/>19.5 Harry Jacobs: 50 runs in 70 balls, 72 minutes (6x4)<br/>26.1 Chelmsford CC Sat 2nd XI: 150 runs in 26.1 overs, 97 minutes, 14 extras<br/>27.3 2nd Wicket: 50 runs in 51 balls, 31 minutes, Harry Jacobs 11 (16), George Wilson 33 (35), 6 extras<br/>32.1 George Wilson: 50 runs in 51 balls, 47 minutes (5x4)<br/>32.5 Chelmsford CC Sat 2nd XI: 200 runs in 32.5 overs, 119 minutes, 22 extras<br/>33.6 2nd Wicket: 100 runs in 91 balls, 52 minutes, Harry Jacobs 30 (34), George Wilson 57 (57), 14 extras<br/>40.3 Chelmsford CC Sat 2nd XI: 250 runs in 40.3 overs, 148 minutes, 26 extras\n<br/>\n",
       "points": [
         {
@@ -1213,7 +1213,7 @@
         "id": 7325784,
         "status": "New",
         "published": "Yes",
-        "last_updated": "05/09/2026",
+        "last_updated": "08/09/2026",
         "league_name": "Essex League",
         "league_id": "7300",
         "competition_name": "Division 06 - 2nd XI Premier Division",
@@ -1255,10 +1255,10 @@
         "result": "W",
         "result_description": "Hutton CC - 2nd XI - Overs Win",
         "result_applied_to": "21950",
-        "home_confirmed": "false",
-        "away_confirmed": "false",
-        "result_locked": "false",
-        "scorecard_locked": "false",
+        "home_confirmed": "true",
+        "away_confirmed": "true",
+        "result_locked": "true",
+        "scorecard_locked": "true",
         "match_notes": "<b>Hutton CC 2nd XI Innings</b><br/>\n8.3 Hutton CC 2nd XI: 50 runs in 8.3 overs, 33 minutes, 2 extras<br/>9.3 2nd Wicket: 50 runs in 54 balls, 31 minutes, Adam Holdgate 31 (28), Oscar Hunwick 19 (26), 2 extras<br/>17.4 Hutton CC 2nd XI: 100 runs in 17.4 overs, 67 minutes, 7 extras<br/>24.4 4th Wicket: 50 runs in 48 balls, 34 minutes, Andrew Mascall 38 (32), Daniel Payne 9 (16), 3 extras<br/>26.5 Hutton CC 2nd XI: 150 runs in 26.4 overs, 105 minutes, 11 extras<br/>26.7 Andrew Mascall: 50 runs in 43 balls, 49 minutes (7x4, 2x6)<br/>35.3 Hutton CC 2nd XI: 200 runs in 35.3 overs, 134 minutes, 16 extras<br/>37.1 6th Wicket: 50 runs in 59 balls, 31 minutes, Henry Hunwick 31 (32), Louis Poynter 14 (27), 6 extras<br/>43.1 Hutton CC 2nd XI: 250 runs in 43.1 overs, 167 minutes, 21 extras\n<br/>\n<br/>\n<b>Chelmsford CC Sat 2nd XI Innings</b><br/>\n10.6 1st Wicket: 50 runs in 66 balls, 41 minutes, Harry Jacobs 22 (39), Dan Hagen 22 (27), 6 extras<br/>10.6 Chelmsford CC Sat 2nd XI: 50 runs in 11.0 overs, 41 minutes, 6 extras<br/>16.6 Dan Hagen: 50 runs in 42 balls, 62 minutes (9x4)<br/>17.2 1st Wicket: 100 runs in 104 balls, 64 minutes, Harry Jacobs 41 (61), Dan Hagen 52 (43), 7 extras<br/>17.2 Chelmsford CC Sat 2nd XI: 100 runs in 17.2 overs, 64 minutes, 7 extras<br/>19.5 Harry Jacobs: 50 runs in 70 balls, 72 minutes (6x4)<br/>26.1 Chelmsford CC Sat 2nd XI: 150 runs in 26.1 overs, 97 minutes, 14 extras<br/>27.3 2nd Wicket: 50 runs in 51 balls, 31 minutes, Harry Jacobs 11 (16), George Wilson 33 (35), 6 extras<br/>32.1 George Wilson: 50 runs in 51 balls, 47 minutes (5x4)<br/>32.5 Chelmsford CC Sat 2nd XI: 200 runs in 32.5 overs, 119 minutes, 22 extras<br/>33.6 2nd Wicket: 100 runs in 91 balls, 52 minutes, Harry Jacobs 30 (34), George Wilson 57 (57), 14 extras<br/>40.3 Chelmsford CC Sat 2nd XI: 250 runs in 40.3 overs, 148 minutes, 26 extras\n<br/>\n",
         "points": [
           {
@@ -1324,7 +1324,7 @@
         ]
       }
     ],
-    "fetched_at": "2026-09-08T05:13:38.411Z"
+    "fetched_at": "2026-09-08T09:49:29.129Z"
   },
   {
     "team": {
@@ -1335,7 +1335,7 @@
       "id": 7461910,
       "status": "New",
       "published": "Yes",
-      "last_updated": "05/09/2026",
+      "last_updated": "08/09/2026",
       "league_name": "Essex League",
       "league_id": "7300",
       "competition_name": "Division 10 - 3rd XI Premier Division",
@@ -1875,7 +1875,7 @@
         "id": 7461910,
         "status": "New",
         "published": "Yes",
-        "last_updated": "05/09/2026",
+        "last_updated": "08/09/2026",
         "league_name": "Essex League",
         "league_id": "7300",
         "competition_name": "Division 10 - 3rd XI Premier Division",
@@ -1986,7 +1986,7 @@
         ]
       }
     ],
-    "fetched_at": "2026-09-08T05:13:40.651Z"
+    "fetched_at": "2026-09-08T09:49:32.282Z"
   },
   {
     "team": {
@@ -2654,7 +2654,7 @@
         ]
       }
     ],
-    "fetched_at": "2026-09-08T05:13:42.666Z"
+    "fetched_at": "2026-09-08T09:49:34.058Z"
   },
   {
     "team": {
@@ -3368,7 +3368,7 @@
         ]
       }
     ],
-    "fetched_at": "2026-09-08T05:13:43.932Z"
+    "fetched_at": "2026-09-08T09:49:36.010Z"
   },
   {
     "team": {
@@ -3591,7 +3591,7 @@
         ]
       }
     ],
-    "fetched_at": "2026-09-08T05:13:45.406Z"
+    "fetched_at": "2026-09-08T09:49:38.995Z"
   },
   {
     "team": {
@@ -4310,7 +4310,7 @@
         ]
       }
     ],
-    "fetched_at": "2026-09-08T05:13:46.710Z"
+    "fetched_at": "2026-09-08T09:49:41.022Z"
   },
   {
     "team": {
@@ -4591,7 +4591,7 @@
         ]
       }
     ],
-    "fetched_at": "2026-09-08T05:13:48.022Z"
+    "fetched_at": "2026-09-08T09:49:42.098Z"
   },
   {
     "team": {
@@ -4994,7 +4994,7 @@
         ]
       }
     ],
-    "fetched_at": "2026-09-08T05:13:49.809Z"
+    "fetched_at": "2026-09-08T09:49:43.023Z"
   },
   {
     "team": {
@@ -5671,6 +5671,6 @@
         ]
       }
     ],
-    "fetched_at": "2026-09-08T05:13:51.492Z"
+    "fetched_at": "2026-09-08T09:49:44.635Z"
   }
 ]
