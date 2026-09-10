@@ -1,1 +1,341 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="refresh" content="60" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/humanity/jquery-ui.css">
+    <title>Chelmsford Hockey Club</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+	    display: flex;
+	    flex-direction: column;
+	    height: 100vh;
+        }
+
+        header {
+            background-color: #1e8f1e;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+	    flex: 1;
+	    height: 140px;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+	    height: 1300px;
+        }
+
+        .column {
+            background-color: white;
+        }
+
+        .column-middle {
+            width: 60%;
+        }
+
+        .column-left, .column-right {
+	    text-align: center;
+            width: 20%;
+        }
+
+	.single-column-table {
+	    width: 80%;
+	    margin: 0 auto;
+	    border-collapse: collapse;
+	}
+
+	.single-column-table td {
+	    font-size: 48px;
+	    padding: 10px 0;
+	    height: 62px;
+	}
+
+	.dropdown-options {
+	    font-size: 50px;
+	    padding: 10px 0;
+	    border: 0;	    
+	    appearance: none;
+	}
+
+        .sponsors {
+            background-color: #1e8f1e;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+	    height: 100px;
+        }
+
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items:center;
+            justify-content:center;
+            background-color: white;
+        }
+
+        .grid-item {
+            text-align: center;
+	        margin: 0;
+	        line-height: 0;
+	        width:calc(100%/3);
+        }
+
+        .grid-item img {
+            width:75%;
+            position:relative;
+        }
+        
+    	.grid-item-span {
+    	    grid-column: 2 / span 2;
+    	}
+
+        .footer {
+            background-image: url('footer.png');
+            background-size: cover;
+            background-position: center;
+            justify-content: center;
+            color: black;
+            font-size: 48px;
+    	    width: 100%;
+    	    height: 370px;
+    	    display: flex;
+    	    align-items: flex-end;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h3>Welcome to Chelmsford Hockey Club</h3>
+    </header>
+
+    <section>
+        <div class="column column-left" align="center">
+	    <br/>
+	    <b>Changing Room</b>
+	    <br/><br/>
+	    <div id="dynamicDropdownsLeft"></div>
+	</div>
+
+        <div class="column column-middle">
+            <br><br><br>
+            <div id="gmsFixtures"
+		class="gms-wrapper gms-ajax" 
+		data-method="api" 
+		data-show="fixtures+results" 
+		data-club_id="e9ba26d3-7e18-4772-abb0-584e887c9d38"
+		data-sort_by="fixtureTime" 
+		data-options="showGender:yes, showList:yes, filter:home">
+	    </div>
+            <script src="https://gmsfeed.co.uk/js/api.js"></script>
+        </div>
+
+        <div class="column column-right" align="center">
+	    <br/>
+	    <b>Changing Room</b>
+	    <br/><br/>
+	    <div id="dynamicDropdownsRight"></div>
+	</div>
+    </section>
+
+    <div class="sponsors">
+        <h1>Thank you to our Sponsors:</h1>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item"><img src="//fixtures.chelmsfordhc.org.uk/img/gray and sons.png" alt="Gray and Sons"></div>
+        <div class="grid-item"><img src="//fixtures.chelmsfordhc.org.uk/img/skippers.png" alt="Skippers"></div>
+        <div class="grid-item"><img src="//fixtures.chelmsfordhc.org.uk/img/birketts.png" alt="Birketts"></div>
+        <div class="grid-item"><img src="//fixtures.chelmsfordhc.org.uk/img/green recycling.png" alt="Green Recycling"></div>
+        <div class="grid-item"><img src="//fixtures.chelmsfordhc.org.uk/img/st-cedds.png" alt="St Cedds"></div>
+        <div class="grid-item"><img src="//fixtures.chelmsfordhc.org.uk/img/new-hall.png" alt="New Hall"></div>
+        <div class="grid-item"><img src="//fixtures.chelmsfordhc.org.uk/img/old_park_meadow.svg" alt="Old Park Meadow"></div>
+        <div class="grid-item grid-item-span"><img src="//fixtures.chelmsfordhc.org.uk/img/meadow-oak.png" alt="Meadow Oak"></div>
+        <div class="grid-item"><img src="//fixtures.chelmsfordhc.org.uk/img/stonebondlogo.png" alt="Stonebond"></div>
+    </div>
+
+    <div class="footer">
+        <p id="datetime"></p>
+    </div>
+
+    <script>
+        
+            function displayTime() {
+                const now = new Date();
+                const timeString = now.toLocaleString('en-GB', { hour: 'numeric', minute: '2-digit', hour12: true }) + ' - ' + now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                document.getElementById('datetime').textContent = timeString;
+            }
+        
+            function countFixtures() {
+                const fixturesDiv = document.getElementById('gmsFixtures');
+                const fixtures = fixturesDiv.querySelectorAll('.gms-card');
+                return fixtures.length;
+            }
+        
+            let leftColumnSelections = new Set();
+        
+            function generateLeftDropdowns(count) {
+                const container = document.getElementById('dynamicDropdownsLeft');
+                container.innerHTML = '';
+                leftColumnSelections.clear();
+        
+                for (let i = 1; i <= count; i++) {
+                    const select = document.createElement('select');
+                    select.className = 'dropdown-options';
+                    select.id = `dropdownLeft${i}`;
+                    select.onchange = saveDropdownSelection;
+        
+                    for (let j = 1; j <= 6; j++) {
+                        const option = document.createElement('option');
+                        option.value = j.toString();
+                        option.textContent = j.toString();
+                        select.appendChild(option);
+                    }
+        
+                    container.appendChild(select);
+                    container.appendChild(document.createElement('br'));
+                    container.appendChild(document.createElement('br'));
+        
+                    // Set initial value to 1
+                    select.value = '1';
+                    leftColumnSelections.add(1);
+                }
+        
+                loadDropdownSelections('Left');
+            }
+        
+            function generateRightDropdowns(count) {
+                const container = document.getElementById('dynamicDropdownsRight');
+                container.innerHTML = '';
+        
+                for (let i = 1; i <= count; i++) {
+                    const select = document.createElement('select');
+                    select.className = 'dropdown-options';
+                    select.id = `dropdownRight${i}`;
+                    select.onchange = saveDropdownSelection;
+        
+                    for (let j = 1; j <= 6; j++) {
+                        const option = document.createElement('option');
+                        option.value = j.toString();
+                        option.textContent = j.toString();
+                        select.appendChild(option);
+                    }
+        
+                    container.appendChild(select);
+                    container.appendChild(document.createElement('br'));
+                    container.appendChild(document.createElement('br'));
+        
+                    // Set initial value to 1
+                    select.value = '1';
+                }
+        
+                loadDropdownSelections('Right');
+            }
+            
+            function saveDropdownSelection(event) {
+                const dropdown = event.target;
+                const selectedValue = dropdown.value;
+                const dropdownId = dropdown.id;
+        
+                let existingValues = localStorage.getItem('dropdownSelections') || '{}';
+                existingValues = JSON.parse(existingValues);
+                existingValues[dropdownId] = selectedValue;
+                localStorage.setItem('dropdownSelections', JSON.stringify(existingValues));
+        
+                // Update leftColumnSelections if it's a left dropdown
+                if (dropdownId.startsWith('dropdownLeft')) {
+                    leftColumnSelections.clear();
+                    document.querySelectorAll('[id^="dropdownLeft"]').forEach(select => {
+                        leftColumnSelections.add(parseInt(select.value));
+                    });
+                    // Regenerate right dropdowns to ensure no conflicts
+                    //generateRightDropdowns(countFixtures());
+                }
+            }
+            
+            function loadDropdownSelections(side) {
+                const selectedValues = JSON.parse(localStorage.getItem('dropdownSelections')) || {};
+                const dropdowns = document.querySelectorAll(`[id^="dropdown${side}"]`);
+                for (const dropdown of dropdowns) {
+                    const dropdownId = dropdown.id;
+                    const selectedValue = selectedValues[dropdownId];
+                    if (selectedValue && dropdown.querySelector(`option[value="${selectedValue}"]`)) {
+                        dropdown.value = selectedValue;
+                    }
+                }
+            }
+            
+            const observer = new MutationObserver((mutations) => {
+                for (let mutation of mutations) {
+                    if (mutation.type === 'childList') {
+                        for (let node of mutation.addedNodes) {
+                            if (node.nodeType === Node.ELEMENT_NODE) {
+                                const fixtureCount = countFixtures();
+                                generateLeftDropdowns(fixtureCount);
+                                generateRightDropdowns(fixtureCount);
+                                return;
+                            }
+                        }
+                    }
+                }
+            });
+        
+            const config = { childList: true, subtree: true };
+            observer.observe(document.getElementById('gmsFixtures'), config);
+        
+            setTimeout(() => {
+                observer.disconnect();
+                console.log('Stopped observing after 30 seconds');
+                if (document.getElementById('dynamicDropdownsLeft').children.length === 0 || 
+                    document.getElementById('dynamicDropdownsRight').children.length === 0) {
+                    console.log('No fixtures found');
+                }
+            }, 30000);
+        
+            displayTime();
+            setInterval(displayTime, 60000);
+
+        $(document).ready(function(){
+            $('section').on('change', '.dropdown-options', function(){
+                var selectId = $(this).attr('id');
+                var roomNumber = $(this).val();
+                $.ajax({
+    				url: '<?php echo base_url(); ?>changing/updategms',
+    				type:'POST',
+    				dataType: 'json',
+    				data: {'select_id' : selectId, 'room_number' : roomNumber},
+    				success: function(output_string){
+    				    alert('success');
+    				} // End of success function of ajax form
+    			});
+            });
+            
+            var selects = <?php echo $selects; ?>;
+            
+            setTimeout(function(){
+                $('.dropdown-options').each(function(){
+                    if($(this).attr('id') in selects)
+                    {
+                        $(this).val(selects[$(this).attr('id')]);
+                    }
+                });
+                $('.dropdown-options').css('visibility', 'visible');
+            }, 1000);
+            setTimeout(function(){
+                window.location.reload();
+            }, 60000);
+        });
+    </script>
+    <style>
+        .dropdown-options {
+            visibility:hidden;
+        }
+    </style>
+</body>
+</html>
