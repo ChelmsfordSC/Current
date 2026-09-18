@@ -7,32 +7,6 @@
     <link rel="stylesheet" href="../style.css">
     <style>
         /* Page-specific additions for the API docs, on top of the shared stylesheet */
-        .api-endpoint {
-            margin-bottom: 10px;
-        }
-        .api-endpoint-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 14px;
-            flex-wrap: wrap;
-        }
-        .api-method {
-            display: inline-block;
-            background: #27ae60;
-            color: #fff;
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 0.5px;
-            padding: 4px 10px;
-            border-radius: 4px;
-        }
-        .api-path {
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-            font-size: 15px;
-            color: #1a252f;
-            font-weight: 600;
-        }
         .api-code {
             background: #1a252f;
             color: #e9ecef;
@@ -45,6 +19,16 @@
             margin: 10px 0 18px;
         }
         .api-code .comment { color: #8ea0b3; }
+        .api-endpoint-line {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 14px;
+            background: #eef1f3;
+            padding: 8px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 4px 0 14px;
+            word-break: break-all;
+        }
         .api-label {
             font-size: 13px;
             font-weight: 700;
@@ -172,34 +156,22 @@
                 <h2 class="section-title">GET /api/today</h2>
             </div>
             <div class="section-content">
-                <div class="api-endpoint">
-                    <div class="api-endpoint-header">
-                        <span class="api-method">GET</span>
-                        <span class="api-path">/api/today</span>
-                    </div>
-                    <p>Returns fixtures and results scheduled for today only. Useful for a "what's on today" display without having to filter the full fixture list yourself.</p>
+                <p>Returns fixtures and results scheduled for today only, so you don't have to filter the full fixture list yourself for a simple "what's on today" display.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/today</p>
+                <p>No parameters.</p>
 
-                    <p class="api-label">Parameters</p>
-                    <p>None.</p>
-
-                    <p class="api-label">Example request</p>
-                    <pre class="api-code"><span class="comment"># curl</span>
+                <p class="api-label">Example request</p>
+                <pre class="api-code"><span class="comment"># curl</span>
 curl -H "X-API-Key: YOUR_API_KEY" \
   https://gms-api.chelmsfordsc.org.uk/api/today</pre>
-                    <pre class="api-code"><span class="comment">// JavaScript (fetch)</span>
-const res = await fetch('https://gms-api.chelmsfordsc.org.uk/api/today', {
-  headers: { 'X-API-Key': 'YOUR_API_KEY' }
-});
-const data = await res.json();</pre>
 
-                    <p class="api-label">Example response</p>
-                    <pre class="api-code">{
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
   "fixtures": [
     { <span class="comment">/* same shape as /api/fixtures below */</span> }
   ]
 }</pre>
-                    <p>Same field shape as <a href="#fixtures">/api/fixtures</a> below, filtered down to just today's date — an empty array simply means nothing's on today.</p>
-                </div>
+                <p>Same field shape as <a href="#fixtures">/api/fixtures</a> below, just filtered down to today's date — an empty array simply means nothing's on today.</p>
             </div>
         </div>
 
@@ -208,38 +180,23 @@ const data = await res.json();</pre>
                 <h2 class="section-title">GET /api/fixtures</h2>
             </div>
             <div class="section-content">
-                <div class="api-endpoint">
-                    <div class="api-endpoint-header">
-                        <span class="api-method">GET</span>
-                        <span class="api-path">/api/fixtures</span>
-                    </div>
-                    <p>Returns every known fixture and result across Chelmsford's hockey teams and the competitions they play in — past, present and future. Optional query parameters narrow this down.</p>
+                <p>Returns every known fixture and result across Chelmsford's hockey teams and the competitions they play in — past, present and future.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/fixtures?team=47e1e6e9-120c-4185-ad68-be7b70b76eac&amp;comp_id=e28a25be-e7df-41b2-a923-a5c2921c0ca6&amp;from=2026-09-01&amp;to=2026-12-31</p>
+                <p>All four query parameters are optional and can be combined — drop them all to get everything:</p>
+                <table class="api-table">
+                    <tr><th>Parameter</th><th>Description</th></tr>
+                    <tr><td><code>team</code></td><td>A <code>club_team_id</code> (see <a href="#teams">/api/teams</a>) — only fixtures involving that Chelmsford team.</td></tr>
+                    <tr><td><code>comp_id</code></td><td>A competition ID (see <a href="#leagues">/api/leagues</a>) — only fixtures in that competition.</td></tr>
+                    <tr><td><code>from</code> / <code>to</code></td><td>ISO dates (<code>YYYY-MM-DD</code>), inclusive — filters on the fixture's date.</td></tr>
+                </table>
 
-                    <p class="api-label">Parameters</p>
-                    <table class="api-table">
-                        <tr><th>Name</th><th>In</th><th>Description</th></tr>
-                        <tr><td><code>team</code></td><td>Query string</td><td>Optional. A <code>club_team_id</code> (see <a href="#teams">/api/teams</a>) — returns only fixtures involving that Chelmsford team.</td></tr>
-                        <tr><td><code>comp_id</code></td><td>Query string</td><td>Optional. A competition ID (see <a href="#leagues">/api/leagues</a>) — returns only fixtures in that competition.</td></tr>
-                        <tr><td><code>from</code> / <code>to</code></td><td>Query string</td><td>Optional. ISO dates (<code>YYYY-MM-DD</code>), inclusive, filtering on the fixture's date. Combine both for a range, or use either alone for an open-ended one.</td></tr>
-                    </table>
-                    <p>All filters can be combined — e.g. <code>?team=47e1e6e9-120c-4185-ad68-be7b70b76eac&amp;from=2026-09-01</code>. Leave all of them off to get everything, as before.</p>
-
-                    <p class="api-label">Example request</p>
-                    <pre class="api-code"><span class="comment"># curl -- everything</span>
-curl -H "X-API-Key: YOUR_API_KEY" \
-  https://gms-api.chelmsfordsc.org.uk/api/fixtures
-
-<span class="comment"># curl -- just one team, from today onward</span>
+                <p class="api-label">Example request</p>
+                <pre class="api-code"><span class="comment"># curl -- one team, from today onward</span>
 curl -H "X-API-Key: YOUR_API_KEY" \
   "https://gms-api.chelmsfordsc.org.uk/api/fixtures?team=47e1e6e9-120c-4185-ad68-be7b70b76eac&amp;from=2026-09-18"</pre>
-                    <pre class="api-code"><span class="comment">// JavaScript (fetch)</span>
-const res = await fetch('https://gms-api.chelmsfordsc.org.uk/api/fixtures', {
-  headers: { 'X-API-Key': 'YOUR_API_KEY' }
-});
-const data = await res.json();</pre>
 
-                    <p class="api-label">Example response</p>
-                    <pre class="api-code">{
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
   "fixtures": [
     {
       "fixture_id": "19_sep_2026_upminster_3_chelmsford_4",
@@ -261,24 +218,7 @@ const data = await res.json();</pre>
     }
   ]
 }</pre>
-
-                    <p class="api-label">Field reference</p>
-                    <table class="api-table">
-                        <tr><th>Field</th><th>Description</th></tr>
-                        <tr><td><code>fixture_id</code></td><td>Stable unique ID for this fixture, derived from its date and team names. Use it with <a href="#fixture-by-id">/api/fixtures/:id</a>.</td></tr>
-                        <tr><td><code>comp_id</code></td><td>ID of the competition this fixture belongs to, or <code>null</code> if not yet known. See <a href="#leagues">/api/leagues</a>.</td></tr>
-                        <tr><td><code>home_team_name</code> / <code>away_team_name</code></td><td>Team names as published by the league.</td></tr>
-                        <tr><td><code>fixture_date</code></td><td>Date as the league displays it, e.g. <code>"19 Sep 2026"</code>. Not sortable/comparable as text — use <code>fixture_date_iso</code> instead.</td></tr>
-                        <tr><td><code>fixture_date_iso</code></td><td>The same date in <code>YYYY-MM-DD</code> form, for sorting or the <code>from</code>/<code>to</code> filters above.</td></tr>
-                        <tr><td><code>fixture_time</code></td><td>Kick-off time as text, e.g. <code>"11:30"</code> (or <code>"TBC"</code>). <code>null</code> once the match has been played (see <code>status</code>).</td></tr>
-                        <tr><td><code>status</code></td><td><code>"scheduled"</code> until the match has been played, then <code>"completed"</code>.</td></tr>
-                        <tr><td><code>home_score</code> / <code>away_score</code></td><td>Final score once <code>status</code> is <code>"completed"</code>, otherwise <code>null</code>.</td></tr>
-                        <tr><td><code>scorers</code></td><td>Goalscorer information, or <code>null</code> if not available.</td></tr>
-                        <tr><td><code>venue_name</code> / <code>venue_url</code></td><td>Where it's being played, with a link to a map where one is known.</td></tr>
-                        <tr><td><code>club_team_id</code> / <code>club_side</code></td><td>Only populated when Chelmsford is playing in this fixture — which of our teams it is, and whether we're <code>"home"</code> or <code>"away"</code>.</td></tr>
-                        <tr><td><code>last_updated</code></td><td>When this row was last refreshed from the league's own system, as an ISO timestamp.</td></tr>
-                    </table>
-                </div>
+                <p>Each fixture carries its own <code>fixture_id</code> (a stable ID derived from its date and the two team names — use it with <a href="#fixture-by-id">/api/fixtures/:id</a>), both a display date (<code>fixture_date</code>) and a sortable one (<code>fixture_date_iso</code>, also what the <code>from</code>/<code>to</code> filters above compare against), and a <code>status</code> that's <code>"scheduled"</code> until the match is played and <code>"completed"</code> afterwards, at which point <code>home_score</code>/<code>away_score</code> are filled in. <code>club_team_id</code>/<code>club_side</code> are only set on the side that's actually one of Chelmsford's own teams.</p>
             </div>
         </div>
 
@@ -287,26 +227,16 @@ const data = await res.json();</pre>
                 <h2 class="section-title">GET /api/fixtures/:id</h2>
             </div>
             <div class="section-content">
-                <div class="api-endpoint">
-                    <div class="api-endpoint-header">
-                        <span class="api-method">GET</span>
-                        <span class="api-path">/api/fixtures/:id</span>
-                    </div>
-                    <p>Returns a single fixture by its <code>fixture_id</code> — the same ID shown in the <a href="#fixtures">/api/fixtures</a> list above.</p>
+                <p>Returns a single fixture by its <code>fixture_id</code> — the same ID shown in the <a href="#fixtures">/api/fixtures</a> list above.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/fixtures/19_sep_2026_upminster_3_chelmsford_4</p>
 
-                    <p class="api-label">Parameters</p>
-                    <table class="api-table">
-                        <tr><th>Name</th><th>In</th><th>Description</th></tr>
-                        <tr><td><code>id</code></td><td>URL path</td><td>A <code>fixture_id</code> value, e.g. <code>19_sep_2026_upminster_3_chelmsford_4</code>.</td></tr>
-                    </table>
-
-                    <p class="api-label">Example request</p>
-                    <pre class="api-code"><span class="comment"># curl</span>
+                <p class="api-label">Example request</p>
+                <pre class="api-code"><span class="comment"># curl</span>
 curl -H "X-API-Key: YOUR_API_KEY" \
   https://gms-api.chelmsfordsc.org.uk/api/fixtures/19_sep_2026_upminster_3_chelmsford_4</pre>
 
-                    <p class="api-label">Example response — a played match</p>
-                    <pre class="api-code">{
+                <p class="api-label">Example response — a played match</p>
+                <pre class="api-code">{
   "fixture_id": "12_sep_2026_chelmsford_5_tower_hamlets_1",
   "comp_id": "255273c5-c270-4304-b396-cc1b911a5754",
   "home_team_name": "Chelmsford 5 (F)",
@@ -324,14 +254,7 @@ curl -H "X-API-Key: YOUR_API_KEY" \
   "club_side": "home",
   "last_updated": "2026-09-18T04:19:07.958Z"
 }</pre>
-                    <p>Same fields as a single entry from <a href="#fixtures">/api/fixtures</a> — see the field reference there. Returned on its own rather than wrapped in a list.</p>
-
-                    <p class="api-label">Not found</p>
-                    <p>If no fixture matches the given <code>id</code>, the API returns a <code>404</code>:</p>
-                    <pre class="api-code">{
-  "error": "Not found"
-}</pre>
-                </div>
+                <p>Same fields as a single entry from <a href="#fixtures">/api/fixtures</a>, just returned on its own rather than wrapped in a list. If no fixture matches the given <code>id</code>, you'll get a <code>404</code> instead: <code>{"error": "Not found"}</code>.</p>
             </div>
         </div>
 
@@ -340,23 +263,17 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <h2 class="section-title">GET /api/teams</h2>
             </div>
             <div class="section-content">
-                <div class="api-endpoint">
-                    <div class="api-endpoint-header">
-                        <span class="api-method">GET</span>
-                        <span class="api-path">/api/teams</span>
-                    </div>
-                    <p>Lists Chelmsford's own hockey teams as the API currently knows them, along with the <code>club_team_id</code> used to filter <a href="#fixtures">/api/fixtures</a> by team.</p>
+                <p>Lists Chelmsford's own hockey teams as the API currently knows them, along with the <code>club_team_id</code> used to filter <a href="#fixtures">/api/fixtures</a> by team. Only teams the pipeline has actually seen play are listed — a brand new team won't appear until its first fixture has been picked up.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/teams</p>
+                <p>No parameters.</p>
 
-                    <p class="api-label">Parameters</p>
-                    <p>None.</p>
-
-                    <p class="api-label">Example request</p>
-                    <pre class="api-code"><span class="comment"># curl</span>
+                <p class="api-label">Example request</p>
+                <pre class="api-code"><span class="comment"># curl</span>
 curl -H "X-API-Key: YOUR_API_KEY" \
   https://gms-api.chelmsfordsc.org.uk/api/teams</pre>
 
-                    <p class="api-label">Example response</p>
-                    <pre class="api-code">{
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
   "teams": [
     {
       "club_team_id": "47e1e6e9-120c-4185-ad68-be7b70b76eac",
@@ -372,17 +289,7 @@ curl -H "X-API-Key: YOUR_API_KEY" \
     }
   ]
 }</pre>
-
-                    <p class="api-label">Field reference</p>
-                    <table class="api-table">
-                        <tr><th>Field</th><th>Description</th></tr>
-                        <tr><td><code>club_team_id</code></td><td>Stable ID for this team. Use it as <code>?team=</code> on <a href="#fixtures">/api/fixtures</a>.</td></tr>
-                        <tr><td><code>team_name</code></td><td>Team name as most recently seen from the league (may or may not carry a gender suffix like <code>"(F)"</code> depending on which league page it was last seen on).</td></tr>
-                        <tr><td><code>fixture_count</code></td><td>How many fixture rows the API currently has for this team.</td></tr>
-                        <tr><td><code>last_seen</code></td><td>The latest <code>fixture_date_iso</code> we have for this team (i.e. the date of its last known fixture, played or upcoming).</td></tr>
-                    </table>
-                    <p>Only teams the pipeline has actually seen play (home or away) are listed — a brand new team won't appear here until its first fixture has been picked up.</p>
-                </div>
+                <p><code>team_name</code> is the team name as most recently seen (it may or may not carry a gender suffix like <code>"(F)"</code>, depending on which league page it was last seen on); <code>last_seen</code> is the latest <code>fixture_date_iso</code> we have for that team, played or upcoming.</p>
             </div>
         </div>
 
@@ -391,30 +298,17 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <h2 class="section-title">GET /api/leagues</h2>
             </div>
             <div class="section-content">
-                <div class="api-endpoint">
-                    <div class="api-endpoint-header">
-                        <span class="api-method">GET</span>
-                        <span class="api-path">/api/leagues</span>
-                    </div>
-                    <p>Self-serve lookup for competition IDs — no need to email us for a <code>comp_id</code> any more. Only lists competitions one of Chelmsford's own teams is actually registered in, and grows automatically as new teams/seasons are picked up.</p>
+                <p>Self-serve lookup for competition IDs — no need to email us for a <code>comp_id</code> any more. Only lists competitions one of Chelmsford's own teams is actually registered in, and grows automatically as new teams/seasons are picked up.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/leagues?search=Women</p>
+                <p>The optional <code>search</code> parameter does a case-insensitive substring match on the competition name — leave it off to list everything.</p>
 
-                    <p class="api-label">Parameters</p>
-                    <table class="api-table">
-                        <tr><th>Name</th><th>In</th><th>Description</th></tr>
-                        <tr><td><code>search</code></td><td>Query string</td><td>Optional. Case-insensitive substring match on the competition name. Omit to list everything.</td></tr>
-                    </table>
-
-                    <p class="api-label">Example request</p>
-                    <pre class="api-code"><span class="comment"># curl -- everything</span>
-curl -H "X-API-Key: YOUR_API_KEY" \
-  https://gms-api.chelmsfordsc.org.uk/api/leagues
-
-<span class="comment"># curl -- search by name</span>
+                <p class="api-label">Example request</p>
+                <pre class="api-code"><span class="comment"># curl</span>
 curl -H "X-API-Key: YOUR_API_KEY" \
   "https://gms-api.chelmsfordsc.org.uk/api/leagues?search=Women"</pre>
 
-                    <p class="api-label">Example response</p>
-                    <pre class="api-code">{
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
   "leagues": [
     {
       "comp_id": "255273c5-c270-4304-b396-cc1b911a5754",
@@ -430,16 +324,7 @@ curl -H "X-API-Key: YOUR_API_KEY" \
     }
   ]
 }</pre>
-
-                    <p class="api-label">Field reference</p>
-                    <table class="api-table">
-                        <tr><th>Field</th><th>Description</th></tr>
-                        <tr><td><code>comp_id</code></td><td>Use this with <a href="#league-by-id">/api/leagues/:comp_id</a>, <a href="#standings">/api/standings</a>, or as <code>?comp_id=</code> on <a href="#fixtures">/api/fixtures</a>.</td></tr>
-                        <tr><td><code>name</code></td><td>Competition name as published by the league.</td></tr>
-                        <tr><td><code>season</code></td><td>Season string, e.g. <code>"2026-2027"</code>.</td></tr>
-                        <tr><td><code>gender</code></td><td><code>"M"</code>, <code>"F"</code>, or <code>null</code> if not determinable from the name.</td></tr>
-                    </table>
-                </div>
+                <p>Use a <code>comp_id</code> from here with <a href="#league-by-id">/api/leagues/:comp_id</a>, <a href="#standings">/api/standings</a>, or as <code>?comp_id=</code> on <a href="#fixtures">/api/fixtures</a>.</p>
             </div>
         </div>
 
@@ -448,38 +333,22 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <h2 class="section-title">GET /api/leagues/:comp_id</h2>
             </div>
             <div class="section-content">
-                <div class="api-endpoint">
-                    <div class="api-endpoint-header">
-                        <span class="api-method">GET</span>
-                        <span class="api-path">/api/leagues/:comp_id</span>
-                    </div>
-                    <p>Direct lookup for a single competition once you already have its <code>comp_id</code> cached, rather than searching by name every time.</p>
+                <p>Direct lookup for a single competition once you already have its <code>comp_id</code> cached, rather than searching by name every time.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/leagues/255273c5-c270-4304-b396-cc1b911a5754</p>
 
-                    <p class="api-label">Parameters</p>
-                    <table class="api-table">
-                        <tr><th>Name</th><th>In</th><th>Description</th></tr>
-                        <tr><td><code>comp_id</code></td><td>URL path</td><td>The competition's ID — see <a href="#leagues">/api/leagues</a>.</td></tr>
-                    </table>
-
-                    <p class="api-label">Example request</p>
-                    <pre class="api-code"><span class="comment"># curl</span>
+                <p class="api-label">Example request</p>
+                <pre class="api-code"><span class="comment"># curl</span>
 curl -H "X-API-Key: YOUR_API_KEY" \
   https://gms-api.chelmsfordsc.org.uk/api/leagues/255273c5-c270-4304-b396-cc1b911a5754</pre>
 
-                    <p class="api-label">Example response</p>
-                    <pre class="api-code">{
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
   "comp_id": "255273c5-c270-4304-b396-cc1b911a5754",
   "name": "East Women's Division 2 South East",
   "season": "2026-2027",
   "gender": "F"
 }</pre>
-
-                    <p class="api-label">Not found</p>
-                    <p>If no competition matches the given <code>comp_id</code>, the API returns a <code>404</code>:</p>
-                    <pre class="api-code">{
-  "error": "Not found"
-}</pre>
-                </div>
+                <p>If no competition matches the given <code>comp_id</code>, you'll get a <code>404</code> instead: <code>{"error": "Not found"}</code>.</p>
             </div>
         </div>
 
@@ -488,32 +357,17 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <h2 class="section-title">GET /api/standings</h2>
             </div>
             <div class="section-content">
-                <div class="api-endpoint">
-                    <div class="api-endpoint-header">
-                        <span class="api-method">GET</span>
-                        <span class="api-path">/api/standings?comp_id=</span>
-                    </div>
-                    <p>Returns the league table for a single competition.</p>
+                <p>Returns the league table for a single competition.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/standings?comp_id=255273c5-c270-4304-b396-cc1b911a5754</p>
+                <p><code>comp_id</code> is required — see <a href="#leagues">/api/leagues</a> to look one up by name.</p>
 
-                    <p class="api-label">Parameters</p>
-                    <table class="api-table">
-                        <tr><th>Name</th><th>In</th><th>Description</th></tr>
-                        <tr><td><code>comp_id</code></td><td>Query string</td><td>Required. The competition's ID — see <a href="#leagues">/api/leagues</a> to look one up by name.</td></tr>
-                    </table>
-
-                    <p class="api-label">Example request</p>
-                    <pre class="api-code"><span class="comment"># curl</span>
+                <p class="api-label">Example request</p>
+                <pre class="api-code"><span class="comment"># curl</span>
 curl -H "X-API-Key: YOUR_API_KEY" \
   "https://gms-api.chelmsfordsc.org.uk/api/standings?comp_id=255273c5-c270-4304-b396-cc1b911a5754"</pre>
 
-                    <p class="api-label">Example response — no matching data</p>
-                    <pre class="api-code">{
-  "standings": []
-}</pre>
-                    <p>The response is always an object with a <code>standings</code> array, empty when there's no data for that <code>comp_id</code> yet.</p>
-
-                    <p class="api-label">Example response — populated</p>
-                    <pre class="api-code">{
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
   "standings": [
     {
       "team_name": "Chelmsford 4",
@@ -529,8 +383,7 @@ curl -H "X-API-Key: YOUR_API_KEY" \
     }
   ]
 }</pre>
-                    <p>One entry per team in the competition, ordered by league position. Field names match the columns written by our own scraper, so they're accurate — the specific numbers above are illustrative rather than a live-pulled example; happy to swap in a real one if you send us a response from a populated <code>comp_id</code>.</p>
-                </div>
+                <p>One entry per team in the competition, ordered by league position. The response is always an object with a <code>standings</code> array — empty (<code>{"standings": []}</code>) if there's no data for that <code>comp_id</code> yet, rather than an error.</p>
             </div>
         </div>
 
@@ -539,23 +392,17 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <h2 class="section-title">GET /api/status</h2>
             </div>
             <div class="section-content">
-                <div class="api-endpoint">
-                    <div class="api-endpoint-header">
-                        <span class="api-method">GET</span>
-                        <span class="api-path">/api/status</span>
-                    </div>
-                    <p>A simple health-check — confirms the API is up and returns the single most recent scrape log entry, so you can see when the underlying data was last refreshed (and whether that last refresh succeeded).</p>
+                <p>A simple health-check — confirms the API is up and returns the single most recent scrape log entry, so you can see when the underlying data was last refreshed and whether that refresh succeeded.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/status</p>
+                <p>No parameters.</p>
 
-                    <p class="api-label">Parameters</p>
-                    <p>None.</p>
-
-                    <p class="api-label">Example request</p>
-                    <pre class="api-code"><span class="comment"># curl</span>
+                <p class="api-label">Example request</p>
+                <pre class="api-code"><span class="comment"># curl</span>
 curl -H "X-API-Key: YOUR_API_KEY" \
   https://gms-api.chelmsfordsc.org.uk/api/status</pre>
 
-                    <p class="api-label">Example response</p>
-                    <pre class="api-code">{
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
   "last_scrape": {
     "id": 1657,
     "show_type": "matchdays",
@@ -566,8 +413,7 @@ curl -H "X-API-Key: YOUR_API_KEY" \
     "run_at": "2026-09-18T18:24:41.178Z"
   }
 }</pre>
-                    <p><code>status</code> on the inner object is one of <code>"success"</code>, <code>"empty"</code> (ran fine, nothing new), <code>"skipped"</code> (e.g. a stage lock was already held), or <code>"error"</code>.</p>
-                </div>
+                <p><code>status</code> on the inner object is one of <code>"success"</code>, <code>"empty"</code> (ran fine, nothing new), <code>"skipped"</code> (e.g. a stage lock was already held), or <code>"error"</code>.</p>
             </div>
         </div>
 
@@ -576,32 +422,22 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <h2 class="section-title">GET /api/status/history</h2>
             </div>
             <div class="section-content">
-                <div class="api-endpoint">
-                    <div class="api-endpoint-header">
-                        <span class="api-method">GET</span>
-                        <span class="api-path">/api/status/history</span>
-                    </div>
-                    <p>Like <a href="#status">/api/status</a>, but returns a run of recent scrape log entries instead of just the latest one — handy for spotting a pattern (e.g. a cluster of errors) without needing direct database access.</p>
+                <p>Like <a href="#status">/api/status</a>, but returns a run of recent scrape log entries instead of just the latest one — handy for spotting a pattern (e.g. a cluster of errors) without needing direct database access.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/status/history?limit=10</p>
+                <p>The optional <code>limit</code> parameter controls how many entries come back, most recent first — defaults to 20, capped at 100.</p>
 
-                    <p class="api-label">Parameters</p>
-                    <table class="api-table">
-                        <tr><th>Name</th><th>In</th><th>Description</th></tr>
-                        <tr><td><code>limit</code></td><td>Query string</td><td>Optional. How many entries to return, most recent first. Defaults to 20, capped at 100.</td></tr>
-                    </table>
-
-                    <p class="api-label">Example request</p>
-                    <pre class="api-code"><span class="comment"># curl</span>
+                <p class="api-label">Example request</p>
+                <pre class="api-code"><span class="comment"># curl</span>
 curl -H "X-API-Key: YOUR_API_KEY" \
   "https://gms-api.chelmsfordsc.org.uk/api/status/history?limit=10"</pre>
 
-                    <p class="api-label">Example response</p>
-                    <pre class="api-code">{
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
   "history": [
     { <span class="comment">/* same shape as the inner object in /api/status above */</span> },
     { <span class="comment">/* ... */</span> }
   ]
 }</pre>
-                </div>
             </div>
         </div>
 
