@@ -136,6 +136,7 @@
                     <li><a href="#today">Today's Fixtures & Results</a></li>
                     <li><a href="#fixtures">All Fixtures & Results</a></li>
                     <li><a href="#fixture-by-id">Look Up a Single Fixture</a></li>
+                    <li><a href="#fixture-details">Fixture Detail (Scorers, Team Sheets &amp; Officials)</a></li>
                     <li><a href="#teams">List Our Teams</a></li>
                     <li><a href="#leagues">Find a Competition</a></li>
                     <li><a href="#league-by-id">Look Up a Single Competition</a></li>
@@ -266,6 +267,78 @@
   "last_updated": "2026-09-18T04:19:07.958Z"
 }</pre>
                 <p>Same fields as a single entry from <a href="#fixtures">/api/fixtures</a>, just returned on its own rather than wrapped in a list. If no fixture matches the given <code>id</code>, you'll get a <code>404</code> instead: <code>{"error": "Not found"}</code>.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="fixture-details">
+            <div class="section-header">
+                <h2 class="section-title">Fixture Detail (Scorers, Team Sheets &amp; Officials)</h2>
+            </div>
+            <div class="section-content">
+                <p>Returns the richer "Show Detail" information GMS collects for a fixture once it's been played — goal scorers, full team sheets with squad numbers, coaching roles, match officials and club crests. This is separate from <a href="#fixture-by-id">/api/fixtures/:id</a> above because GMS only has this level of detail for a fixture once someone at either club has actually entered it, and only within a rolling window (roughly the last month to the next fortnight) — outside that window, or before anything's been entered, you won't get a result yet.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/fixtures/19_sep_2026_chelmsford_3_billericay_2/details</p>
+                <p>Optionally add <code>?fields=</code> to get back just the parts you need instead of everything:</p>
+                <table class="api-table">
+                    <tr><th>Parameter</th><th>Description</th></tr>
+                    <tr><td><code>fields</code></td><td>Optional, comma-separated. One or more of <code>scorers</code>, <code>team_sheet</code>, <code>coaching_roles</code>, <code>officials</code>, <code>crests</code> — e.g. <code>?fields=scorers,team_sheet</code>. Leave it off to get everything.</td></tr>
+                </table>
+
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
+  "fixture_id": "19_sep_2026_chelmsford_3_billericay_2",
+  "gms_fixture_uuid": "GMS_FIXTURE_UUID",
+  "club_side": "home",
+  "competition_name": "Essex Premier Division",
+  "venue_address": "Chelmer Park, Chelmsford, CM2 8RL",
+  "status": "has_details",
+  "eh_fixture_link": "https://www.englandhockey.co.uk/fixtures/GMS_FIXTURE_UUID",
+  "last_updated": "2026-09-19T18:42:11.000Z",
+
+  <span class="comment">/* raw GMS-side scorers/team sheets, keyed by home/away */</span>
+  "home_scorers_text": "S. Wren (12' FG, 41' PC)",
+  "away_scorers_text": "Name Withheld (55' FG)",
+  "home_team_sheet": [
+    { "squad_number": "1", "name": "R. Ahmed", "is_captain": false, "is_goalkeeper": true, "tag": null, "withheld": false, "count": null, "goals": [] },
+    { "squad_number": "7", "name": "S. Wren", "is_captain": true, "is_goalkeeper": false, "tag": null, "withheld": false, "count": null, "goals": [{ "time": "12'", "type": "FG" }, { "time": "41'", "type": "PC" }] },
+    { "squad_number": null, "name": null, "is_captain": false, "is_goalkeeper": false, "tag": null, "withheld": true, "count": 3, "goals": [] }
+  ],
+  "away_team_sheet": [ <span class="comment">/* same shape as home_team_sheet */</span> ],
+  "home_coaching_roles": [{ "role": "Team Coach", "name": "L. Patel" }],
+  "away_coaching_roles": [{ "role": "First Aider", "name": "K. Doyle" }],
+  "home_crest_url": "https://clubportal.englandhockey.co.uk/uploads/clubcrests/...png",
+  "away_crest_url": "https://clubportal.englandhockey.co.uk/uploads/clubcrests/...png",
+  "match_officials": [{ "role": "Umpire", "name": "P. Grant" }, { "role": "Umpire", "name": "M. O'Connell" }],
+
+  <span class="comment">/* the same data again, but from Chelmsford's own point of view --</span>
+  <span class="comment">   see the note below */</span>
+  "club_scorers_text": "S. Wren (12' FG, 41' PC)",
+  "opponent_scorers_text": "Name Withheld (55' FG)",
+  "club_team_sheet": [ <span class="comment">/* same as home_team_sheet -- Chelmsford was home in this fixture */</span> ],
+  "opponent_team_sheet": [ <span class="comment">/* same as away_team_sheet */</span> ],
+  "club_coaching_roles": [{ "role": "Team Coach", "name": "L. Patel" }],
+  "opponent_coaching_roles": [{ "role": "First Aider", "name": "K. Doyle" }],
+  "club_crest_url": "https://clubportal.englandhockey.co.uk/uploads/clubcrests/...png",
+  "opponent_crest_url": "https://clubportal.englandhockey.co.uk/uploads/clubcrests/...png"
+}</pre>
+
+                <p class="api-label">Club vs. opponent</p>
+                <p>Every field above comes in two flavours: <code>home_*</code>/<code>away_*</code> (GMS's own home/away split for that match) and <code>club_*</code>/<code>opponent_*</code> (the same information from Chelmsford's own point of view, using the fixture's <code>club_side</code>). If you only care about "our" team sheet or "our" scorer, use the <code>club_*</code> fields and you won't need to look up which side was home or away yourself — <code>club_team_sheet</code> is always Chelmsford's line-up, whichever side we were on. The <code>club_*</code>/<code>opponent_*</code> fields are <code>null</code> on the rare fixture where <code>club_side</code> hasn't been identified yet.</p>
+
+                <p class="api-label">Team sheet entries</p>
+                <p>Each entry in a <code>*_team_sheet</code> array is one player:</p>
+                <table class="api-table">
+                    <tr><th>Field</th><th>Description</th></tr>
+                    <tr><td><code>squad_number</code></td><td>Shirt number, or <code>null</code> if GMS doesn't have one for this player.</td></tr>
+                    <tr><td><code>name</code></td><td>Player name, or <code>null</code> for a withheld entry (see below).</td></tr>
+                    <tr><td><code>is_captain</code> / <code>is_goalkeeper</code></td><td>From the <code>(C)</code>/<code>(GK)</code> tags GMS shows next to a name.</td></tr>
+                    <tr><td><code>tag</code></td><td>Any other bracketed tag GMS shows next to a name that isn't <code>(C)</code> or <code>(GK)</code>, otherwise <code>null</code>.</td></tr>
+                    <tr><td><code>goals</code></td><td>Array of <code>{ "time": "12'", "type": "FG" }</code> — one per goal event. Confirmed event types so far: <code>FG</code> (field goal), <code>PC</code> (penalty corner), <code>PS</code> (penalty stroke).</td></tr>
+                    <tr><td><code>withheld</code> / <code>count</code></td><td>Some clubs withhold player names. <code>withheld: true</code> with a <code>count</code> means one entry standing in for that many otherwise-unlisted players (name and squad number both <code>null</code>); a specific numbered player whose name alone is withheld instead gets <code>name: null</code> with their real <code>squad_number</code> kept and <code>count: null</code>.</td></tr>
+                </table>
+                <p><code>*_coaching_roles</code> and <code>match_officials</code> are simpler — just an array of <code>{ "role": "...", "name": "..." }</code>, e.g. <code>"First Aider"</code>, <code>"Team Coach"</code>, <code>"Umpire"</code>. Role text is whatever free text GMS has on file, not a fixed list.</p>
+
+                <p class="api-label">When there's nothing to show yet</p>
+                <p>If GMS has nothing entered for this fixture yet, <code>status</code> comes back as <code>"no_details"</code> and every other field above is <code>null</code> — that's normal for a fixture that hasn't been played, or one that's just finished and hasn't had its scorers/team sheet filled in yet. If the fixture is outside the rolling window this endpoint covers, or its <code>id</code> doesn't match a known fixture at all, you'll get a <code>404</code> instead: <code>{"error": "Not found"}</code>.</p>
             </div>
         </div>
 
