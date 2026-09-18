@@ -160,11 +160,6 @@
                 <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/today</p>
                 <p>No parameters.</p>
 
-                <p class="api-label">Example request</p>
-                <pre class="api-code"><span class="comment"># curl</span>
-curl -H "X-API-Key: YOUR_API_KEY" \
-  https://gms-api.chelmsfordsc.org.uk/api/today</pre>
-
                 <p class="api-label">Example response</p>
                 <pre class="api-code">{
   "fixtures": [
@@ -189,11 +184,6 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                     <tr><td><code>comp_id</code></td><td>A competition ID (see <a href="#leagues">/api/leagues</a>) — only fixtures in that competition.</td></tr>
                     <tr><td><code>from</code> / <code>to</code></td><td>ISO dates (<code>YYYY-MM-DD</code>), inclusive — filters on the fixture's date.</td></tr>
                 </table>
-
-                <p class="api-label">Example request</p>
-                <pre class="api-code"><span class="comment"># curl -- one team, from today onward</span>
-curl -H "X-API-Key: YOUR_API_KEY" \
-  "https://gms-api.chelmsfordsc.org.uk/api/fixtures?team=47e1e6e9-120c-4185-ad68-be7b70b76eac&amp;from=2026-09-18"</pre>
 
                 <p class="api-label">Example response</p>
                 <pre class="api-code">{
@@ -230,11 +220,6 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <p>Returns a single fixture by its <code>fixture_id</code> — the same ID shown in the <a href="#fixtures">/api/fixtures</a> list above.</p>
                 <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/fixtures/19_sep_2026_upminster_3_chelmsford_4</p>
 
-                <p class="api-label">Example request</p>
-                <pre class="api-code"><span class="comment"># curl</span>
-curl -H "X-API-Key: YOUR_API_KEY" \
-  https://gms-api.chelmsfordsc.org.uk/api/fixtures/19_sep_2026_upminster_3_chelmsford_4</pre>
-
                 <p class="api-label">Example response — a played match</p>
                 <pre class="api-code">{
   "fixture_id": "12_sep_2026_chelmsford_5_tower_hamlets_1",
@@ -267,11 +252,6 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/teams</p>
                 <p>No parameters.</p>
 
-                <p class="api-label">Example request</p>
-                <pre class="api-code"><span class="comment"># curl</span>
-curl -H "X-API-Key: YOUR_API_KEY" \
-  https://gms-api.chelmsfordsc.org.uk/api/teams</pre>
-
                 <p class="api-label">Example response</p>
                 <pre class="api-code">{
   "teams": [
@@ -302,11 +282,6 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/leagues?search=Women</p>
                 <p>The optional <code>search</code> parameter does a case-insensitive substring match on the competition name — leave it off to list everything.</p>
 
-                <p class="api-label">Example request</p>
-                <pre class="api-code"><span class="comment"># curl</span>
-curl -H "X-API-Key: YOUR_API_KEY" \
-  "https://gms-api.chelmsfordsc.org.uk/api/leagues?search=Women"</pre>
-
                 <p class="api-label">Example response</p>
                 <pre class="api-code">{
   "leagues": [
@@ -336,11 +311,6 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <p>Direct lookup for a single competition once you already have its <code>comp_id</code> cached, rather than searching by name every time.</p>
                 <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/leagues/255273c5-c270-4304-b396-cc1b911a5754</p>
 
-                <p class="api-label">Example request</p>
-                <pre class="api-code"><span class="comment"># curl</span>
-curl -H "X-API-Key: YOUR_API_KEY" \
-  https://gms-api.chelmsfordsc.org.uk/api/leagues/255273c5-c270-4304-b396-cc1b911a5754</pre>
-
                 <p class="api-label">Example response</p>
                 <pre class="api-code">{
   "comp_id": "255273c5-c270-4304-b396-cc1b911a5754",
@@ -360,11 +330,6 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <p>Returns the league table for a single competition.</p>
                 <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/standings?comp_id=255273c5-c270-4304-b396-cc1b911a5754</p>
                 <p><code>comp_id</code> is required — see <a href="#leagues">/api/leagues</a> to look one up by name.</p>
-
-                <p class="api-label">Example request</p>
-                <pre class="api-code"><span class="comment"># curl</span>
-curl -H "X-API-Key: YOUR_API_KEY" \
-  "https://gms-api.chelmsfordsc.org.uk/api/standings?comp_id=255273c5-c270-4304-b396-cc1b911a5754"</pre>
 
                 <p class="api-label">Example response</p>
                 <pre class="api-code">{
@@ -396,11 +361,6 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/status</p>
                 <p>No parameters.</p>
 
-                <p class="api-label">Example request</p>
-                <pre class="api-code"><span class="comment"># curl</span>
-curl -H "X-API-Key: YOUR_API_KEY" \
-  https://gms-api.chelmsfordsc.org.uk/api/status</pre>
-
                 <p class="api-label">Example response</p>
                 <pre class="api-code">{
   "last_scrape": {
@@ -425,11 +385,6 @@ curl -H "X-API-Key: YOUR_API_KEY" \
                 <p>Like <a href="#status">/api/status</a>, but returns a run of recent scrape log entries instead of just the latest one — handy for spotting a pattern (e.g. a cluster of errors) without needing direct database access.</p>
                 <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/status/history?limit=10</p>
                 <p>The optional <code>limit</code> parameter controls how many entries come back, most recent first — defaults to 20, capped at 100.</p>
-
-                <p class="api-label">Example request</p>
-                <pre class="api-code"><span class="comment"># curl</span>
-curl -H "X-API-Key: YOUR_API_KEY" \
-  "https://gms-api.chelmsfordsc.org.uk/api/status/history?limit=10"</pre>
 
                 <p class="api-label">Example response</p>
                 <pre class="api-code">{
