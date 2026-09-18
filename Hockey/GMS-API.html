@@ -62,16 +62,42 @@
             font-size: 12.5px;
         }
         .api-toc {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 16px;
             list-style: none;
             padding: 0;
             margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px 32px;
+        }
+        @media (max-width: 640px) {
+            .api-toc { grid-template-columns: 1fr; }
+        }
+        .api-toc li {
+            margin: 0;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        .api-toc li:nth-last-child(-n+2) {
+            border-bottom: none;
         }
         .api-toc a {
+            display: flex;
+            align-items: center;
+            color: #2c3e50;
+            text-decoration: none;
+            padding: 9px 0;
             font-size: 14px;
             font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .api-toc a:hover {
+            color: #27ae60;
+        }
+        .api-toc a::before {
+            content: '→';
+            margin-right: 8px;
+            color: #27ae60;
+            font-weight: bold;
+            flex-shrink: 0;
         }
         .draft-flag {
             display: inline-block;
@@ -107,15 +133,15 @@
                 <ul class="api-toc">
                     <li><a href="#overview">Overview</a></li>
                     <li><a href="#api-key">Getting an API Key</a></li>
-                    <li><a href="#today">GET /api/today</a></li>
-                    <li><a href="#fixtures">GET /api/fixtures</a></li>
-                    <li><a href="#fixture-by-id">GET /api/fixtures/:id</a></li>
-                    <li><a href="#teams">GET /api/teams</a></li>
-                    <li><a href="#leagues">GET /api/leagues</a></li>
-                    <li><a href="#league-by-id">GET /api/leagues/:comp_id</a></li>
-                    <li><a href="#standings">GET /api/standings</a></li>
-                    <li><a href="#status">GET /api/status</a></li>
-                    <li><a href="#status-history">GET /api/status/history</a></li>
+                    <li><a href="#today">Today's Fixtures & Results</a></li>
+                    <li><a href="#fixtures">All Fixtures & Results</a></li>
+                    <li><a href="#fixture-by-id">Look Up a Single Fixture</a></li>
+                    <li><a href="#teams">List Our Teams</a></li>
+                    <li><a href="#leagues">Find a Competition</a></li>
+                    <li><a href="#league-by-id">Look Up a Single Competition</a></li>
+                    <li><a href="#standings">League Table for a Competition</a></li>
+                    <li><a href="#status">Check the API's Health</a></li>
+                    <li><a href="#status-history">Recent Scrape History</a></li>
                     <li><a href="#errors">Errors</a></li>
                     <li><a href="#rate-limits">Rate Limits</a></li>
                     <li><a href="#support">Support</a></li>
@@ -153,7 +179,7 @@
 
         <div class="content-section" id="today">
             <div class="section-header">
-                <h2 class="section-title">GET /api/today</h2>
+                <h2 class="section-title">Today's Fixtures & Results</h2>
             </div>
             <div class="section-content">
                 <p>Returns fixtures and results scheduled for today only, so you don't have to filter the full fixture list yourself for a simple "what's on today" display.</p>
@@ -172,11 +198,11 @@
 
         <div class="content-section" id="fixtures">
             <div class="section-header">
-                <h2 class="section-title">GET /api/fixtures</h2>
+                <h2 class="section-title">All Fixtures & Results</h2>
             </div>
             <div class="section-content">
                 <p>Returns every known fixture and result across Chelmsford's hockey teams and the competitions they play in — past, present and future.</p>
-                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/fixtures?team=47e1e6e9-120c-4185-ad68-be7b70b76eac&amp;comp_id=e28a25be-e7df-41b2-a923-a5c2921c0ca6&amp;from=2026-09-01&amp;to=2026-12-31</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/fixtures?team=YOUR_TEAM_ID&amp;comp_id=YOUR_COMP_ID&amp;from=2026-09-01&amp;to=2026-12-31</p>
                 <p>All four query parameters are optional and can be combined — drop them all to get everything:</p>
                 <table class="api-table">
                     <tr><th>Parameter</th><th>Description</th></tr>
@@ -190,7 +216,7 @@
   "fixtures": [
     {
       "fixture_id": "19_sep_2026_upminster_3_chelmsford_4",
-      "comp_id": "e28a25be-e7df-41b2-a923-a5c2921c0ca6",
+      "comp_id": "YOUR_COMP_ID",
       "home_team_name": "Upminster 3",
       "away_team_name": "Chelmsford 4",
       "fixture_date": "19 Sep 2026",
@@ -202,7 +228,7 @@
       "scorers": null,
       "venue_name": "Coopers Company &amp; Coborn School",
       "venue_url": "https://www.google.com/maps/search/?api=1&amp;query=Coopers+Company+%26+Coborn+School",
-      "club_team_id": "47e1e6e9-120c-4185-ad68-be7b70b76eac",
+      "club_team_id": "YOUR_TEAM_ID",
       "club_side": "away",
       "last_updated": "2026-09-17T17:39:41.899Z"
     }
@@ -214,7 +240,7 @@
 
         <div class="content-section" id="fixture-by-id">
             <div class="section-header">
-                <h2 class="section-title">GET /api/fixtures/:id</h2>
+                <h2 class="section-title">Look Up a Single Fixture</h2>
             </div>
             <div class="section-content">
                 <p>Returns a single fixture by its <code>fixture_id</code> — the same ID shown in the <a href="#fixtures">/api/fixtures</a> list above.</p>
@@ -223,7 +249,7 @@
                 <p class="api-label">Example response — a played match</p>
                 <pre class="api-code">{
   "fixture_id": "12_sep_2026_chelmsford_5_tower_hamlets_1",
-  "comp_id": "255273c5-c270-4304-b396-cc1b911a5754",
+  "comp_id": "YOUR_COMP_ID",
   "home_team_name": "Chelmsford 5 (F)",
   "away_team_name": "Tower Hamlets 1",
   "fixture_date": "12 Sep 2026",
@@ -235,7 +261,7 @@
   "scorers": null,
   "venue_name": "Coopers Company &amp; Coborn School",
   "venue_url": "https://www.google.com/maps/search/?api=1&amp;query=Coopers+Company+%26+Coborn+School",
-  "club_team_id": "09083ed3-cd42-4c8a-9cd1-0813729badb8",
+  "club_team_id": "YOUR_TEAM_ID",
   "club_side": "home",
   "last_updated": "2026-09-18T04:19:07.958Z"
 }</pre>
@@ -245,7 +271,7 @@
 
         <div class="content-section" id="teams">
             <div class="section-header">
-                <h2 class="section-title">GET /api/teams</h2>
+                <h2 class="section-title">List Our Teams</h2>
             </div>
             <div class="section-content">
                 <p>Lists Chelmsford's own hockey teams as the API currently knows them, along with the <code>club_team_id</code> used to filter <a href="#fixtures">/api/fixtures</a> by team. Only teams the pipeline has actually seen play are listed — a brand new team won't appear until its first fixture has been picked up.</p>
@@ -256,13 +282,13 @@
                 <pre class="api-code">{
   "teams": [
     {
-      "club_team_id": "47e1e6e9-120c-4185-ad68-be7b70b76eac",
+      "club_team_id": "TEAM_ID_1",
       "team_name": "Chelmsford 4",
       "fixture_count": 22,
       "last_seen": "2027-03-20"
     },
     {
-      "club_team_id": "09083ed3-cd42-4c8a-9cd1-0813729badb8",
+      "club_team_id": "TEAM_ID_2",
       "team_name": "Chelmsford 5 (F)",
       "fixture_count": 18,
       "last_seen": "2027-03-06"
@@ -275,7 +301,7 @@
 
         <div class="content-section" id="leagues">
             <div class="section-header">
-                <h2 class="section-title">GET /api/leagues</h2>
+                <h2 class="section-title">Find a Competition</h2>
             </div>
             <div class="section-content">
                 <p>Self-serve lookup for competition IDs — no need to email us for a <code>comp_id</code> any more. Only lists competitions one of Chelmsford's own teams is actually registered in, and grows automatically as new teams/seasons are picked up.</p>
@@ -286,13 +312,13 @@
                 <pre class="api-code">{
   "leagues": [
     {
-      "comp_id": "255273c5-c270-4304-b396-cc1b911a5754",
+      "comp_id": "COMP_ID_1",
       "name": "East Women's Division 2 South East",
       "season": "2026-2027",
       "gender": "F"
     },
     {
-      "comp_id": "b69e5afd-30e5-484c-b8a9-f5ca0cf010c0",
+      "comp_id": "COMP_ID_2",
       "name": "East Women's Premier Division",
       "season": "2026-2027",
       "gender": "F"
@@ -305,15 +331,15 @@
 
         <div class="content-section" id="league-by-id">
             <div class="section-header">
-                <h2 class="section-title">GET /api/leagues/:comp_id</h2>
+                <h2 class="section-title">Look Up a Single Competition</h2>
             </div>
             <div class="section-content">
                 <p>Direct lookup for a single competition once you already have its <code>comp_id</code> cached, rather than searching by name every time.</p>
-                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/leagues/255273c5-c270-4304-b396-cc1b911a5754</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/leagues/YOUR_COMP_ID</p>
 
                 <p class="api-label">Example response</p>
                 <pre class="api-code">{
-  "comp_id": "255273c5-c270-4304-b396-cc1b911a5754",
+  "comp_id": "YOUR_COMP_ID",
   "name": "East Women's Division 2 South East",
   "season": "2026-2027",
   "gender": "F"
@@ -324,11 +350,11 @@
 
         <div class="content-section" id="standings">
             <div class="section-header">
-                <h2 class="section-title">GET /api/standings</h2>
+                <h2 class="section-title">League Table for a Competition</h2>
             </div>
             <div class="section-content">
                 <p>Returns the league table for a single competition.</p>
-                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/standings?comp_id=255273c5-c270-4304-b396-cc1b911a5754</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/standings?comp_id=YOUR_COMP_ID</p>
                 <p><code>comp_id</code> is required — see <a href="#leagues">/api/leagues</a> to look one up by name.</p>
 
                 <p class="api-label">Example response</p>
@@ -354,7 +380,7 @@
 
         <div class="content-section" id="status">
             <div class="section-header">
-                <h2 class="section-title">GET /api/status</h2>
+                <h2 class="section-title">Check the API's Health</h2>
             </div>
             <div class="section-content">
                 <p>A simple health-check — confirms the API is up and returns the single most recent scrape log entry, so you can see when the underlying data was last refreshed and whether that refresh succeeded.</p>
@@ -367,7 +393,7 @@
     "id": 1657,
     "show_type": "matchdays",
     "club_id": null,
-    "comp_id": "b69e5afd-30e5-484c-b8a9-f5ca0cf010c0",
+    "comp_id": "YOUR_COMP_ID",
     "status": "success",
     "message": "...",
     "run_at": "2026-09-18T18:24:41.178Z"
@@ -379,7 +405,7 @@
 
         <div class="content-section" id="status-history">
             <div class="section-header">
-                <h2 class="section-title">GET /api/status/history</h2>
+                <h2 class="section-title">Recent Scrape History</h2>
             </div>
             <div class="section-content">
                 <p>Like <a href="#status">/api/status</a>, but returns a run of recent scrape log entries instead of just the latest one — handy for spotting a pattern (e.g. a cluster of errors) without needing direct database access.</p>
