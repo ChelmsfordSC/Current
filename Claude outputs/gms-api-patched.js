@@ -11,8 +11,23 @@ export default {
 
     if (request.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
 
+    // Per-person API keys, looked up in D1 (see the api_keys table) instead
+    // of one shared secret compared in-memory -- this is what makes it
+    // possible to revoke a single person's access, or see who's actually
+    // using the API, without breaking everyone else who has a key.
     const apiKey = request.headers.get('X-API-Key');
-    if (apiKey !== env.API_KEY) return json({ error: 'Unauthorized' }, 401, corsHeaders);
+    const keyRow = apiKey
+      ? await env.DB.prepare(`SELECT key, revoked FROM api_keys WHERE key = ?`).bind(apiKey).first()
+      : null;
+    if (!keyRow || keyRow.revoked) return json({ error: 'Unauthorized' }, 401, corsHeaders);
+
+    // Fire-and-forget -- ctx.waitUntil lets this write happen after the
+    // response is already on its way back, so checking a key in doesn't
+    // add a second D1 round trip to every request's latency.
+    ctx.waitUntil(
+      env.DB.prepare(`UPDATE api_keys SET last_used_at = ? WHERE key = ?`)
+        .bind(new Date().toISOString(), apiKey).run()
+    );
 
     const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
     if (await isRateLimited(env, ip)) return json({ error: 'Too many requests' }, 429, corsHeaders);
