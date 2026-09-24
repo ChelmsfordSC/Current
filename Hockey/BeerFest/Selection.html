@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chelmsford Hockey Club Beer & Cider Festival - November 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: url('thumbnail_image.png') center center no-repeat;
+            background-size: cover;
+            background-color: #f9f7f1;
+            color: #333;
+            padding: 0;
+            margin: 0;
+            font-size: 38px;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .container {
+            max-width: none;
+            width: calc(100vw - 80px);
+            height: calc(100vh - 80px);
+            margin: 40px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 25px 35px;
+            box-shadow: none;
+            display: flex;
+            flex-direction: column;
+            border: 8px solid #2d5016;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 5px solid #2d5016;
+        }
+
+        h1 {
+            font-size: 4.2em;
+            margin-bottom: 10px;
+            color: #2d5016;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #333;
+            letter-spacing: 2px;
+        }
+
+        .sponsor {
+            margin: 8px 0;
+            font-size: 2em;
+            color: #666;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 18px;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .section {
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .section::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .section::-webkit-scrollbar-track {
+            background: #f9f7f1;
+            border-radius: 5px;
+        }
+
+        .section::-webkit-scrollbar-thumb {
+            background: #2d5016;
+            border-radius: 5px;
+        }
+
+        .section h2 {
+            font-size: 3.2em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 4px solid #2d5016;
+            color: #2d5016;
+            font-weight: bold;
+        }
+
+        .section h3 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: #2d5016;
+            font-weight: bold;
+        }
+
+        .item-header {
+            display: grid;
+            grid-template-columns: 130px 3fr 1fr 2.5fr;
+            padding: 12px 0;
+            font-weight: bold;
+            border-bottom: 4px solid #2d5016;
+            margin-bottom: 12px;
+            gap: 18px;
+            color: #2d5016;
+            font-size: 2em;
+        }
+
+        .beer-item, .cider-item {
+            display: grid;
+            grid-template-columns: 130px 3fr 1fr 2.5fr;
+            padding: 12px 0;
+            border-bottom: 2px solid #e8e8e8;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .beer-label {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .beer-label-placeholder {
+            width: 130px;
+            height: 130px;
+            background-color: #f9f7f1;
+            border-radius: 8px;
+            border: 3px solid #ddd;
+        }
+
+        .beer-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .beer-name {
+            font-weight: bold;
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .brewery {
+            color: #666;
+            font-size: 1.60em;
+            font-style: italic;
+        }
+
+        .abv {
+            font-weight: bold;
+            color: #2d5016;
+            font-size: 2.1em;
+        }
+
+        .stock {
+            text-align: right;
+            padding-left: 10px;
+        }
+
+        .stock-bar-container {
+            width: 100%;
+            max-width: 400px;
+            height: 85px;
+            background-color: #f9f7f1;
+            border: 5px solid #2d5016;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-left: auto;
+        }
+
+        .stock-bar-fill {
+            height: 100%;
+            background-color: #44aa44;
+            transition: width 0.5s ease;
+        }
+
+        .loading {
+            color: #999;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+
+        .sponsors-section {
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 4px solid #2d5016;
+            text-align: center;
+        }
+
+        .sponsors-section h2 {
+            font-size: 2.6em;
+            margin-bottom: 15px;
+            color: #2d5016;
+            font-weight: bold;
+        }
+
+        .sponsors-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            align-items: center;
+        }
+
+        .sponsor-item {
+            padding: 0;
+            background: none;
+            border: none;
+            color: #2d5016;
+            font-weight: bold;
+            border-radius: 0;
+            font-size: 1.5em;
+        }
+
+        .sponsor-separator {
+            color: #2d5016;
+            font-weight: bold;
+            font-size: 1.5em;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to Chelmsford Hockey Club</h1>
+            <div class="subtitle">BEER & CIDER FESTIVAL</div>
+            <div class="sponsor">Proudly sponsored by Gray & Sons</div>
+            <div class="sponsor">November 2025</div>
+        </header>
+
+        <div class="content-grid">
+            <!-- Column 1: All Festival Beers + Behind the Bar -->
+            <div class="section">
+                <h2>Festival Beers</h2>
+                
+                <div class="item-header">
+                    <div></div>
+                    <div>Name / Brewery</div>
+                    <div>ABV</div>
+                    <div style="text-align: right;">Amount Left</div>
+                </div>
+                
+                <div class="beer-item">
+                    <img src="Mighty Oak - Lionheart.jpg" alt="Lionheart" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">LIONHEART</div>
+                        <div class="brewery">Mighty Oak Brewery</div>
+                    </div>
+                    <div class="abv">3.6%</div>
+                    <div class="stock" data-drink="LIONHEART">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Settle - Ribblehead.jpg" alt="Ribblehead Bitter" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">RIBBLEHEAD BITTER</div>
+                        <div class="brewery">Settle Brewery</div>
+                    </div>
+                    <div class="abv">3.8%</div>
+                    <div class="stock" data-drink="RIBBLEHEAD BITTER">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Tatton - Pennine Dark Mild.jpeg" alt="Pennine Dark Mild" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">PENNINE DARK MILD</div>
+                        <div class="brewery">Tatton Brewery</div>
+                    </div>
+                    <div class="abv">3.9%</div>
+                    <div class="stock" data-drink="PENNINE DARK MILD">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Brentwood - Legacy.jpg" alt="Legacy" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">LEGACY</div>
+                        <div class="brewery">Brentwood Brewery</div>
+                    </div>
+                    <div class="abv">4.0%</div>
+                    <div class="stock" data-drink="LEGACY">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Oakham - Inferno.png" alt="Inferno" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">INFERNO</div>
+                        <div class="brewery">Oakham Ales</div>
+                    </div>
+                    <div class="abv">4.0%</div>
+                    <div class="stock" data-drink="INFERNO">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Colchester - Sweeney Todd.png" alt="Sweeney Todd" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">SWEENEY TODD</div>
+                        <div class="brewery">Colchester Brewery</div>
+                    </div>
+                    <div class="abv">4.2%</div>
+                    <div class="stock" data-drink="SWEENEY TODD">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Leigh on Sea - Six Little Ships.jpg" alt="Six Little Ships" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">SIX LITTLE SHIPS</div>
+                        <div class="brewery">Leigh-on-Sea</div>
+                    </div>
+                    <div class="abv">4.2%</div>
+                    <div class="stock" data-drink="SIX LITTLE SHIPS">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Skinners - Lushingtons.jpeg" alt="Lushingtons" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">LUSHINGTONS</div>
+                        <div class="brewery">Skinners Brewery</div>
+                    </div>
+                    <div class="abv">4.2%</div>
+                    <div class="stock" data-drink="LUSHINGTONS">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Wantsum - Heart of Darkness.png" alt="Heart of Darkness" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">HEART OF DARKNESS</div>
+                        <div class="brewery">Wantsum</div>
+                    </div>
+                    <div class="abv">4.5%</div>
+                    <div class="stock" data-drink="HEART OF DARKNESS">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Vale - Gravitas.jpeg" alt="Gravitas" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">GRAVITAS</div>
+                        <div class="brewery">Vale Brewery</div>
+                    </div>
+                    <div class="abv">4.8%</div>
+                    <div class="stock" data-drink="GRAVITAS">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                </h3>Behind the Bar</h3>
+
+                <div class="beer-item">
+                    <img src="Mighty Oak - Captain Bob.jpg" alt="Captain Bob" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">CAPTAIN BOB</div>
+                        <div class="brewery">Mighty Oak Brewery</div>
+                    </div>
+                    <div class="abv">3.8%</div>
+                    <div class="stock" data-drink="CAPTAIN BOB">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Mauldons - Silver Adder.jpg" alt="Silver Adder" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">SILVER ADDER</div>
+                        <div class="brewery">Mauldons Brewery</div>
+                    </div>
+                    <div class="abv">4.2%</div>
+                    <div class="stock" data-drink="SILVER ADDER">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2: Cider & Low Alcohol -->
+            <div class="section">
+                <h2>Cider</h2>
+                
+                <div class="item-header">
+                    <div></div>
+                    <div>Name / Brewery</div>
+                    <div>ABV</div>
+                    <div style="text-align: right;">Amount Left</div>
+                </div>
+                
+                <h3>Lilley's</h3>
+
+                <div class="cider-item">
+                    <img src="Lilleys - Fire Dancer.jpg" alt="Firedancer" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">FIREDANCER</div>
+                    </div>
+                    <div class="abv">4.5%</div>
+                    <div class="stock" data-drink="FIREDANCER">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="cider-item">
+                    <img src="Lilleys - Select.jpg" alt="Select" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">SELECT</div>
+                    </div>
+                    <div class="abv">4.8%</div>
+                    <div class="stock" data-drink="SELECT">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="cider-item">
+                    <img src="Lilleys - Red Rabbit.jpg" alt="Red Rabbit" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">RED RABBIT</div>
+                    </div>
+                    <div class="abv">6.0%</div>
+                    <div class="stock" data-drink="RED RABBIT">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="cider-item">
+                    <img src="Lilleys - Bee Sting.jpg" alt="Bee Sting" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">BEE STING (Perry)</div>
+                    </div>
+                    <div class="abv">6.8%</div>
+                    <div class="stock" data-drink="BEE STING (Perry)">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="cider-item">
+                    <img src="Lilleys - Elderflower.jpg" alt="Elderflower" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">ELDERFLOWER</div>
+                    </div>
+                    <div class="abv">3.4%</div>
+                    <div class="stock" data-drink="ELDERFLOWER">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="cider-item">
+                    <img src="Lilleys - Pina Colada.jpg" alt="Pina Colada" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">PINA COLADA</div>
+                    </div>
+                    <div class="abv">3.4%</div>
+                    <div class="stock" data-drink="PINA COLADA">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="cider-item">
+                    <img src="Lilleys - Raspberry Mojito.jpg" alt="Raspberry Mojito" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">RASPBERRY MOJITO</div>
+                    </div>
+                    <div class="abv">3.4%</div>
+                    <div class="stock" data-drink="RASPBERRY MOJITO">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="cider-item">
+                    <img src="Lilleys - Wild Berry.jpg" alt="Wild Berry" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">WILD BERRY</div>
+                    </div>
+                    <div class="abv">3.4%</div>
+                    <div class="stock" data-drink="WILD BERRY">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="cider-item">
+                    <img src="Lilleys - Mango.jpg" alt="Man-Ghoooul" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">MAN-GHOOOUL (Mango)</div>
+                    </div>
+                    <div class="abv">4.0%</div>
+                    <div class="stock" data-drink="MAN-GHOOOUL (Mango)">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="cider-item">
+                    <img src="Lilleys - Rhubarb.jpg" alt="Rhubarb" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">RHUBARB</div>
+                    </div>
+                    <div class="abv">4.0%</div>
+                    <div class="stock" data-drink="RHUBARB">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 25px;">Low Alcohol</h2>
+
+                <div class="item-header">
+                    <div></div>
+                    <div>Name / Brewery</div>
+                    <div>ABV</div>
+                    <div style="text-align: right;">Amount Left</div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Shipyard - Low Tide.png" alt="Low Tide" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">LOW TIDE</div>
+                        <div class="brewery">Shipyard</div>
+                    </div>
+                    <div class="abv">0.5%</div>
+                    <div class="stock" data-drink="LOW TIDE">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="St Austell - Proper Job 0.5_.jpg" alt="Proper Job" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">PROPER JOB</div>
+                        <div class="brewery">St Austell</div>
+                    </div>
+                    <div class="abv">0.5%</div>
+                    <div class="stock" data-drink="PROPER JOB">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="beer-item">
+                    <img src="Adnams - Ghost Ship 0.5_.jpg" alt="Ghost Ship" class="beer-label">
+                    <div class="beer-info">
+                        <div class="beer-name">GHOST SHIP</div>
+                        <div class="brewery">Adnams (club bar)</div>
+                    </div>
+                    <div class="abv">0.5%</div>
+                    <div class="stock" data-drink="GHOST SHIP">
+                        <span class="loading">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sponsors Section -->
+        <div class="sponsors-section">
+            <h2>Thank You to Our Sponsors</h2>
+            <div class="sponsors-list">
+                <div class="sponsor-item">David Carr Esq.</div>
+                <div class="sponsor-separator">|</div>
+                <div class="sponsor-item">Toby "Can't concede if you don't play" Stock</div>
+                <div class="sponsor-separator">|</div>
+                <div class="sponsor-item">FITBRAIN 4 KIDS</div>
+                <div class="sponsor-separator">|</div>
+                <div class="sponsor-item">Mens Vets</div>
+                <div class="sponsor-separator">|</div>
+                <div class="sponsor-item">Mens Evergreens</div>
+                <div class="sponsor-separator">|</div>
+                <div class="sponsor-item">Mens 1XI</div>
+                <div class="sponsor-separator">|</div>
+                <div class="sponsor-item">Aquabridge Law</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JSONBin configuration
+        const API_KEY = '$2a$10$5J2bEaYJje4O1i40NLVVTu9u9Tz2kmlIl0xKoWpGr2vaIUPhp93ey';
+        const BIN_ID = '690a223c43b1c97be9987c36';
+        const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}/latest`;
+
+        // Function to create stock bar
+        function createStockBar(percentage) {
+            console.log('createStockBar called with:', percentage, 'type:', typeof percentage);
+            const value = parseInt(percentage);
+            console.log('Parsed value:', value);
+            
+            // Show SOLD OUT text instead of bar when stock is 0
+            if (value === 0) {
+                return '<div style="font-weight: bold; color: #d32f2f; font-size: 1.6em; text-align: right;">SOLD OUT</div>';
+            }
+            
+            // Determine color based on percentage
+            let color;
+            if (value <= 25) {
+                color = '#f44336'; // Red - very low
+            } else if (value <= 50) {
+                color = '#ff9800'; // Orange - low
+            } else if (value <= 75) {
+                color = '#8bc34a'; // Light green - medium
+            } else {
+                color = '#4caf50'; // Green - full stock
+            }
+            
+            const result = `<div class="stock-bar-container"><div class="stock-bar-fill" style="width: ${value}%; background-color: ${color};"></div></div>`;
+            console.log('Generated HTML:', result);
+            return result;
+        }
+
+        // Fetch stock levels from JSONBin
+        async function fetchStockLevels() {
+            try {
+                console.log('Fetching from:', API_URL);
+                
+                const response = await fetch(API_URL, {
+                    headers: {
+                        'X-Master-Key': API_KEY
+                    }
+                });
+
+                console.log('Response status:', response.status);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('Full API response:', data);
+                
+                const stockData = data.record.stockLevels;
+                console.log('Stock data:', stockData);
+
+                // Update all stock displays
+                document.querySelectorAll('[data-drink]').forEach(element => {
+                    const drinkName = element.getAttribute('data-drink');
+                    const stockLevel = stockData[drinkName] || "0%";
+                    console.log(`${drinkName}: ${stockLevel}`);
+                    element.innerHTML = createStockBar(stockLevel);
+                });
+
+            } catch (error) {
+                console.error('Error fetching stock levels:', error);
+                document.querySelectorAll('[data-drink]').forEach(element => {
+                    element.innerHTML = '<span style="color: #ff0000;">Error</span>';
+                });
+            }
+        }
+
+        // Fetch stock levels on page load
+        fetchStockLevels();
+
+        // Optionally refresh every 60 seconds
+        setInterval(fetchStockLevels, 60000);
+    </script>
+</body>
+</html>

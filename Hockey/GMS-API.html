@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMS-API - Chelmsford Sports Club</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Page-specific additions for the API docs, on top of the shared stylesheet */
+        .api-code {
+            background: #1a252f;
+            color: #e9ecef;
+            border-radius: 6px;
+            padding: 14px 16px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 10px 0 18px;
+        }
+        .api-code .comment { color: #8ea0b3; }
+        .api-endpoint-line {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 14px;
+            background: #eef1f3;
+            padding: 8px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 4px 0 14px;
+            word-break: break-all;
+        }
+        .api-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin: 16px 0 4px;
+        }
+        table.api-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0 18px;
+            font-size: 13.5px;
+        }
+        table.api-table th,
+        table.api-table td {
+            text-align: left;
+            padding: 8px 10px;
+            border-bottom: 1px solid #e9ecef;
+            vertical-align: top;
+        }
+        table.api-table th {
+            background: #f8f9fa;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        table.api-table code {
+            background: #eef1f3;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 12.5px;
+        }
+        .api-toc {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px 32px;
+        }
+        @media (max-width: 640px) {
+            .api-toc { grid-template-columns: 1fr; }
+        }
+        .api-toc li {
+            margin: 0;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        .api-toc li:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+        .api-toc a {
+            display: flex;
+            align-items: center;
+            color: #2c3e50;
+            text-decoration: none;
+            padding: 9px 0;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .api-toc a:hover {
+            color: #27ae60;
+        }
+        .api-toc a::before {
+            content: '→';
+            margin-right: 8px;
+            color: #27ae60;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .draft-flag {
+            display: inline-block;
+            background: #fff3cd;
+            color: #8a6416;
+            border: 1px solid #f39c12;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            padding: 2px 7px;
+            border-radius: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="page-title">
+            <h1 class="title">GMS-API</h1>
+            <p class="subtitle">Live hockey fixtures, results and league standings for Chelmsford Sports Club, available as a free JSON API for anyone at the club to build with.</p>
+        </section>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">On this page</h2>
+            </div>
+            <div class="section-content">
+                <ul class="api-toc">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#api-key">Getting an API Key</a></li>
+                    <li><a href="#today">Today's Fixtures & Results</a></li>
+                    <li><a href="#fixtures">All Fixtures & Results</a></li>
+                    <li><a href="#fixture-by-id">Look Up a Single Fixture</a></li>
+                    <li><a href="#fixture-details">Fixture Detail (Scorers, Team Sheets &amp; Officials)</a></li>
+                    <li><a href="#teams">List Our Teams</a></li>
+                    <li><a href="#leagues">Find a Competition</a></li>
+                    <li><a href="#league-by-id">Look Up a Single Competition</a></li>
+                    <li><a href="#standings">League Table for a Competition</a></li>
+                    <li><a href="#status">Check the API's Health</a></li>
+                    <li><a href="#status-history">Recent Scrape History</a></li>
+                    <li><a href="#errors">Errors</a></li>
+                    <li><a href="#rate-limits">Rate Limits</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="overview">
+            <div class="section-header">
+                <h2 class="section-title">Overview</h2>
+            </div>
+            <div class="section-content">
+                <p>GMS-API is a small JSON API that mirrors the fixtures, results and league standings for Chelmsford Sports Club's hockey teams. It's built and run by the club's IT volunteers, and it's free for anyone connected to the club to use — for a display screen in the clubhouse, a personal project, or anything else.</p>
+                <p><strong>Base URL:</strong> <code>https://gms-api.chelmsfordsc.org.uk</code></p>
+                <p>Every endpoint below is a <code>GET</code> request over HTTPS and returns JSON. There's nothing to install and no SDK — any language or tool that can make an HTTPS request and read JSON will work, including a browser's own <code>fetch()</code>.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="api-key">
+            <div class="section-header">
+                <h2 class="section-title">Getting an API Key</h2>
+            </div>
+            <div class="section-content">
+                <div class="contact-box">
+                    <strong>Every request needs an API key.</strong> Email <a href="mailto:it@chelmsfordsc.org.uk">it@chelmsfordsc.org.uk</a> with a line or two about what you're building, and we'll send you a key. There's no cost and no formal approval process — this is just so we know who's using it and can let you know if anything changes.
+                </div>
+                <p class="api-label">Using your key</p>
+                <p>Send it on every request as an <code>X-API-Key</code> header:</p>
+                <pre class="api-code">X-API-Key: YOUR_API_KEY</pre>
+                <div class="note-box">
+                    Keep your key out of any code you publish publicly (a public GitHub repo, a client-side script anyone can view the source of, etc.). If you think a key has leaked, email us and we'll issue you a new one.
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="today">
+            <div class="section-header">
+                <h2 class="section-title">Today's Fixtures & Results</h2>
+            </div>
+            <div class="section-content">
+                <p>Returns fixtures and results scheduled for today only, so you don't have to filter the full fixture list yourself for a simple "what's on today" display.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/today</p>
+                <p>No parameters.</p>
+
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
+  "fixtures": [
+    { <span class="comment">/* same shape as /api/fixtures below */</span> }
+  ]
+}</pre>
+                <p>Same field shape as <a href="#fixtures">/api/fixtures</a> below, just filtered down to today's date — an empty array simply means nothing's on today.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="fixtures">
+            <div class="section-header">
+                <h2 class="section-title">All Fixtures & Results</h2>
+            </div>
+            <div class="section-content">
+                <p>Returns every known fixture and result across Chelmsford's hockey teams and the competitions they play in — past, present and future.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/fixtures?team=YOUR_TEAM_ID&amp;comp_id=YOUR_COMP_ID&amp;from=2026-09-01&amp;to=2026-12-31</p>
+                <p>All four query parameters are optional and can be combined — drop them all to get everything:</p>
+                <table class="api-table">
+                    <tr><th>Parameter</th><th>Description</th></tr>
+                    <tr><td><code>team</code></td><td>A <code>club_team_id</code> (see <a href="#teams">/api/teams</a>) — only fixtures involving that Chelmsford team.</td></tr>
+                    <tr><td><code>comp_id</code></td><td>A competition ID (see <a href="#leagues">/api/leagues</a>) — only fixtures in that competition.</td></tr>
+                    <tr><td><code>from</code> / <code>to</code></td><td>ISO dates (<code>YYYY-MM-DD</code>), inclusive — filters on the fixture's date.</td></tr>
+                </table>
+
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
+  "fixtures": [
+    {
+      "fixture_id": "19_sep_2026_upminster_3_chelmsford_4",
+      "comp_id": "YOUR_COMP_ID",
+      "home_team_name": "Upminster 3",
+      "away_team_name": "Chelmsford 4",
+      "fixture_date": "19 Sep 2026",
+      "fixture_date_iso": "2026-09-19",
+      "fixture_time": "11:30",
+      "status": "scheduled",
+      "home_score": null,
+      "away_score": null,
+      "scorers": null,
+      "venue_name": "Coopers Company &amp; Coborn School",
+      "venue_url": "https://www.google.com/maps/search/?api=1&amp;query=Coopers+Company+%26+Coborn+School",
+      "club_team_id": "YOUR_TEAM_ID",
+      "club_side": "away",
+      "last_updated": "2026-09-17T17:39:41.899Z"
+    }
+  ]
+}</pre>
+                <p>Each fixture carries its own <code>fixture_id</code> (a stable ID derived from its date and the two team names — use it with <a href="#fixture-by-id">/api/fixtures/:id</a>), both a display date (<code>fixture_date</code>) and a sortable one (<code>fixture_date_iso</code>, also what the <code>from</code>/<code>to</code> filters above compare against), and a <code>status</code> that's <code>"scheduled"</code> until the match is played and <code>"completed"</code> afterwards, at which point <code>home_score</code>/<code>away_score</code> are filled in. <code>club_team_id</code>/<code>club_side</code> are only set on the side that's actually one of Chelmsford's own teams.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="fixture-by-id">
+            <div class="section-header">
+                <h2 class="section-title">Look Up a Single Fixture</h2>
+            </div>
+            <div class="section-content">
+                <p>Returns a single fixture by its <code>fixture_id</code> — the same ID shown in the <a href="#fixtures">/api/fixtures</a> list above.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/fixtures/19_sep_2026_upminster_3_chelmsford_4</p>
+
+                <p class="api-label">Example response — a played match</p>
+                <pre class="api-code">{
+  "fixture_id": "12_sep_2026_chelmsford_5_tower_hamlets_1",
+  "comp_id": "YOUR_COMP_ID",
+  "home_team_name": "Chelmsford 5 (F)",
+  "away_team_name": "Tower Hamlets 1",
+  "fixture_date": "12 Sep 2026",
+  "fixture_date_iso": "2026-09-12",
+  "fixture_time": null,
+  "status": "completed",
+  "home_score": 5,
+  "away_score": 3,
+  "scorers": null,
+  "venue_name": "Coopers Company &amp; Coborn School",
+  "venue_url": "https://www.google.com/maps/search/?api=1&amp;query=Coopers+Company+%26+Coborn+School",
+  "club_team_id": "YOUR_TEAM_ID",
+  "club_side": "home",
+  "last_updated": "2026-09-18T04:19:07.958Z"
+}</pre>
+                <p>Same fields as a single entry from <a href="#fixtures">/api/fixtures</a>, just returned on its own rather than wrapped in a list. If no fixture matches the given <code>id</code>, you'll get a <code>404</code> instead: <code>{"error": "Not found"}</code>.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="fixture-details">
+            <div class="section-header">
+                <h2 class="section-title">Fixture Detail (Scorers, Team Sheets &amp; Officials)</h2>
+            </div>
+            <div class="section-content">
+                <p>Returns the richer "Show Detail" information GMS collects for a fixture once it's been played — goal scorers, full team sheets with squad numbers, coaching roles, match officials and club crests. This is separate from <a href="#fixture-by-id">/api/fixtures/:id</a> above because GMS only has this level of detail for a fixture once someone at either club has actually entered it, and only within a rolling window (roughly the last month to the next fortnight) — outside that window, or before anything's been entered, you won't get a result yet.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/fixtures/19_sep_2026_chelmsford_3_billericay_2/details</p>
+                <p>Optionally add <code>?fields=</code> to get back just the parts you need instead of everything:</p>
+                <table class="api-table">
+                    <tr><th>Parameter</th><th>Description</th></tr>
+                    <tr><td><code>fields</code></td><td>Optional, comma-separated. One or more of <code>scorers</code>, <code>team_sheet</code>, <code>coaching_roles</code>, <code>officials</code>, <code>crests</code> — e.g. <code>?fields=scorers,team_sheet</code>. Leave it off to get everything.</td></tr>
+                </table>
+
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
+  "fixture_id": "19_sep_2026_chelmsford_3_billericay_2",
+  "gms_fixture_uuid": "GMS_FIXTURE_UUID",
+  "club_side": "home",
+  "competition_name": "Essex Premier Division",
+  "venue_address": "Chelmer Park, Chelmsford, CM2 8RL",
+  "status": "has_details",
+  "eh_fixture_link": "https://www.englandhockey.co.uk/fixtures/GMS_FIXTURE_UUID",
+  "last_updated": "2026-09-19T18:42:11.000Z",
+
+  <span class="comment">/* raw GMS-side scorers/team sheets, keyed by home/away */</span>
+  "home_scorers_text": "S. Wren (12' FG, 41' PC)",
+  "away_scorers_text": "Name Withheld (55' FG)",
+  "home_team_sheet": [
+    { "squad_number": "1", "name": "R. Ahmed", "is_captain": false, "is_goalkeeper": true, "tag": null, "withheld": false, "count": null, "goals": [] },
+    { "squad_number": "7", "name": "S. Wren", "is_captain": true, "is_goalkeeper": false, "tag": null, "withheld": false, "count": null, "goals": [{ "time": "12'", "type": "FG" }, { "time": "41'", "type": "PC" }] },
+    { "squad_number": null, "name": null, "is_captain": false, "is_goalkeeper": false, "tag": null, "withheld": true, "count": 3, "goals": [] }
+  ],
+  "away_team_sheet": [ <span class="comment">/* same shape as home_team_sheet */</span> ],
+  "home_coaching_roles": [{ "role": "Team Coach", "name": "L. Patel" }],
+  "away_coaching_roles": [{ "role": "First Aider", "name": "K. Doyle" }],
+  "home_crest_url": "https://clubportal.englandhockey.co.uk/uploads/clubcrests/...png",
+  "away_crest_url": "https://clubportal.englandhockey.co.uk/uploads/clubcrests/...png",
+  "match_officials": [{ "role": "Umpire", "name": "P. Grant" }, { "role": "Umpire", "name": "M. O'Connell" }],
+
+  <span class="comment">/* the same data again, but from Chelmsford's own point of view --</span>
+  <span class="comment">   see the note below */</span>
+  "club_scorers_text": "S. Wren (12' FG, 41' PC)",
+  "opponent_scorers_text": "Name Withheld (55' FG)",
+  "club_team_sheet": [ <span class="comment">/* same as home_team_sheet -- Chelmsford was home in this fixture */</span> ],
+  "opponent_team_sheet": [ <span class="comment">/* same as away_team_sheet */</span> ],
+  "club_coaching_roles": [{ "role": "Team Coach", "name": "L. Patel" }],
+  "opponent_coaching_roles": [{ "role": "First Aider", "name": "K. Doyle" }],
+  "club_crest_url": "https://clubportal.englandhockey.co.uk/uploads/clubcrests/...png",
+  "opponent_crest_url": "https://clubportal.englandhockey.co.uk/uploads/clubcrests/...png"
+}</pre>
+
+                <p class="api-label">Club vs. opponent</p>
+                <p>Every field above comes in two flavours: <code>home_*</code>/<code>away_*</code> (GMS's own home/away split for that match) and <code>club_*</code>/<code>opponent_*</code> (the same information from Chelmsford's own point of view, using the fixture's <code>club_side</code>). If you only care about "our" team sheet or "our" scorer, use the <code>club_*</code> fields and you won't need to look up which side was home or away yourself — <code>club_team_sheet</code> is always Chelmsford's line-up, whichever side we were on. The <code>club_*</code>/<code>opponent_*</code> fields are <code>null</code> on the rare fixture where <code>club_side</code> hasn't been identified yet.</p>
+
+                <p class="api-label">Team sheet entries</p>
+                <p>Each entry in a <code>*_team_sheet</code> array is one player:</p>
+                <table class="api-table">
+                    <tr><th>Field</th><th>Description</th></tr>
+                    <tr><td><code>squad_number</code></td><td>Shirt number, or <code>null</code> if GMS doesn't have one for this player.</td></tr>
+                    <tr><td><code>name</code></td><td>Player name, or <code>null</code> for a withheld entry (see below).</td></tr>
+                    <tr><td><code>is_captain</code> / <code>is_goalkeeper</code></td><td>From the <code>(C)</code>/<code>(GK)</code> tags GMS shows next to a name.</td></tr>
+                    <tr><td><code>tag</code></td><td>Any other bracketed tag GMS shows next to a name that isn't <code>(C)</code> or <code>(GK)</code>, otherwise <code>null</code>.</td></tr>
+                    <tr><td><code>goals</code></td><td>Array of <code>{ "time": "12'", "type": "FG" }</code> — one per goal event. Confirmed event types so far: <code>FG</code> (field goal), <code>PC</code> (penalty corner), <code>PS</code> (penalty stroke).</td></tr>
+                    <tr><td><code>withheld</code> / <code>count</code></td><td>Some clubs withhold player names. <code>withheld: true</code> with a <code>count</code> means one entry standing in for that many otherwise-unlisted players (name and squad number both <code>null</code>); a specific numbered player whose name alone is withheld instead gets <code>name: null</code> with their real <code>squad_number</code> kept and <code>count: null</code>.</td></tr>
+                </table>
+                <p><code>*_coaching_roles</code> and <code>match_officials</code> are simpler — just an array of <code>{ "role": "...", "name": "..." }</code>, e.g. <code>"First Aider"</code>, <code>"Team Coach"</code>, <code>"Umpire"</code>. Role text is whatever free text GMS has on file, not a fixed list.</p>
+
+                <p class="api-label">When there's nothing to show yet</p>
+                <p>If GMS has nothing entered for this fixture yet, <code>status</code> comes back as <code>"no_details"</code> and every other field above is <code>null</code> — that's normal for a fixture that hasn't been played, or one that's just finished and hasn't had its scorers/team sheet filled in yet. If the fixture is outside the rolling window this endpoint covers, or its <code>id</code> doesn't match a known fixture at all, you'll get a <code>404</code> instead: <code>{"error": "Not found"}</code>.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="teams">
+            <div class="section-header">
+                <h2 class="section-title">List Our Teams</h2>
+            </div>
+            <div class="section-content">
+                <p>Lists Chelmsford's own hockey teams as the API currently knows them, along with the <code>club_team_id</code> used to filter <a href="#fixtures">/api/fixtures</a> by team. Only teams the pipeline has actually seen play are listed — a brand new team won't appear until its first fixture has been picked up.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/teams</p>
+                <p>No parameters.</p>
+
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
+  "teams": [
+    {
+      "club_team_id": "TEAM_ID_1",
+      "team_name": "Chelmsford 4",
+      "fixture_count": 22,
+      "last_seen": "2027-03-20"
+    },
+    {
+      "club_team_id": "TEAM_ID_2",
+      "team_name": "Chelmsford 5 (F)",
+      "fixture_count": 18,
+      "last_seen": "2027-03-06"
+    }
+  ]
+}</pre>
+                <p><code>team_name</code> is the team name as most recently seen (it may or may not carry a gender suffix like <code>"(F)"</code>, depending on which league page it was last seen on); <code>last_seen</code> is the latest <code>fixture_date_iso</code> we have for that team, played or upcoming.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="leagues">
+            <div class="section-header">
+                <h2 class="section-title">Find a Competition</h2>
+            </div>
+            <div class="section-content">
+                <p>Self-serve lookup for competition IDs — no need to email us for a <code>comp_id</code> any more. Only lists competitions one of Chelmsford's own teams is actually registered in, and grows automatically as new teams/seasons are picked up.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/leagues?search=Women</p>
+                <p>The optional <code>search</code> parameter does a case-insensitive substring match on the competition name — leave it off to list everything.</p>
+
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
+  "leagues": [
+    {
+      "comp_id": "COMP_ID_1",
+      "name": "East Women's Division 2 South East",
+      "season": "2026-2027",
+      "gender": "F"
+    },
+    {
+      "comp_id": "COMP_ID_2",
+      "name": "East Women's Premier Division",
+      "season": "2026-2027",
+      "gender": "F"
+    }
+  ]
+}</pre>
+                <p>Use a <code>comp_id</code> from here with <a href="#league-by-id">/api/leagues/:comp_id</a>, <a href="#standings">/api/standings</a>, or as <code>?comp_id=</code> on <a href="#fixtures">/api/fixtures</a>.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="league-by-id">
+            <div class="section-header">
+                <h2 class="section-title">Look Up a Single Competition</h2>
+            </div>
+            <div class="section-content">
+                <p>Direct lookup for a single competition once you already have its <code>comp_id</code> cached, rather than searching by name every time.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/leagues/YOUR_COMP_ID</p>
+
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
+  "comp_id": "YOUR_COMP_ID",
+  "name": "East Women's Division 2 South East",
+  "season": "2026-2027",
+  "gender": "F"
+}</pre>
+                <p>If no competition matches the given <code>comp_id</code>, you'll get a <code>404</code> instead: <code>{"error": "Not found"}</code>.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="standings">
+            <div class="section-header">
+                <h2 class="section-title">League Table for a Competition</h2>
+            </div>
+            <div class="section-content">
+                <p>Returns the league table for a single competition.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/standings?comp_id=YOUR_COMP_ID</p>
+                <p><code>comp_id</code> is required — see <a href="#leagues">/api/leagues</a> to look one up by name.</p>
+
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
+  "standings": [
+    {
+      "team_name": "Chelmsford 4",
+      "position": 1,
+      "played": 4,
+      "won": 3,
+      "drawn": 1,
+      "lost": 0,
+      "goals_for": 12,
+      "goals_against": 3,
+      "goal_difference": 9,
+      "points": 10
+    }
+  ]
+}</pre>
+                <p>One entry per team in the competition, ordered by league position. The response is always an object with a <code>standings</code> array — empty (<code>{"standings": []}</code>) if there's no data for that <code>comp_id</code> yet, rather than an error.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="status">
+            <div class="section-header">
+                <h2 class="section-title">Check the API's Health</h2>
+            </div>
+            <div class="section-content">
+                <p>A simple health-check — confirms the API is up and returns the single most recent scrape log entry, so you can see when the underlying data was last refreshed and whether that refresh succeeded.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/status</p>
+                <p>No parameters.</p>
+
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
+  "last_scrape": {
+    "id": 1657,
+    "show_type": "matchdays",
+    "club_id": null,
+    "comp_id": "YOUR_COMP_ID",
+    "status": "success",
+    "message": "...",
+    "run_at": "2026-09-18T18:24:41.178Z"
+  }
+}</pre>
+                <p><code>status</code> on the inner object is one of <code>"success"</code>, <code>"empty"</code> (ran fine, nothing new), <code>"skipped"</code> (e.g. a stage lock was already held), or <code>"error"</code>.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="status-history">
+            <div class="section-header">
+                <h2 class="section-title">Recent Scrape History</h2>
+            </div>
+            <div class="section-content">
+                <p>Like <a href="#status">/api/status</a>, but returns a run of recent scrape log entries instead of just the latest one — handy for spotting a pattern (e.g. a cluster of errors) without needing direct database access.</p>
+                <p class="api-endpoint-line">GET https://gms-api.chelmsfordsc.org.uk/api/status/history?limit=10</p>
+                <p>The optional <code>limit</code> parameter controls how many entries come back, most recent first — defaults to 20, capped at 100.</p>
+
+                <p class="api-label">Example response</p>
+                <pre class="api-code">{
+  "history": [
+    { <span class="comment">/* same shape as the inner object in /api/status above */</span> },
+    { <span class="comment">/* ... */</span> }
+  ]
+}</pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="errors">
+            <div class="section-header">
+                <h2 class="section-title">Errors</h2>
+            </div>
+            <div class="section-content">
+                <p>Errors come back as JSON with a normal HTTP status code:</p>
+                <table class="api-table">
+                    <tr><th>Status</th><th>Meaning</th><th>Example body</th></tr>
+                    <tr>
+                        <td><code>401</code></td>
+                        <td>Missing or incorrect <code>X-API-Key</code> header.</td>
+                        <td><code>{"error": "Unauthorized"}</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>429</code><span class="draft-flag">unverified</span></td>
+                        <td>Too many requests in a short space of time — see <a href="#rate-limits">Rate Limits</a>. (Confirmed correct by code inspection; we haven't yet actually tripped this limit against a real key to see it live.)</td>
+                        <td><code>{"error": "Too many requests"}</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-section" id="rate-limits">
+            <div class="section-header">
+                <h2 class="section-title">Rate Limits</h2>
+            </div>
+            <div class="section-content">
+                <p>This API runs on a free hosting tier, so there's a limit on how many requests it accepts from any one key or address in a short period. Normal use — a page that refreshes every so often, a script that checks in occasionally — will never come close to it.</p>
+                <p>If you're building something that needs to call the API very frequently (many times a minute, for lots of users), please email <a href="mailto:it@chelmsfordsc.org.uk">it@chelmsfordsc.org.uk</a> first so we can make sure it'll work smoothly for everyone.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="support">
+            <div class="section-header">
+                <h2 class="section-title">Support</h2>
+            </div>
+            <div class="section-content">
+                <div class="contact-box">
+                    Questions, API key requests, competition IDs, or something not working as documented — email <a href="mailto:it@chelmsfordsc.org.uk">it@chelmsfordsc.org.uk</a> and we'll help out.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Chelmsford Sports Club, Sports Pavilion, Chelmer Park, Beehive Lane, Galleywood, Chelmsford, Essex, CM2 8RL</p>
+            <p class="footer-text">© 2026 Chelmsford Sports Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load header.html from root -->
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error('Error loading header:', err));
+    </script>
+</body>
+</html>

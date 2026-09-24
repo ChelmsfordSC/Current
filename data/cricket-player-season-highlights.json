@@ -1,0 +1,3645 @@
+{
+  "generated_at": "2026-09-21T19:39:48.886Z",
+  "season": "2026",
+  "centuries": [
+    {
+      "player": "Harry Jacobs",
+      "runs": 128,
+      "score": "128*",
+      "not_out": true,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Abberton & District CC Sunday 1st XI",
+      "date": "10/05/2026",
+      "match_id": 7505924
+    },
+    {
+      "player": "Harry Jacobs",
+      "runs": 120,
+      "score": "120",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "IPSCOL CC Sunday 1st XI",
+      "date": "12/07/2026",
+      "match_id": 7507207
+    },
+    {
+      "player": "George Wilson",
+      "runs": 119,
+      "score": "119*",
+      "not_out": true,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "West Essex CC 3rd XI",
+      "date": "13/06/2026",
+      "match_id": 7461849
+    },
+    {
+      "player": "George Wilson",
+      "runs": 114,
+      "score": "114*",
+      "not_out": true,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Shenfield CC 3rd XI",
+      "date": "09/05/2026",
+      "match_id": 7461824
+    },
+    {
+      "player": "Ayman Hossain",
+      "runs": 111,
+      "score": "111",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Brentwood CC 3rd XI",
+      "date": "04/07/2026",
+      "match_id": 7461861
+    },
+    {
+      "player": "Dan Hagen",
+      "runs": 111,
+      "score": "111*",
+      "not_out": true,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Upminster CC Men's 2nd XI",
+      "date": "09/05/2026",
+      "match_id": 7325703
+    },
+    {
+      "player": "Dinil Siriwardana",
+      "runs": 109,
+      "score": "109",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Wanstead & Snaresbrook CC 3rd XI",
+      "date": "11/07/2026",
+      "match_id": 7461870
+    },
+    {
+      "player": "Jack Sterland",
+      "runs": 109,
+      "score": "109*",
+      "not_out": true,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Fives and Heronians CC 1st XI",
+      "date": "01/08/2026",
+      "match_id": 7325311
+    },
+    {
+      "player": "Mohammed Baig",
+      "runs": 108,
+      "score": "108*",
+      "not_out": true,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Upminster CC Men's 2nd XI",
+      "date": "11/07/2026",
+      "match_id": 7325748
+    },
+    {
+      "player": "Suhail Shahid",
+      "runs": 108,
+      "score": "108",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Stanford Le Hope CC 4th XI",
+      "date": "30/05/2026",
+      "match_id": 7462388
+    },
+    {
+      "player": "James Clifford",
+      "runs": 106,
+      "score": "106*",
+      "not_out": true,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Hornchurch CC 1st XI",
+      "date": "18/07/2026",
+      "match_id": 7325301
+    },
+    {
+      "player": "Tom Iliffe",
+      "runs": 106,
+      "score": "106*",
+      "not_out": true,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Orsett & Thurrock CC 6th XI",
+      "date": "09/05/2026",
+      "match_id": 7462367
+    },
+    {
+      "player": "Tom Iliffe",
+      "runs": 104,
+      "score": "104*",
+      "not_out": true,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Old Southendian & Southchurch CC 5th XI",
+      "date": "05/09/2026",
+      "match_id": 7462485
+    },
+    {
+      "player": "Aarav Salil",
+      "runs": 103,
+      "score": "103*",
+      "not_out": true,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Brentwood CC 1st XI",
+      "date": "13/06/2026",
+      "match_id": 7325277
+    },
+    {
+      "player": "David Wilson",
+      "runs": 103,
+      "score": "103*",
+      "not_out": true,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Orsett & Thurrock CC 7th XI",
+      "date": "20/06/2026",
+      "match_id": 7462408
+    },
+    {
+      "player": "Dan Hagen",
+      "runs": 102,
+      "score": "102",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Brentwood CC 2nd XI",
+      "date": "22/08/2026",
+      "match_id": 7325775
+    },
+    {
+      "player": "Ben Clifford",
+      "runs": 101,
+      "score": "101*",
+      "not_out": true,
+      "team": "Twenty20",
+      "team_id": 133549,
+      "opposition": "Gidea Park & Romford CC 1st XI",
+      "date": "25/05/2026",
+      "match_id": 7236815
+    },
+    {
+      "player": "Mohammed Baig",
+      "runs": 101,
+      "score": "101",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "IPSCOL CC Sunday 1st XI",
+      "date": "21/06/2026",
+      "match_id": 7507172
+    },
+    {
+      "player": "Mohammed Baig",
+      "runs": 101,
+      "score": "101*",
+      "not_out": true,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Abberton & District CC Sunday 1st XI",
+      "date": "28/06/2026",
+      "match_id": 7507178
+    }
+  ],
+  "half_centuries": [
+    {
+      "player": "Dinil Siriwardana",
+      "runs": 99,
+      "score": "99*",
+      "not_out": true,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Ardleigh CC 1st XI",
+      "date": "16/08/2026",
+      "match_id": 7510292
+    },
+    {
+      "player": "Tanay Mukherjee",
+      "runs": 96,
+      "score": "96",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Woodford Wells CC 3rd XI",
+      "date": "08/08/2026",
+      "match_id": 7461887
+    },
+    {
+      "player": "Aarav Salil",
+      "runs": 93,
+      "score": "93",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Westcliff-On-Sea CC 1st XI",
+      "date": "25/04/2026",
+      "match_id": 7236831
+    },
+    {
+      "player": "Ben Clifford",
+      "runs": 93,
+      "score": "93*",
+      "not_out": true,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Colchester and East Essex CC 1st XI",
+      "date": "08/08/2026",
+      "match_id": 7325315
+    },
+    {
+      "player": "Ben Lawrence",
+      "runs": 90,
+      "score": "90",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "West Bergholt CC Sunday 1st XI",
+      "date": "09/08/2026",
+      "match_id": 7510286
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 90,
+      "score": "90",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Abberton & District CC Sunday 1st XI",
+      "date": "10/05/2026",
+      "match_id": 7505924
+    },
+    {
+      "player": "Ben Clifford",
+      "runs": 89,
+      "score": "89",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Epping CC 1st XI",
+      "date": "20/06/2026",
+      "match_id": 7325282
+    },
+    {
+      "player": "Suhail Shahid",
+      "runs": 85,
+      "score": "85",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Billericay CC 5th XI",
+      "date": "04/07/2026",
+      "match_id": 7462422
+    },
+    {
+      "player": "Tom Iliffe",
+      "runs": 85,
+      "score": "85",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Westcliff-On-Sea CC 5th XI",
+      "date": "13/06/2026",
+      "match_id": 7462401
+    },
+    {
+      "player": "Ben Clifford",
+      "runs": 84,
+      "score": "84*",
+      "not_out": true,
+      "team": "Twenty20",
+      "team_id": 133549,
+      "opposition": "Springfield CC, Essex Twenty20",
+      "date": "16/07/2026",
+      "match_id": 7340810
+    },
+    {
+      "player": "Dinil Siriwardana",
+      "runs": 84,
+      "score": "84",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "IPSCOL CC Sunday 1st XI",
+      "date": "12/07/2026",
+      "match_id": 7507207
+    },
+    {
+      "player": "Harry Jacobs",
+      "runs": 84,
+      "score": "84",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Frinton On Sea CC Sunday Challenge",
+      "date": "19/07/2026",
+      "match_id": 7507212
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 83,
+      "score": "83",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Woodford Wells CC 2nd XI",
+      "date": "30/05/2026",
+      "match_id": 7325717
+    },
+    {
+      "player": "Aarav Salil",
+      "runs": 82,
+      "score": "82",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Wanstead & Snaresbrook CC 1st XI LC",
+      "date": "09/08/2026",
+      "match_id": 7731669
+    },
+    {
+      "player": "Harry Jacobs",
+      "runs": 82,
+      "score": "82",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Hutton CC 2nd XI",
+      "date": "05/09/2026",
+      "match_id": 7325784
+    },
+    {
+      "player": "Chetan Shetty",
+      "runs": 81,
+      "score": "81",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Old Southendian & Southchurch CC 5th XI",
+      "date": "05/09/2026",
+      "match_id": 7462485
+    },
+    {
+      "player": "Dinil Siriwardana",
+      "runs": 81,
+      "score": "81",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Brightlingsea CC Sunday XI",
+      "date": "20/09/2026",
+      "match_id": 7510339
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 81,
+      "score": "81",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Great Bentley CC 1st XI",
+      "date": "23/08/2026",
+      "match_id": 7510300
+    },
+    {
+      "player": "Harry Green",
+      "runs": 79,
+      "score": "79",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Woodford Wells CC 2nd XI",
+      "date": "30/05/2026",
+      "match_id": 7325717
+    },
+    {
+      "player": "Jason Lofthouse",
+      "runs": 79,
+      "score": "79",
+      "not_out": false,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Billericay CC 4th XI",
+      "date": "09/05/2026",
+      "match_id": 7462095
+    },
+    {
+      "player": "Harry Green",
+      "runs": 78,
+      "score": "78",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Harold Wood CC 2nd XI",
+      "date": "06/06/2026",
+      "match_id": 7325720
+    },
+    {
+      "player": "Liam Keaney",
+      "runs": 78,
+      "score": "78*",
+      "not_out": true,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Kirby CC Sunday 2nd XI",
+      "date": "19/09/2026",
+      "match_id": 7510336
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 77,
+      "score": "77",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Harold Wood CC 2nd XI",
+      "date": "08/08/2026",
+      "match_id": 7325768
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 77,
+      "score": "77",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Wivenhoe Town CC Sunday XI",
+      "date": "24/05/2026",
+      "match_id": 7507126
+    },
+    {
+      "player": "Jack Sterland",
+      "runs": 77,
+      "score": "77",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Wanstead & Snaresbrook CC 1st XI",
+      "date": "22/08/2026",
+      "match_id": 7325327
+    },
+    {
+      "player": "Tom Iliffe",
+      "runs": 77,
+      "score": "77*",
+      "not_out": true,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Stanford Le Hope CC 4th XI",
+      "date": "30/05/2026",
+      "match_id": 7462388
+    },
+    {
+      "player": "Thomas Duxson",
+      "runs": 76,
+      "score": "76",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Wanstead & Snaresbrook CC 2nd XI",
+      "date": "04/07/2026",
+      "match_id": 7325742
+    },
+    {
+      "player": "Ben Lawrence",
+      "runs": 74,
+      "score": "74*",
+      "not_out": true,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Kirby CC Sunday 2nd XI",
+      "date": "26/04/2026",
+      "match_id": 7505909
+    },
+    {
+      "player": "George Wilson",
+      "runs": 74,
+      "score": "74",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Brentwood CC 3rd XI",
+      "date": "30/05/2026",
+      "match_id": 7461840
+    },
+    {
+      "player": "Suhail Shahid",
+      "runs": 74,
+      "score": "74",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Orsett & Thurrock CC 7th XI",
+      "date": "20/06/2026",
+      "match_id": 7462408
+    },
+    {
+      "player": "Suhail Shahid",
+      "runs": 73,
+      "score": "73",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Orsett & Thurrock CC 6th XI",
+      "date": "09/05/2026",
+      "match_id": 7462367
+    },
+    {
+      "player": "Ben Lawrence",
+      "runs": 71,
+      "score": "71*",
+      "not_out": true,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Westcliff-On-Sea CC 2nd XI",
+      "date": "25/04/2026",
+      "match_id": 7577468
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 71,
+      "score": "71",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Mistley CC TC Div C",
+      "date": "05/07/2026",
+      "match_id": 7507202
+    },
+    {
+      "player": "Tom Iliffe",
+      "runs": 71,
+      "score": "71*",
+      "not_out": true,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Billericay CC 5th XI",
+      "date": "15/08/2026",
+      "match_id": 7462460
+    },
+    {
+      "player": "James Clifford",
+      "runs": 70,
+      "score": "70",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Epping CC 1st XI",
+      "date": "20/06/2026",
+      "match_id": 7325282
+    },
+    {
+      "player": "Thomas Duxson",
+      "runs": 70,
+      "score": "70*",
+      "not_out": true,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Billericay CC 2nd XI",
+      "date": "23/05/2026",
+      "match_id": 7325713
+    },
+    {
+      "player": "Thomas Duxson",
+      "runs": 69,
+      "score": "69",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Harold Wood CC 2nd XI",
+      "date": "08/08/2026",
+      "match_id": 7325768
+    },
+    {
+      "player": "Harry Jacobs",
+      "runs": 68,
+      "score": "68",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Ardleigh CC 1st XI",
+      "date": "16/08/2026",
+      "match_id": 7510292
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 67,
+      "score": "67",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Brentwood CC 2nd XI",
+      "date": "22/08/2026",
+      "match_id": 7325775
+    },
+    {
+      "player": "George Wilson",
+      "runs": 67,
+      "score": "67",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Mistley CC TC Div C",
+      "date": "14/06/2026",
+      "match_id": 7507165
+    },
+    {
+      "player": "Mohammed Baig",
+      "runs": 67,
+      "score": "67",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Shenfield CC 3rd XI",
+      "date": "09/05/2026",
+      "match_id": 7461824
+    },
+    {
+      "player": "Suhail Shahid",
+      "runs": 67,
+      "score": "67",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Hadleigh & Thundersley CC, Essex 4th XI",
+      "date": "27/06/2026",
+      "match_id": 7462411
+    },
+    {
+      "player": "Ben Lawrence",
+      "runs": 66,
+      "score": "66",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Harold Wood CC 3rd XI",
+      "date": "02/05/2026",
+      "match_id": 7262196
+    },
+    {
+      "player": "Brad Green",
+      "runs": 66,
+      "score": "66*",
+      "not_out": true,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Buckhurst Hill CC Saturday 1st XI",
+      "date": "25/07/2026",
+      "match_id": 7325308
+    },
+    {
+      "player": "Dinil Siriwardana",
+      "runs": 66,
+      "score": "66",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "West Essex CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7461910
+    },
+    {
+      "player": "George Wilson",
+      "runs": 66,
+      "score": "66",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Abberton & District CC Sunday 1st XI",
+      "date": "28/06/2026",
+      "match_id": 7507178
+    },
+    {
+      "player": "Aarav Salil",
+      "runs": 64,
+      "score": "64",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Old Southendian & Southchurch CC 1st XI",
+      "date": "14/06/2026",
+      "match_id": 7681513
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 64,
+      "score": "64",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Billericay CC 2nd XI",
+      "date": "23/05/2026",
+      "match_id": 7325713
+    },
+    {
+      "player": "Harry Green",
+      "runs": 64,
+      "score": "64",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Ilford CC 2nd XI",
+      "date": "27/06/2026",
+      "match_id": 7325738
+    },
+    {
+      "player": "Rishabh Upadhyay",
+      "runs": 64,
+      "score": "64",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Wanstead & Snaresbrook CC 1st XI",
+      "date": "11/07/2026",
+      "match_id": 7325296
+    },
+    {
+      "player": "George Wilson",
+      "runs": 63,
+      "score": "63",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Woodford Wells CC 3rd XI",
+      "date": "22/08/2026",
+      "match_id": 7461900
+    },
+    {
+      "player": "George Wilson",
+      "runs": 63,
+      "score": "63*",
+      "not_out": true,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Wivenhoe Town CC Sunday XI",
+      "date": "02/08/2026",
+      "match_id": 7510284
+    },
+    {
+      "player": "Micky Burns",
+      "runs": 62,
+      "score": "62",
+      "not_out": false,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Loughton CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7462177
+    },
+    {
+      "player": "Richard Goodey",
+      "runs": 62,
+      "score": "62",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Westcliff-On-Sea CC 6th XI",
+      "date": "16/05/2026",
+      "match_id": 7462371
+    },
+    {
+      "player": "Rishabh Upadhyay",
+      "runs": 62,
+      "score": "62",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Epping CC 1st XI",
+      "date": "16/05/2026",
+      "match_id": 7325254
+    },
+    {
+      "player": "Jack Sterland",
+      "runs": 61,
+      "score": "61",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Westcliff-On-Sea CC 1st XI",
+      "date": "25/04/2026",
+      "match_id": 7236831
+    },
+    {
+      "player": "Thomas Duxson",
+      "runs": 61,
+      "score": "61*",
+      "not_out": true,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Billericay CC 2nd XI",
+      "date": "20/06/2026",
+      "match_id": 7325732
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 60,
+      "score": "60",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Epping CC 2nd XI",
+      "date": "25/07/2026",
+      "match_id": 7325754
+    },
+    {
+      "player": "George Wilson",
+      "runs": 60,
+      "score": "60",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Hutton CC 2nd XI",
+      "date": "05/09/2026",
+      "match_id": 7325784
+    },
+    {
+      "player": "Harriet Goodey",
+      "runs": 60,
+      "score": "60*",
+      "not_out": true,
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Galleywood CC Womens 1st XI",
+      "date": "19/06/2026",
+      "match_id": 7399548
+    },
+    {
+      "player": "James Clifford",
+      "runs": 60,
+      "score": "60*",
+      "not_out": true,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Colchester and East Essex CC 1st XI",
+      "date": "08/08/2026",
+      "match_id": 7325315
+    },
+    {
+      "player": "Jordan Campion",
+      "runs": 60,
+      "score": "60",
+      "not_out": false,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Oakfield Parkonians CC, Essex 4th XI",
+      "date": "20/06/2026",
+      "match_id": 7462125
+    },
+    {
+      "player": "Alex Bayha",
+      "runs": 59,
+      "score": "59",
+      "not_out": false,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Harold Wood CC 4th XI",
+      "date": "02/05/2026",
+      "match_id": 7262197
+    },
+    {
+      "player": "Jack Sterland",
+      "runs": 59,
+      "score": "59",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Epping CC 1st XI",
+      "date": "20/06/2026",
+      "match_id": 7325282
+    },
+    {
+      "player": "Abhijeet Kumar",
+      "runs": 58,
+      "score": "58",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Leigh On Sea CC Saturday 4th XI",
+      "date": "11/07/2026",
+      "match_id": 7462430
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 58,
+      "score": "58*",
+      "not_out": true,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Brentwood CC 2nd XI",
+      "date": "13/06/2026",
+      "match_id": 7325728
+    },
+    {
+      "player": "Thomas Duxson",
+      "runs": 58,
+      "score": "58",
+      "not_out": false,
+      "team": "Twenty20",
+      "team_id": 133549,
+      "opposition": "Upminster CC Men's 1st XI - T20",
+      "date": "25/05/2026",
+      "match_id": 7697883
+    },
+    {
+      "player": "Aarav Salil",
+      "runs": 57,
+      "score": "57",
+      "not_out": false,
+      "team": "Twenty20",
+      "team_id": 133549,
+      "opposition": "Gidea Park & Romford CC 1st XI",
+      "date": "25/05/2026",
+      "match_id": 7236815
+    },
+    {
+      "player": "Arunabha Mukherjee",
+      "runs": 57,
+      "score": "57",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Shenfield CC 5th XI",
+      "date": "25/07/2026",
+      "match_id": 7462442
+    },
+    {
+      "player": "David Wilson",
+      "runs": 57,
+      "score": "57",
+      "not_out": false,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Billericay CC 4th XI",
+      "date": "09/05/2026",
+      "match_id": 7462095
+    },
+    {
+      "player": "Dinil Siriwardana",
+      "runs": 57,
+      "score": "57",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Harold Wood CC 3rd XI",
+      "date": "23/05/2026",
+      "match_id": 7461835
+    },
+    {
+      "player": "Harry Jacobs",
+      "runs": 57,
+      "score": "57*",
+      "not_out": true,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Ardleigh CC 1st XI",
+      "date": "19/04/2026",
+      "match_id": 7505893
+    },
+    {
+      "player": "Jason Lofthouse",
+      "runs": 57,
+      "score": "57",
+      "not_out": false,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Loughton CC 3rd XI",
+      "date": "01/08/2026",
+      "match_id": 7462155
+    },
+    {
+      "player": "William Jackson",
+      "runs": 57,
+      "score": "57*",
+      "not_out": true,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Orsett & Thurrock CC 4th XI",
+      "date": "08/08/2026",
+      "match_id": 7462160
+    },
+    {
+      "player": "Aarav Salil",
+      "runs": 56,
+      "score": "56",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Colchester and East Essex CC 1st XI",
+      "date": "08/08/2026",
+      "match_id": 7325315
+    },
+    {
+      "player": "Ben Clifford",
+      "runs": 56,
+      "score": "56",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Wanstead & Snaresbrook CC 1st XI LC",
+      "date": "09/08/2026",
+      "match_id": 7731669
+    },
+    {
+      "player": "Ben Lawrence",
+      "runs": 56,
+      "score": "56",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Brentwood CC 3rd XI",
+      "date": "30/05/2026",
+      "match_id": 7461840
+    },
+    {
+      "player": "George Wilson",
+      "runs": 56,
+      "score": "56",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Great Bentley CC 1st XI",
+      "date": "07/06/2026",
+      "match_id": 7507154
+    },
+    {
+      "player": "David Wilson",
+      "runs": 55,
+      "score": "55",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "IPSCOL CC Sunday 1st XI",
+      "date": "21/06/2026",
+      "match_id": 7507172
+    },
+    {
+      "player": "Dominic Punt",
+      "runs": 55,
+      "score": "55*",
+      "not_out": true,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Orsett & Thurrock CC 4th XI",
+      "date": "22/08/2026",
+      "match_id": 7462169
+    },
+    {
+      "player": "Anisur Rahman",
+      "runs": 54,
+      "score": "54",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Shenfield CC 5th XI",
+      "date": "25/07/2026",
+      "match_id": 7462442
+    },
+    {
+      "player": "Ben Clifford",
+      "runs": 54,
+      "score": "54",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Westcliff-On-Sea CC 1st XI",
+      "date": "25/04/2026",
+      "match_id": 7236831
+    },
+    {
+      "player": "George Wilson",
+      "runs": 54,
+      "score": "54",
+      "not_out": false,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Kirby CC Sunday 2nd XI",
+      "date": "26/04/2026",
+      "match_id": 7505909
+    },
+    {
+      "player": "Ayman Hossain",
+      "runs": 53,
+      "score": "53",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Harlow CC 3rd XI",
+      "date": "15/08/2026",
+      "match_id": 7461895
+    },
+    {
+      "player": "Charlie Jackson",
+      "runs": 53,
+      "score": "53*",
+      "not_out": true,
+      "team": "Sat 6th XI",
+      "team_id": 105976,
+      "opposition": "Great Baddow CC 4th XI",
+      "date": "15/08/2026",
+      "match_id": 7681015
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 53,
+      "score": "53",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Westcliff-On-Sea CC 2nd XI",
+      "date": "25/04/2026",
+      "match_id": 7577468
+    },
+    {
+      "player": "James Clifford",
+      "runs": 53,
+      "score": "53",
+      "not_out": false,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Westcliff-On-Sea CC 1st XI",
+      "date": "25/04/2026",
+      "match_id": 7236831
+    },
+    {
+      "player": "James Clifford",
+      "runs": 53,
+      "score": "53*",
+      "not_out": true,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Brentwood CC 1st XI",
+      "date": "05/09/2026",
+      "match_id": 7325338
+    },
+    {
+      "player": "Richard Cory",
+      "runs": 53,
+      "score": "53",
+      "not_out": false,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Billericay CC 4th XI",
+      "date": "11/07/2026",
+      "match_id": 7462139
+    },
+    {
+      "player": "Thom Wilshaw",
+      "runs": 53,
+      "score": "53",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Harold Wood CC 3rd XI",
+      "date": "02/05/2026",
+      "match_id": 7262196
+    },
+    {
+      "player": "Dan Hagen",
+      "runs": 52,
+      "score": "52",
+      "not_out": false,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Hutton CC 2nd XI",
+      "date": "05/09/2026",
+      "match_id": 7325784
+    },
+    {
+      "player": "George Wilson",
+      "runs": 52,
+      "score": "52*",
+      "not_out": true,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Hornchurch CC 3rd XI",
+      "date": "20/06/2026",
+      "match_id": 7461855
+    },
+    {
+      "player": "Tanay Mukherjee",
+      "runs": 52,
+      "score": "52*",
+      "not_out": true,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Hornchurch CC 3rd XI",
+      "date": "20/06/2026",
+      "match_id": 7461855
+    },
+    {
+      "player": "Alex Bayha",
+      "runs": 51,
+      "score": "51*",
+      "not_out": true,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Braintree CC 3rd XI",
+      "date": "25/04/2026",
+      "match_id": 7506920
+    },
+    {
+      "player": "Ben Lawrence",
+      "runs": 51,
+      "score": "51",
+      "not_out": false,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Wanstead & Snaresbrook CC 3rd XI",
+      "date": "11/07/2026",
+      "match_id": 7461870
+    },
+    {
+      "player": "Elliot Wenzel",
+      "runs": 51,
+      "score": "51*",
+      "not_out": true,
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Ardleigh CC 1st XI",
+      "date": "19/04/2026",
+      "match_id": 7505893
+    },
+    {
+      "player": "James Burns",
+      "runs": 51,
+      "score": "51*",
+      "not_out": true,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Billericay CC 4th XI",
+      "date": "09/05/2026",
+      "match_id": 7462095
+    },
+    {
+      "player": "Rudy Jackman",
+      "runs": 51,
+      "score": "51*",
+      "not_out": true,
+      "team": "Sat 6th XI",
+      "team_id": 105976,
+      "opposition": "Great Baddow CC 4th XI",
+      "date": "15/08/2026",
+      "match_id": 7681015
+    },
+    {
+      "player": "Abhijeet Kumar",
+      "runs": 50,
+      "score": "50",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Orsett & Thurrock CC 7th XI",
+      "date": "20/06/2026",
+      "match_id": 7462408
+    },
+    {
+      "player": "Alex Bailey",
+      "runs": 50,
+      "score": "50*",
+      "not_out": true,
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Braintree CC 3rd XI",
+      "date": "25/04/2026",
+      "match_id": 7506920
+    },
+    {
+      "player": "Ben Clifford",
+      "runs": 50,
+      "score": "50*",
+      "not_out": true,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Hornchurch CC 1st XI",
+      "date": "15/08/2026",
+      "match_id": 7325323
+    },
+    {
+      "player": "Brad Green",
+      "runs": 50,
+      "score": "50*",
+      "not_out": true,
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Hornchurch CC 1st XI",
+      "date": "18/07/2026",
+      "match_id": 7325301
+    },
+    {
+      "player": "Charlie Jackson",
+      "runs": 50,
+      "score": "50*",
+      "not_out": true,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Shenfield CC 6th XI",
+      "date": "18/07/2026",
+      "match_id": 7729761
+    },
+    {
+      "player": "Deepak Reddy Singireddy",
+      "runs": 50,
+      "score": "50*",
+      "not_out": true,
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Wanstead & Snaresbrook CC 2nd XI",
+      "date": "16/05/2026",
+      "match_id": 7325708
+    },
+    {
+      "player": "Henry Wright",
+      "runs": 50,
+      "score": "50",
+      "not_out": false,
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Leigh On Sea CC Saturday 4th XI",
+      "date": "11/07/2026",
+      "match_id": 7462430
+    },
+    {
+      "player": "Jason Lofthouse",
+      "runs": 50,
+      "score": "50",
+      "not_out": false,
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Frenford CC 4th XI",
+      "date": "30/05/2026",
+      "match_id": 7462109
+    },
+    {
+      "player": "Rajwali Baig",
+      "runs": 50,
+      "score": "50*",
+      "not_out": true,
+      "team": "Sat 6th XI",
+      "team_id": 105976,
+      "opposition": "Great Baddow CC 4th XI",
+      "date": "15/08/2026",
+      "match_id": 7681015
+    }
+  ],
+  "five_fors": [
+    {
+      "player": "Steve Bond",
+      "wickets": 7,
+      "runs": 39,
+      "figures": "7-39",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Hornchurch CC 3rd XI",
+      "date": "16/05/2026",
+      "match_id": 7461826
+    },
+    {
+      "player": "Abraham Kurian",
+      "wickets": 6,
+      "runs": 35,
+      "figures": "6-35",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Orsett & Thurrock CC 7th XI",
+      "date": "20/06/2026",
+      "match_id": 7462408
+    },
+    {
+      "player": "Daniel Purchase",
+      "wickets": 6,
+      "runs": 49,
+      "figures": "6-49",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Frenford CC 4th XI",
+      "date": "04/07/2026",
+      "match_id": 7462135
+    },
+    {
+      "player": "Abdul Baig",
+      "wickets": 6,
+      "runs": 72,
+      "figures": "6-72",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Shenfield CC 3rd XI",
+      "date": "25/07/2026",
+      "match_id": 7461880
+    },
+    {
+      "player": "Alex Rowe-Goodey",
+      "wickets": 5,
+      "runs": 4,
+      "figures": "5-4",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "High Roding CC Womens 1st XI",
+      "date": "08/05/2026",
+      "match_id": 7399544
+    },
+    {
+      "player": "Freddie Ryan",
+      "wickets": 5,
+      "runs": 9,
+      "figures": "5-9",
+      "team": "Sun 1st XI",
+      "team_id": 30938,
+      "opposition": "Forest Gate Lions CC Friendly XI",
+      "date": "13/09/2026",
+      "match_id": 7597561
+    },
+    {
+      "player": "Thom Wilshaw",
+      "wickets": 5,
+      "runs": 12,
+      "figures": "5-12",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Harold Wood CC 3rd XI",
+      "date": "23/05/2026",
+      "match_id": 7461835
+    },
+    {
+      "player": "Abdul Baig",
+      "wickets": 5,
+      "runs": 21,
+      "figures": "5-21",
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Mistley CC TC Div C",
+      "date": "05/07/2026",
+      "match_id": 7507202
+    },
+    {
+      "player": "Piyush Singh",
+      "wickets": 5,
+      "runs": 22,
+      "figures": "5-22",
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Kirby CC Sunday 2nd XI",
+      "date": "26/04/2026",
+      "match_id": 7505909
+    },
+    {
+      "player": "Ben Waring",
+      "wickets": 5,
+      "runs": 23,
+      "figures": "5-23",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Brentwood CC 1st XI",
+      "date": "13/06/2026",
+      "match_id": 7325277
+    },
+    {
+      "player": "Abdul Baig",
+      "wickets": 5,
+      "runs": 26,
+      "figures": "5-26",
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Mistley CC TC Div C",
+      "date": "14/06/2026",
+      "match_id": 7507165
+    },
+    {
+      "player": "Thom Wilshaw",
+      "wickets": 5,
+      "runs": 32,
+      "figures": "5-32",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Hornchurch CC 3rd XI",
+      "date": "20/06/2026",
+      "match_id": 7461855
+    },
+    {
+      "player": "Neil Siriwardana",
+      "wickets": 5,
+      "runs": 35,
+      "figures": "5-35",
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Brightlingsea CC Sunday XI",
+      "date": "20/09/2026",
+      "match_id": 7510339
+    },
+    {
+      "player": "Liam Keaney",
+      "wickets": 5,
+      "runs": 38,
+      "figures": "5-38",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Hutton CC 2nd XI",
+      "date": "01/08/2026",
+      "match_id": 7325763
+    },
+    {
+      "player": "Tom Halsey",
+      "wickets": 5,
+      "runs": 44,
+      "figures": "5-44",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Upminster CC Men's 2nd XI",
+      "date": "11/07/2026",
+      "match_id": 7325748
+    },
+    {
+      "player": "Piyush Singh",
+      "wickets": 5,
+      "runs": 49,
+      "figures": "5-49",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Oakfield Parkonians CC, Essex 4th XI",
+      "date": "20/06/2026",
+      "match_id": 7462125
+    },
+    {
+      "player": "Alex Bayha",
+      "wickets": 5,
+      "runs": 52,
+      "figures": "5-52",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Harlow CC 3rd XI",
+      "date": "01/08/2026",
+      "match_id": 7461883
+    },
+    {
+      "player": "Ben Waring",
+      "wickets": 5,
+      "runs": 57,
+      "figures": "5-57",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Hutton CC 1st XI",
+      "date": "27/06/2026",
+      "match_id": 7325288
+    }
+  ],
+  "ducks": [
+    {
+      "player": "Rishabh Upadhyay",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Bexley CC 1st XI",
+      "date": "18/04/2026",
+      "match_id": 7235356
+    },
+    {
+      "player": "Elliot Wenzel",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Springfield CC, Essex 1st XI",
+      "date": "02/05/2026",
+      "match_id": 7675532
+    },
+    {
+      "player": "Rishabh Upadhyay",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Colchester and East Essex CC 1st XI",
+      "date": "09/05/2026",
+      "match_id": 7325252
+    },
+    {
+      "player": "Sean Sullivan",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Colchester and East Essex CC 1st XI",
+      "date": "09/05/2026",
+      "match_id": 7325252
+    },
+    {
+      "player": "Ben Clifford",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Epping CC 1st XI",
+      "date": "16/05/2026",
+      "match_id": 7325254
+    },
+    {
+      "player": "Dan Hagen",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Old Southendian & Southchurch CC 1st XI",
+      "date": "14/06/2026",
+      "match_id": 7681513
+    },
+    {
+      "player": "Oliver Devenish",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Old Southendian & Southchurch CC 1st XI",
+      "date": "14/06/2026",
+      "match_id": 7681513
+    },
+    {
+      "player": "Sean Sullivan",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Old Southendian & Southchurch CC 1st XI",
+      "date": "14/06/2026",
+      "match_id": 7681513
+    },
+    {
+      "player": "Ben Waring",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Epping CC 1st XI",
+      "date": "20/06/2026",
+      "match_id": 7325282
+    },
+    {
+      "player": "Jack Sterland",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Hutton CC 1st XI",
+      "date": "27/06/2026",
+      "match_id": 7325288
+    },
+    {
+      "player": "Dan Hagen",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Loughton CC 1st XI",
+      "date": "04/07/2026",
+      "match_id": 7325292
+    },
+    {
+      "player": "Jack Parrish",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Wanstead & Snaresbrook CC 1st XI",
+      "date": "11/07/2026",
+      "match_id": 7325296
+    },
+    {
+      "player": "Ben Clifford",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Buckhurst Hill CC Saturday 1st XI",
+      "date": "25/07/2026",
+      "match_id": 7325308
+    },
+    {
+      "player": "Rishabh Upadhyay",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Fives and Heronians CC 1st XI",
+      "date": "01/08/2026",
+      "match_id": 7325311
+    },
+    {
+      "player": "Brad Green",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Fives and Heronians CC 1st XI",
+      "date": "01/08/2026",
+      "match_id": 7325311
+    },
+    {
+      "player": "Ben Clifford",
+      "team": "Sat 1st XI",
+      "team_id": 24293,
+      "opposition": "Brentwood CC 1st XI",
+      "date": "05/09/2026",
+      "match_id": 7325338
+    },
+    {
+      "player": "Thom Wilshaw",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Westcliff-On-Sea CC 2nd XI",
+      "date": "25/04/2026",
+      "match_id": 7577468
+    },
+    {
+      "player": "Brian Kaludewa",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Harold Wood CC 2nd XI",
+      "date": "06/06/2026",
+      "match_id": 7325720
+    },
+    {
+      "player": "Miles Clark",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Brentwood CC 2nd XI",
+      "date": "13/06/2026",
+      "match_id": 7325728
+    },
+    {
+      "player": "Thom Wilshaw",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Wanstead & Snaresbrook CC 2nd XI",
+      "date": "04/07/2026",
+      "match_id": 7325742
+    },
+    {
+      "player": "Deepak Reddy Singireddy",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Upminster CC Men's 2nd XI",
+      "date": "11/07/2026",
+      "match_id": 7325748
+    },
+    {
+      "player": "Brian Kaludewa",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Epping CC 2nd XI",
+      "date": "25/07/2026",
+      "match_id": 7325754
+    },
+    {
+      "player": "Harry Jacobs",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Hutton CC 2nd XI",
+      "date": "01/08/2026",
+      "match_id": 7325763
+    },
+    {
+      "player": "George Wilson",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Hutton CC 2nd XI",
+      "date": "01/08/2026",
+      "match_id": 7325763
+    },
+    {
+      "player": "Mohammed Baig",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Hutton CC 2nd XI",
+      "date": "01/08/2026",
+      "match_id": 7325763
+    },
+    {
+      "player": "George Wilson",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Ilford CC 2nd XI",
+      "date": "15/08/2026",
+      "match_id": 7325772
+    },
+    {
+      "player": "Elliot Wenzel",
+      "team": "Sat 2nd XI",
+      "team_id": 24294,
+      "opposition": "Hutton CC 2nd XI",
+      "date": "05/09/2026",
+      "match_id": 7325784
+    },
+    {
+      "player": "Mohammed Baig",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Harold Wood CC 3rd XI",
+      "date": "02/05/2026",
+      "match_id": 7262196
+    },
+    {
+      "player": "Ben Lawrence",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "West Essex CC 3rd XI",
+      "date": "13/06/2026",
+      "match_id": 7461849
+    },
+    {
+      "player": "Danish Shah",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "West Essex CC 3rd XI",
+      "date": "13/06/2026",
+      "match_id": 7461849
+    },
+    {
+      "player": "Neil Siriwardana",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Upminster CC Men's 3rd XI",
+      "date": "27/06/2026",
+      "match_id": 7461860
+    },
+    {
+      "player": "Cam Fern",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Upminster CC Men's 3rd XI",
+      "date": "27/06/2026",
+      "match_id": 7461860
+    },
+    {
+      "player": "Danish Shah",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Brentwood CC 3rd XI",
+      "date": "04/07/2026",
+      "match_id": 7461861
+    },
+    {
+      "player": "Abdul Baig",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Wanstead & Snaresbrook CC 3rd XI",
+      "date": "11/07/2026",
+      "match_id": 7461870
+    },
+    {
+      "player": "Ed Cole",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Harold Wood CC 3rd XI",
+      "date": "18/07/2026",
+      "match_id": 7461872
+    },
+    {
+      "player": "Oakley Bromfield",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Harold Wood CC 3rd XI",
+      "date": "18/07/2026",
+      "match_id": 7461872
+    },
+    {
+      "player": "Oakley Bromfield",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "Harlow CC 3rd XI",
+      "date": "15/08/2026",
+      "match_id": 7461895
+    },
+    {
+      "player": "David Wilson",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "West Essex CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7461910
+    },
+    {
+      "player": "Ed Cole",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "West Essex CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7461910
+    },
+    {
+      "player": "Abdul Baig",
+      "team": "Sat 3rd XI",
+      "team_id": 24295,
+      "opposition": "West Essex CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7461910
+    },
+    {
+      "player": "Chris Cory",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Harold Wood CC 4th XI",
+      "date": "02/05/2026",
+      "match_id": 7262197
+    },
+    {
+      "player": "Daniel Purchase",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Harold Wood CC 4th XI",
+      "date": "02/05/2026",
+      "match_id": 7262197
+    },
+    {
+      "player": "Jason Lofthouse",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Oakfield Parkonians CC, Essex 4th XI",
+      "date": "16/05/2026",
+      "match_id": 7462100
+    },
+    {
+      "player": "Daniel Purchase",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Oakfield Parkonians CC, Essex 4th XI",
+      "date": "16/05/2026",
+      "match_id": 7462100
+    },
+    {
+      "player": "Luke Purchase",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Oakfield Parkonians CC, Essex 4th XI",
+      "date": "16/05/2026",
+      "match_id": 7462100
+    },
+    {
+      "player": "James Burns",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Walthamstow CC 3rd XI",
+      "date": "23/05/2026",
+      "match_id": 7462103
+    },
+    {
+      "player": "Rudy Jackman",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Frenford CC 4th XI",
+      "date": "30/05/2026",
+      "match_id": 7462109
+    },
+    {
+      "player": "Will Jackman",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Frenford CC 4th XI",
+      "date": "30/05/2026",
+      "match_id": 7462109
+    },
+    {
+      "player": "Daniel Purchase",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Frenford CC 4th XI",
+      "date": "30/05/2026",
+      "match_id": 7462109
+    },
+    {
+      "player": "Luke Purchase",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Walthamstow CC 3rd XI",
+      "date": "13/06/2026",
+      "match_id": 7462120
+    },
+    {
+      "player": "Tom Hutchinson",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Walthamstow CC 3rd XI",
+      "date": "13/06/2026",
+      "match_id": 7462120
+    },
+    {
+      "player": "David Wilson",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Frenford CC 4th XI",
+      "date": "04/07/2026",
+      "match_id": 7462135
+    },
+    {
+      "player": "Rishabh Nayak",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Frenford CC 4th XI",
+      "date": "04/07/2026",
+      "match_id": 7462135
+    },
+    {
+      "player": "Vivaan Mittal",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Billericay CC 4th XI",
+      "date": "11/07/2026",
+      "match_id": 7462139
+    },
+    {
+      "player": "David Wilson",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Stanford Le Hope CC 3rd XI",
+      "date": "25/07/2026",
+      "match_id": 7462146
+    },
+    {
+      "player": "Basil Samson",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Stanford Le Hope CC 3rd XI",
+      "date": "25/07/2026",
+      "match_id": 7462146
+    },
+    {
+      "player": "Jason Lofthouse",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Orsett & Thurrock CC 4th XI",
+      "date": "22/08/2026",
+      "match_id": 7462169
+    },
+    {
+      "player": "Micky Burns",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Orsett & Thurrock CC 4th XI",
+      "date": "22/08/2026",
+      "match_id": 7462169
+    },
+    {
+      "player": "Miles Curtis",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Loughton CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7462177
+    },
+    {
+      "player": "Basil Samson",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Loughton CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7462177
+    },
+    {
+      "player": "Daniel Purchase",
+      "team": "Sat 4th XI",
+      "team_id": 30461,
+      "opposition": "Loughton CC 3rd XI",
+      "date": "05/09/2026",
+      "match_id": 7462177
+    },
+    {
+      "player": "Chetan Shetty",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Westcliff-On-Sea CC 6th XI",
+      "date": "16/05/2026",
+      "match_id": 7462371
+    },
+    {
+      "player": "Tom Iliffe",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Billericay CC 5th XI",
+      "date": "04/07/2026",
+      "match_id": 7462422
+    },
+    {
+      "player": "Suhail Shahid",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Leigh On Sea CC Saturday 4th XI",
+      "date": "11/07/2026",
+      "match_id": 7462430
+    },
+    {
+      "player": "Rupert Redman",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Leigh On Sea CC Saturday 4th XI",
+      "date": "11/07/2026",
+      "match_id": 7462430
+    },
+    {
+      "player": "Jim Iliffe",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Leigh On Sea CC Saturday 4th XI",
+      "date": "11/07/2026",
+      "match_id": 7462430
+    },
+    {
+      "player": "Abraham Kurian",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Leigh On Sea CC Saturday 4th XI",
+      "date": "11/07/2026",
+      "match_id": 7462430
+    },
+    {
+      "player": "Vivaan Mittal",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Shenfield CC 6th XI",
+      "date": "18/07/2026",
+      "match_id": 7729761
+    },
+    {
+      "player": "Charlie Jackson",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Shenfield CC 5th XI",
+      "date": "25/07/2026",
+      "match_id": 7462442
+    },
+    {
+      "player": "Henry Dowsett",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Shenfield CC 5th XI",
+      "date": "25/07/2026",
+      "match_id": 7462442
+    },
+    {
+      "player": "David Wilson",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Old Southendian & Southchurch CC 4th XI",
+      "date": "08/08/2026",
+      "match_id": 7462457
+    },
+    {
+      "player": "Charlie Jackson",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Old Southendian & Southchurch CC 4th XI",
+      "date": "08/08/2026",
+      "match_id": 7462457
+    },
+    {
+      "player": "Arunabha Mukherjee",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Old Southendian & Southchurch CC 4th XI",
+      "date": "08/08/2026",
+      "match_id": 7462457
+    },
+    {
+      "player": "Rupert Redman",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Stanford Le Hope CC 4th XI",
+      "date": "22/08/2026",
+      "match_id": 7462466
+    },
+    {
+      "player": "Alex Bailey",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Old Southendian & Southchurch CC 5th XI",
+      "date": "05/09/2026",
+      "match_id": 7462485
+    },
+    {
+      "player": "Jim Iliffe",
+      "team": "Sat 5th XI",
+      "team_id": 45348,
+      "opposition": "Old Southendian & Southchurch CC 5th XI",
+      "date": "05/09/2026",
+      "match_id": 7462485
+    },
+    {
+      "player": "Alex Bayha",
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Frinton On Sea CC Sunday Challenge",
+      "date": "31/05/2026",
+      "match_id": 7507142
+    },
+    {
+      "player": "Alistair Fergus",
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Frinton On Sea CC Sunday Challenge",
+      "date": "31/05/2026",
+      "match_id": 7507142
+    },
+    {
+      "player": "George Wilson",
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "IPSCOL CC Sunday 1st XI",
+      "date": "21/06/2026",
+      "match_id": 7507172
+    },
+    {
+      "player": "David Wilson",
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Abberton & District CC Sunday 1st XI",
+      "date": "28/06/2026",
+      "match_id": 7507178
+    },
+    {
+      "player": "Abdul Baig",
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Mistley CC TC Div C",
+      "date": "05/07/2026",
+      "match_id": 7507202
+    },
+    {
+      "player": "Elliot Wenzel",
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "IPSCOL CC Sunday 1st XI",
+      "date": "12/07/2026",
+      "match_id": 7507207
+    },
+    {
+      "player": "Alex Bailey",
+      "team": "NECL 1st XI",
+      "team_id": 324716,
+      "opposition": "Kirby CC Sunday 2nd XI",
+      "date": "19/09/2026",
+      "match_id": 7510336
+    },
+    {
+      "player": "Harry Jacobs",
+      "team": "Sun 1st XI",
+      "team_id": 30938,
+      "opposition": "Chelmsford CC Sun 2nd XI",
+      "date": "26/07/2026",
+      "match_id": 7728336
+    },
+    {
+      "player": "Ethan Lofthouse",
+      "team": "Sun 1st XI",
+      "team_id": 30938,
+      "opposition": "Chelmsford CC Sun 2nd XI",
+      "date": "26/07/2026",
+      "match_id": 7728336
+    },
+    {
+      "player": "Thom Wilshaw",
+      "team": "Sun 1st XI",
+      "team_id": 30938,
+      "opposition": "Chelmsford CC Sun 2nd XI",
+      "date": "26/07/2026",
+      "match_id": 7728336
+    },
+    {
+      "player": "George Wilson",
+      "team": "Sun 1st XI",
+      "team_id": 30938,
+      "opposition": "Forest Gate Lions CC Friendly XI",
+      "date": "13/09/2026",
+      "match_id": 7597561
+    },
+    {
+      "player": "Elliot Wenzel",
+      "team": "Twenty20",
+      "team_id": 133549,
+      "opposition": "Springfield CC, Essex Twenty20",
+      "date": "16/07/2026",
+      "match_id": 7340810
+    },
+    {
+      "player": "Poppy Moore",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "High Roding CC Womens 1st XI",
+      "date": "08/05/2026",
+      "match_id": 7399544
+    },
+    {
+      "player": "Deanne Nel",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "High Roding CC Womens 1st XI",
+      "date": "08/05/2026",
+      "match_id": 7399544
+    },
+    {
+      "player": "Mila Patel",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "High Roding CC Womens 1st XI",
+      "date": "08/05/2026",
+      "match_id": 7399544
+    },
+    {
+      "player": "Katie Rothstein",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "High Roding CC Womens 1st XI",
+      "date": "08/05/2026",
+      "match_id": 7399544
+    },
+    {
+      "player": "Amiya Featherstone",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Maldon CC Womens 1st XI",
+      "date": "05/06/2026",
+      "match_id": 7399545
+    },
+    {
+      "player": "Poppy Moore",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Maldon CC Womens 1st XI",
+      "date": "05/06/2026",
+      "match_id": 7399545
+    },
+    {
+      "player": "Sienna Nel",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Hadleigh & Thundersley CC, Essex Womens 1st XI",
+      "date": "12/06/2026",
+      "match_id": 7399543
+    },
+    {
+      "player": "Deanne Nel",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Hadleigh & Thundersley CC, Essex Womens 1st XI",
+      "date": "12/06/2026",
+      "match_id": 7399543
+    },
+    {
+      "player": "Sarah Yuen",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Galleywood CC Womens 1st XI",
+      "date": "19/06/2026",
+      "match_id": 7399548
+    },
+    {
+      "player": "Riana Khatri",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Galleywood CC Womens 1st XI",
+      "date": "19/06/2026",
+      "match_id": 7399548
+    },
+    {
+      "player": "Poppy Moore",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Galleywood CC Womens 1st XI",
+      "date": "19/06/2026",
+      "match_id": 7399548
+    },
+    {
+      "player": "Amiya Featherstone",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Galleywood CC Womens 1st XI",
+      "date": "19/06/2026",
+      "match_id": 7399548
+    },
+    {
+      "player": "Eleni Cooke",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "High Roding CC Womens 1st XI",
+      "date": "26/06/2026",
+      "match_id": 7399558
+    },
+    {
+      "player": "Poppy Moore",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "High Roding CC Womens 1st XI",
+      "date": "26/06/2026",
+      "match_id": 7399558
+    },
+    {
+      "player": "Claire Medhurst",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Rayleigh CC Womens 1st XI",
+      "date": "03/07/2026",
+      "match_id": 7399563
+    },
+    {
+      "player": "Sienna Nel",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Hatfield Peverel CC Womens 1st XI",
+      "date": "24/07/2026",
+      "match_id": 7735017
+    },
+    {
+      "player": "Deanne Nel",
+      "team": "Womens 1st XI",
+      "team_id": 213007,
+      "opposition": "Hatfield Peverel CC Womens 1st XI",
+      "date": "24/07/2026",
+      "match_id": 7735017
+    }
+  ],
+  "duck_hunt": [
+    {
+      "player": "David Wilson",
+      "count": 5,
+      "ducks": [
+        {
+          "player": "David Wilson",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "West Essex CC 3rd XI",
+          "date": "05/09/2026",
+          "match_id": 7461910
+        },
+        {
+          "player": "David Wilson",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Frenford CC 4th XI",
+          "date": "04/07/2026",
+          "match_id": 7462135
+        },
+        {
+          "player": "David Wilson",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Stanford Le Hope CC 3rd XI",
+          "date": "25/07/2026",
+          "match_id": 7462146
+        },
+        {
+          "player": "David Wilson",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Old Southendian & Southchurch CC 4th XI",
+          "date": "08/08/2026",
+          "match_id": 7462457
+        },
+        {
+          "player": "David Wilson",
+          "team": "NECL 1st XI",
+          "team_id": 324716,
+          "opposition": "Abberton & District CC Sunday 1st XI",
+          "date": "28/06/2026",
+          "match_id": 7507178
+        }
+      ]
+    },
+    {
+      "player": "Daniel Purchase",
+      "count": 4,
+      "ducks": [
+        {
+          "player": "Daniel Purchase",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Harold Wood CC 4th XI",
+          "date": "02/05/2026",
+          "match_id": 7262197
+        },
+        {
+          "player": "Daniel Purchase",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Oakfield Parkonians CC, Essex 4th XI",
+          "date": "16/05/2026",
+          "match_id": 7462100
+        },
+        {
+          "player": "Daniel Purchase",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Frenford CC 4th XI",
+          "date": "30/05/2026",
+          "match_id": 7462109
+        },
+        {
+          "player": "Daniel Purchase",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Loughton CC 3rd XI",
+          "date": "05/09/2026",
+          "match_id": 7462177
+        }
+      ]
+    },
+    {
+      "player": "Elliot Wenzel",
+      "count": 4,
+      "ducks": [
+        {
+          "player": "Elliot Wenzel",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Springfield CC, Essex 1st XI",
+          "date": "02/05/2026",
+          "match_id": 7675532
+        },
+        {
+          "player": "Elliot Wenzel",
+          "team": "Sat 2nd XI",
+          "team_id": 24294,
+          "opposition": "Hutton CC 2nd XI",
+          "date": "05/09/2026",
+          "match_id": 7325784
+        },
+        {
+          "player": "Elliot Wenzel",
+          "team": "NECL 1st XI",
+          "team_id": 324716,
+          "opposition": "IPSCOL CC Sunday 1st XI",
+          "date": "12/07/2026",
+          "match_id": 7507207
+        },
+        {
+          "player": "Elliot Wenzel",
+          "team": "Twenty20",
+          "team_id": 133549,
+          "opposition": "Springfield CC, Essex Twenty20",
+          "date": "16/07/2026",
+          "match_id": 7340810
+        }
+      ]
+    },
+    {
+      "player": "George Wilson",
+      "count": 4,
+      "ducks": [
+        {
+          "player": "George Wilson",
+          "team": "Sat 2nd XI",
+          "team_id": 24294,
+          "opposition": "Hutton CC 2nd XI",
+          "date": "01/08/2026",
+          "match_id": 7325763
+        },
+        {
+          "player": "George Wilson",
+          "team": "Sat 2nd XI",
+          "team_id": 24294,
+          "opposition": "Ilford CC 2nd XI",
+          "date": "15/08/2026",
+          "match_id": 7325772
+        },
+        {
+          "player": "George Wilson",
+          "team": "NECL 1st XI",
+          "team_id": 324716,
+          "opposition": "IPSCOL CC Sunday 1st XI",
+          "date": "21/06/2026",
+          "match_id": 7507172
+        },
+        {
+          "player": "George Wilson",
+          "team": "Sun 1st XI",
+          "team_id": 30938,
+          "opposition": "Forest Gate Lions CC Friendly XI",
+          "date": "13/09/2026",
+          "match_id": 7597561
+        }
+      ]
+    },
+    {
+      "player": "Poppy Moore",
+      "count": 4,
+      "ducks": [
+        {
+          "player": "Poppy Moore",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "High Roding CC Womens 1st XI",
+          "date": "08/05/2026",
+          "match_id": 7399544
+        },
+        {
+          "player": "Poppy Moore",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "Maldon CC Womens 1st XI",
+          "date": "05/06/2026",
+          "match_id": 7399545
+        },
+        {
+          "player": "Poppy Moore",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "Galleywood CC Womens 1st XI",
+          "date": "19/06/2026",
+          "match_id": 7399548
+        },
+        {
+          "player": "Poppy Moore",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "High Roding CC Womens 1st XI",
+          "date": "26/06/2026",
+          "match_id": 7399558
+        }
+      ]
+    },
+    {
+      "player": "Abdul Baig",
+      "count": 3,
+      "ducks": [
+        {
+          "player": "Abdul Baig",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "Wanstead & Snaresbrook CC 3rd XI",
+          "date": "11/07/2026",
+          "match_id": 7461870
+        },
+        {
+          "player": "Abdul Baig",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "West Essex CC 3rd XI",
+          "date": "05/09/2026",
+          "match_id": 7461910
+        },
+        {
+          "player": "Abdul Baig",
+          "team": "NECL 1st XI",
+          "team_id": 324716,
+          "opposition": "Mistley CC TC Div C",
+          "date": "05/07/2026",
+          "match_id": 7507202
+        }
+      ]
+    },
+    {
+      "player": "Ben Clifford",
+      "count": 3,
+      "ducks": [
+        {
+          "player": "Ben Clifford",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Epping CC 1st XI",
+          "date": "16/05/2026",
+          "match_id": 7325254
+        },
+        {
+          "player": "Ben Clifford",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Buckhurst Hill CC Saturday 1st XI",
+          "date": "25/07/2026",
+          "match_id": 7325308
+        },
+        {
+          "player": "Ben Clifford",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Brentwood CC 1st XI",
+          "date": "05/09/2026",
+          "match_id": 7325338
+        }
+      ]
+    },
+    {
+      "player": "Deanne Nel",
+      "count": 3,
+      "ducks": [
+        {
+          "player": "Deanne Nel",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "High Roding CC Womens 1st XI",
+          "date": "08/05/2026",
+          "match_id": 7399544
+        },
+        {
+          "player": "Deanne Nel",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "Hadleigh & Thundersley CC, Essex Womens 1st XI",
+          "date": "12/06/2026",
+          "match_id": 7399543
+        },
+        {
+          "player": "Deanne Nel",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "Hatfield Peverel CC Womens 1st XI",
+          "date": "24/07/2026",
+          "match_id": 7735017
+        }
+      ]
+    },
+    {
+      "player": "Rishabh Upadhyay",
+      "count": 3,
+      "ducks": [
+        {
+          "player": "Rishabh Upadhyay",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Bexley CC 1st XI",
+          "date": "18/04/2026",
+          "match_id": 7235356
+        },
+        {
+          "player": "Rishabh Upadhyay",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Colchester and East Essex CC 1st XI",
+          "date": "09/05/2026",
+          "match_id": 7325252
+        },
+        {
+          "player": "Rishabh Upadhyay",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Fives and Heronians CC 1st XI",
+          "date": "01/08/2026",
+          "match_id": 7325311
+        }
+      ]
+    },
+    {
+      "player": "Thom Wilshaw",
+      "count": 3,
+      "ducks": [
+        {
+          "player": "Thom Wilshaw",
+          "team": "Sat 2nd XI",
+          "team_id": 24294,
+          "opposition": "Westcliff-On-Sea CC 2nd XI",
+          "date": "25/04/2026",
+          "match_id": 7577468
+        },
+        {
+          "player": "Thom Wilshaw",
+          "team": "Sat 2nd XI",
+          "team_id": 24294,
+          "opposition": "Wanstead & Snaresbrook CC 2nd XI",
+          "date": "04/07/2026",
+          "match_id": 7325742
+        },
+        {
+          "player": "Thom Wilshaw",
+          "team": "Sun 1st XI",
+          "team_id": 30938,
+          "opposition": "Chelmsford CC Sun 2nd XI",
+          "date": "26/07/2026",
+          "match_id": 7728336
+        }
+      ]
+    },
+    {
+      "player": "Alex Bailey",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Alex Bailey",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Old Southendian & Southchurch CC 5th XI",
+          "date": "05/09/2026",
+          "match_id": 7462485
+        },
+        {
+          "player": "Alex Bailey",
+          "team": "NECL 1st XI",
+          "team_id": 324716,
+          "opposition": "Kirby CC Sunday 2nd XI",
+          "date": "19/09/2026",
+          "match_id": 7510336
+        }
+      ]
+    },
+    {
+      "player": "Amiya Featherstone",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Amiya Featherstone",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "Maldon CC Womens 1st XI",
+          "date": "05/06/2026",
+          "match_id": 7399545
+        },
+        {
+          "player": "Amiya Featherstone",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "Galleywood CC Womens 1st XI",
+          "date": "19/06/2026",
+          "match_id": 7399548
+        }
+      ]
+    },
+    {
+      "player": "Basil Samson",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Basil Samson",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Stanford Le Hope CC 3rd XI",
+          "date": "25/07/2026",
+          "match_id": 7462146
+        },
+        {
+          "player": "Basil Samson",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Loughton CC 3rd XI",
+          "date": "05/09/2026",
+          "match_id": 7462177
+        }
+      ]
+    },
+    {
+      "player": "Brian Kaludewa",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Brian Kaludewa",
+          "team": "Sat 2nd XI",
+          "team_id": 24294,
+          "opposition": "Harold Wood CC 2nd XI",
+          "date": "06/06/2026",
+          "match_id": 7325720
+        },
+        {
+          "player": "Brian Kaludewa",
+          "team": "Sat 2nd XI",
+          "team_id": 24294,
+          "opposition": "Epping CC 2nd XI",
+          "date": "25/07/2026",
+          "match_id": 7325754
+        }
+      ]
+    },
+    {
+      "player": "Charlie Jackson",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Charlie Jackson",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Shenfield CC 5th XI",
+          "date": "25/07/2026",
+          "match_id": 7462442
+        },
+        {
+          "player": "Charlie Jackson",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Old Southendian & Southchurch CC 4th XI",
+          "date": "08/08/2026",
+          "match_id": 7462457
+        }
+      ]
+    },
+    {
+      "player": "Dan Hagen",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Dan Hagen",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Old Southendian & Southchurch CC 1st XI",
+          "date": "14/06/2026",
+          "match_id": 7681513
+        },
+        {
+          "player": "Dan Hagen",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Loughton CC 1st XI",
+          "date": "04/07/2026",
+          "match_id": 7325292
+        }
+      ]
+    },
+    {
+      "player": "Danish Shah",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Danish Shah",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "West Essex CC 3rd XI",
+          "date": "13/06/2026",
+          "match_id": 7461849
+        },
+        {
+          "player": "Danish Shah",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "Brentwood CC 3rd XI",
+          "date": "04/07/2026",
+          "match_id": 7461861
+        }
+      ]
+    },
+    {
+      "player": "Ed Cole",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Ed Cole",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "Harold Wood CC 3rd XI",
+          "date": "18/07/2026",
+          "match_id": 7461872
+        },
+        {
+          "player": "Ed Cole",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "West Essex CC 3rd XI",
+          "date": "05/09/2026",
+          "match_id": 7461910
+        }
+      ]
+    },
+    {
+      "player": "Harry Jacobs",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Harry Jacobs",
+          "team": "Sat 2nd XI",
+          "team_id": 24294,
+          "opposition": "Hutton CC 2nd XI",
+          "date": "01/08/2026",
+          "match_id": 7325763
+        },
+        {
+          "player": "Harry Jacobs",
+          "team": "Sun 1st XI",
+          "team_id": 30938,
+          "opposition": "Chelmsford CC Sun 2nd XI",
+          "date": "26/07/2026",
+          "match_id": 7728336
+        }
+      ]
+    },
+    {
+      "player": "Jason Lofthouse",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Jason Lofthouse",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Oakfield Parkonians CC, Essex 4th XI",
+          "date": "16/05/2026",
+          "match_id": 7462100
+        },
+        {
+          "player": "Jason Lofthouse",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Orsett & Thurrock CC 4th XI",
+          "date": "22/08/2026",
+          "match_id": 7462169
+        }
+      ]
+    },
+    {
+      "player": "Jim Iliffe",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Jim Iliffe",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Leigh On Sea CC Saturday 4th XI",
+          "date": "11/07/2026",
+          "match_id": 7462430
+        },
+        {
+          "player": "Jim Iliffe",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Old Southendian & Southchurch CC 5th XI",
+          "date": "05/09/2026",
+          "match_id": 7462485
+        }
+      ]
+    },
+    {
+      "player": "Luke Purchase",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Luke Purchase",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Oakfield Parkonians CC, Essex 4th XI",
+          "date": "16/05/2026",
+          "match_id": 7462100
+        },
+        {
+          "player": "Luke Purchase",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Walthamstow CC 3rd XI",
+          "date": "13/06/2026",
+          "match_id": 7462120
+        }
+      ]
+    },
+    {
+      "player": "Mohammed Baig",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Mohammed Baig",
+          "team": "Sat 2nd XI",
+          "team_id": 24294,
+          "opposition": "Hutton CC 2nd XI",
+          "date": "01/08/2026",
+          "match_id": 7325763
+        },
+        {
+          "player": "Mohammed Baig",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "Harold Wood CC 3rd XI",
+          "date": "02/05/2026",
+          "match_id": 7262196
+        }
+      ]
+    },
+    {
+      "player": "Oakley Bromfield",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Oakley Bromfield",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "Harold Wood CC 3rd XI",
+          "date": "18/07/2026",
+          "match_id": 7461872
+        },
+        {
+          "player": "Oakley Bromfield",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "Harlow CC 3rd XI",
+          "date": "15/08/2026",
+          "match_id": 7461895
+        }
+      ]
+    },
+    {
+      "player": "Rupert Redman",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Rupert Redman",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Leigh On Sea CC Saturday 4th XI",
+          "date": "11/07/2026",
+          "match_id": 7462430
+        },
+        {
+          "player": "Rupert Redman",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Stanford Le Hope CC 4th XI",
+          "date": "22/08/2026",
+          "match_id": 7462466
+        }
+      ]
+    },
+    {
+      "player": "Sean Sullivan",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Sean Sullivan",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Colchester and East Essex CC 1st XI",
+          "date": "09/05/2026",
+          "match_id": 7325252
+        },
+        {
+          "player": "Sean Sullivan",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Old Southendian & Southchurch CC 1st XI",
+          "date": "14/06/2026",
+          "match_id": 7681513
+        }
+      ]
+    },
+    {
+      "player": "Sienna Nel",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Sienna Nel",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "Hadleigh & Thundersley CC, Essex Womens 1st XI",
+          "date": "12/06/2026",
+          "match_id": 7399543
+        },
+        {
+          "player": "Sienna Nel",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "Hatfield Peverel CC Womens 1st XI",
+          "date": "24/07/2026",
+          "match_id": 7735017
+        }
+      ]
+    },
+    {
+      "player": "Vivaan Mittal",
+      "count": 2,
+      "ducks": [
+        {
+          "player": "Vivaan Mittal",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Billericay CC 4th XI",
+          "date": "11/07/2026",
+          "match_id": 7462139
+        },
+        {
+          "player": "Vivaan Mittal",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Shenfield CC 6th XI",
+          "date": "18/07/2026",
+          "match_id": 7729761
+        }
+      ]
+    },
+    {
+      "player": "Abraham Kurian",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Abraham Kurian",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Leigh On Sea CC Saturday 4th XI",
+          "date": "11/07/2026",
+          "match_id": 7462430
+        }
+      ]
+    },
+    {
+      "player": "Alex Bayha",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Alex Bayha",
+          "team": "NECL 1st XI",
+          "team_id": 324716,
+          "opposition": "Frinton On Sea CC Sunday Challenge",
+          "date": "31/05/2026",
+          "match_id": 7507142
+        }
+      ]
+    },
+    {
+      "player": "Alistair Fergus",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Alistair Fergus",
+          "team": "NECL 1st XI",
+          "team_id": 324716,
+          "opposition": "Frinton On Sea CC Sunday Challenge",
+          "date": "31/05/2026",
+          "match_id": 7507142
+        }
+      ]
+    },
+    {
+      "player": "Arunabha Mukherjee",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Arunabha Mukherjee",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Old Southendian & Southchurch CC 4th XI",
+          "date": "08/08/2026",
+          "match_id": 7462457
+        }
+      ]
+    },
+    {
+      "player": "Ben Lawrence",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Ben Lawrence",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "West Essex CC 3rd XI",
+          "date": "13/06/2026",
+          "match_id": 7461849
+        }
+      ]
+    },
+    {
+      "player": "Ben Waring",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Ben Waring",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Epping CC 1st XI",
+          "date": "20/06/2026",
+          "match_id": 7325282
+        }
+      ]
+    },
+    {
+      "player": "Brad Green",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Brad Green",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Fives and Heronians CC 1st XI",
+          "date": "01/08/2026",
+          "match_id": 7325311
+        }
+      ]
+    },
+    {
+      "player": "Cam Fern",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Cam Fern",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "Upminster CC Men's 3rd XI",
+          "date": "27/06/2026",
+          "match_id": 7461860
+        }
+      ]
+    },
+    {
+      "player": "Chetan Shetty",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Chetan Shetty",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Westcliff-On-Sea CC 6th XI",
+          "date": "16/05/2026",
+          "match_id": 7462371
+        }
+      ]
+    },
+    {
+      "player": "Chris Cory",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Chris Cory",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Harold Wood CC 4th XI",
+          "date": "02/05/2026",
+          "match_id": 7262197
+        }
+      ]
+    },
+    {
+      "player": "Claire Medhurst",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Claire Medhurst",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "Rayleigh CC Womens 1st XI",
+          "date": "03/07/2026",
+          "match_id": 7399563
+        }
+      ]
+    },
+    {
+      "player": "Deepak Reddy Singireddy",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Deepak Reddy Singireddy",
+          "team": "Sat 2nd XI",
+          "team_id": 24294,
+          "opposition": "Upminster CC Men's 2nd XI",
+          "date": "11/07/2026",
+          "match_id": 7325748
+        }
+      ]
+    },
+    {
+      "player": "Eleni Cooke",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Eleni Cooke",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "High Roding CC Womens 1st XI",
+          "date": "26/06/2026",
+          "match_id": 7399558
+        }
+      ]
+    },
+    {
+      "player": "Ethan Lofthouse",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Ethan Lofthouse",
+          "team": "Sun 1st XI",
+          "team_id": 30938,
+          "opposition": "Chelmsford CC Sun 2nd XI",
+          "date": "26/07/2026",
+          "match_id": 7728336
+        }
+      ]
+    },
+    {
+      "player": "Henry Dowsett",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Henry Dowsett",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Shenfield CC 5th XI",
+          "date": "25/07/2026",
+          "match_id": 7462442
+        }
+      ]
+    },
+    {
+      "player": "Jack Parrish",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Jack Parrish",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Wanstead & Snaresbrook CC 1st XI",
+          "date": "11/07/2026",
+          "match_id": 7325296
+        }
+      ]
+    },
+    {
+      "player": "Jack Sterland",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Jack Sterland",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Hutton CC 1st XI",
+          "date": "27/06/2026",
+          "match_id": 7325288
+        }
+      ]
+    },
+    {
+      "player": "James Burns",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "James Burns",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Walthamstow CC 3rd XI",
+          "date": "23/05/2026",
+          "match_id": 7462103
+        }
+      ]
+    },
+    {
+      "player": "Katie Rothstein",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Katie Rothstein",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "High Roding CC Womens 1st XI",
+          "date": "08/05/2026",
+          "match_id": 7399544
+        }
+      ]
+    },
+    {
+      "player": "Micky Burns",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Micky Burns",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Orsett & Thurrock CC 4th XI",
+          "date": "22/08/2026",
+          "match_id": 7462169
+        }
+      ]
+    },
+    {
+      "player": "Mila Patel",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Mila Patel",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "High Roding CC Womens 1st XI",
+          "date": "08/05/2026",
+          "match_id": 7399544
+        }
+      ]
+    },
+    {
+      "player": "Miles Clark",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Miles Clark",
+          "team": "Sat 2nd XI",
+          "team_id": 24294,
+          "opposition": "Brentwood CC 2nd XI",
+          "date": "13/06/2026",
+          "match_id": 7325728
+        }
+      ]
+    },
+    {
+      "player": "Miles Curtis",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Miles Curtis",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Loughton CC 3rd XI",
+          "date": "05/09/2026",
+          "match_id": 7462177
+        }
+      ]
+    },
+    {
+      "player": "Neil Siriwardana",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Neil Siriwardana",
+          "team": "Sat 3rd XI",
+          "team_id": 24295,
+          "opposition": "Upminster CC Men's 3rd XI",
+          "date": "27/06/2026",
+          "match_id": 7461860
+        }
+      ]
+    },
+    {
+      "player": "Oliver Devenish",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Oliver Devenish",
+          "team": "Sat 1st XI",
+          "team_id": 24293,
+          "opposition": "Old Southendian & Southchurch CC 1st XI",
+          "date": "14/06/2026",
+          "match_id": 7681513
+        }
+      ]
+    },
+    {
+      "player": "Riana Khatri",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Riana Khatri",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "Galleywood CC Womens 1st XI",
+          "date": "19/06/2026",
+          "match_id": 7399548
+        }
+      ]
+    },
+    {
+      "player": "Rishabh Nayak",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Rishabh Nayak",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Frenford CC 4th XI",
+          "date": "04/07/2026",
+          "match_id": 7462135
+        }
+      ]
+    },
+    {
+      "player": "Rudy Jackman",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Rudy Jackman",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Frenford CC 4th XI",
+          "date": "30/05/2026",
+          "match_id": 7462109
+        }
+      ]
+    },
+    {
+      "player": "Sarah Yuen",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Sarah Yuen",
+          "team": "Womens 1st XI",
+          "team_id": 213007,
+          "opposition": "Galleywood CC Womens 1st XI",
+          "date": "19/06/2026",
+          "match_id": 7399548
+        }
+      ]
+    },
+    {
+      "player": "Suhail Shahid",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Suhail Shahid",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Leigh On Sea CC Saturday 4th XI",
+          "date": "11/07/2026",
+          "match_id": 7462430
+        }
+      ]
+    },
+    {
+      "player": "Tom Hutchinson",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Tom Hutchinson",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Walthamstow CC 3rd XI",
+          "date": "13/06/2026",
+          "match_id": 7462120
+        }
+      ]
+    },
+    {
+      "player": "Tom Iliffe",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Tom Iliffe",
+          "team": "Sat 5th XI",
+          "team_id": 45348,
+          "opposition": "Billericay CC 5th XI",
+          "date": "04/07/2026",
+          "match_id": 7462422
+        }
+      ]
+    },
+    {
+      "player": "Will Jackman",
+      "count": 1,
+      "ducks": [
+        {
+          "player": "Will Jackman",
+          "team": "Sat 4th XI",
+          "team_id": 30461,
+          "opposition": "Frenford CC 4th XI",
+          "date": "30/05/2026",
+          "match_id": 7462109
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

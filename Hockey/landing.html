@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hockey - Chelmsford Sports Club</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="page-title">
+            <h1 class="title">Hockey</h1>
+            <p class="subtitle">Get the latest updates on our hockey teams and upcoming matches</p>
+        </section>
+
+        <div class="content-section hockey-block">
+            <div class="section-header">
+                <h2 class="section-title">Hockey Teams & Information</h2>
+            </div>
+            <div class="section-content">
+                <p>Stay connected with our hockey teams throughout the season. Check fixtures, follow results, and get all the latest updates on match schedules and team performance.</p>
+                <!-- These now point at the live display pages on
+                     displays.chelmsfordsc.org.uk rather than this repo's
+                     own (out of date) local copies, so visitors always see
+                     the same fixtures/results as the clubhouse screens. -->
+                <ul class="block-links">
+                    <li><a href="https://displays.chelmsfordsc.org.uk/Hockey/OpenLeague/Fixtures.html" class="block-link" target="_blank" rel="noopener">Fixtures - Men's / Open League</a></li>
+                    <li><a href="https://displays.chelmsfordsc.org.uk/Hockey/Womens/Fixtures.html" class="block-link" target="_blank" rel="noopener">Fixtures - Women's</a></li>
+                    <li><a href="https://displays.chelmsfordsc.org.uk/Hockey/OpenLeague/Results.html" class="block-link" target="_blank" rel="noopener">Results - Men's / Open League</a></li>
+                    <li><a href="https://displays.chelmsfordsc.org.uk/Hockey/Womens/Results.html" class="block-link" target="_blank" rel="noopener">Results - Women's</a></li>
+                    <li><a href="https://displays.chelmsfordsc.org.uk/Hockey/Changing%20Rooms/ChangingRooms.html" class="block-link" target="_blank" rel="noopener">Changing Room Assignments</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Chelmsford Sports Club, Sports Pavilion, Chelmer Park, Beehive Lane, Galleywood, Chelmsford, Essex, CM2 8RL</p>
+            <p class="footer-text">© 2026 Chelmsford Sports Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load header.html from root -->
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error('Error loading header:', err));
+    </script>
+</body>
+</html>

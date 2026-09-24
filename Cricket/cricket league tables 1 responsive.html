@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Chelmsford CC – Sat 1st to 4th XI League Tables</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{
+    --green:#1f6b3a; --green-dark:#15512b; --green-soft:#e3f2e7; --bg:#f2f4f1; --card:#ffffff;
+    --border:#d8ddd6; --muted:#6f786f; --ink:#1a1a1a; --danger:#b42318; --warning:#8a5a00;
+    --header-h:78px; --footer-h:32px; --gap:10px;
+  }
+  *{ box-sizing:border-box; }
+  html, body{ height:100vh; width:100vw; margin:0; overflow:hidden; background:var(--bg); font-family:"Segoe UI", Arial, sans-serif; color:var(--ink); }
+  header{ position:fixed; top:0; left:0; right:0; height:var(--header-h); background:var(--green); color:#fff; padding:10px 22px; display:flex; align-items:center; justify-content:space-between; gap:18px; z-index:50; }
+  .brand{ display:flex; align-items:center; gap:14px; min-width:0; }
+  .brand img{ width:54px; height:54px; object-fit:contain; background:rgba(255,255,255,.12); border-radius:12px; padding:6px; flex-shrink:0; }
+  header h1{ margin:0; letter-spacing:2.5px; font-size:24px; line-height:1.05; text-transform:uppercase; white-space:nowrap; }
+  .subtitle{ margin-top:3px; font-size:13px; opacity:.92; }
+  .season-block{ text-align:right; flex-shrink:0; }
+  .season{ font-size:24px; letter-spacing:2.5px; font-weight:900; white-space:nowrap; }
+  .updated{ margin-top:3px; font-size:12px; opacity:.92; white-space:nowrap; }
+  main{ position:fixed; top:var(--header-h); bottom:var(--footer-h); left:0; right:0; padding:var(--gap); display:grid; gap:var(--gap); overflow:hidden; grid-template-columns:repeat(2, minmax(0, 1fr)); grid-template-rows:repeat(2, minmax(0, 1fr)); }
+  .table-container{ background:var(--card); border:2px solid var(--border); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; min-height:0; box-shadow:0 2px 8px rgba(0,0,0,.05); }
+  
+  .table-header{ background:var(--green); color:#fff; padding:8px 12px; display:flex; justify-content:space-between; gap:12px; align-items:center; font-weight:900; font-size:20px; text-transform:uppercase; flex-shrink:0; min-height:42px; }
+  .team-label{ flex-shrink:0; white-space:nowrap; }
+  .division-name{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:16px; opacity:.95; text-align:right; }
+  .scroll-area{ flex:1; overflow:auto; min-height:0; }
+  table{ width:100%; border-collapse:collapse; font-size:14px; }
+  th{ position:sticky; top:0; background:#f8f9f7; text-align:center; padding:7px 5px; border-bottom:2px solid var(--border); color:var(--muted); z-index:2; white-space:nowrap; font-weight:900; }
+  td{ padding:5px; border-bottom:1px solid var(--border); white-space:nowrap; text-align:center; font-weight:600; }
+  th.team-col, td.team-col{ text-align:left; min-width:180px; max-width:360px; }
+  td.team-col span{ display:block; overflow:hidden; text-overflow:ellipsis; }
+  tr.highlight{ background-color:var(--green-soft) !important; }
+  .bold{ font-weight:900; }
+  .skeleton-box{ background:#eee; height:20px; margin:10px; border-radius:4px; animation:pulse 1.5s infinite; }
+  @keyframes pulse{ 0%{ opacity:1; } 50%{ opacity:.5; } 100%{ opacity:1; } }
+  .message{ background:#fff; border:2px solid var(--border); border-radius:14px; padding:20px; text-align:center; font-size:15px; display:flex; align-items:center; justify-content:center; min-height:0; }
+  .message.error{ color:var(--danger); border-color:#f0b8b2; background:#fff7f6; }
+  .message.warning{ color:var(--warning); border-color:#f1d28a; background:#fff9e8; }
+  footer{ position:fixed; left:0; right:0; bottom:0; height:var(--footer-h); background:var(--green-dark); color:#fff; padding:6px 14px; display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:12px; z-index:50; }
+  footer span:last-child{ text-align:right; }
+  @media (max-width:1100px){
+    html, body{ overflow:auto; height:auto; min-height:100vh; }
+    header, footer{ position:static; height:auto; }
+    header{ align-items:flex-start; flex-direction:column; }
+    .season-block{ text-align:left; }
+    main{ position:static; grid-template-columns:1fr; grid-template-rows:none; overflow:visible; }
+    .table-container{ min-height:420px; }
+  }
+</style>
+
+
+<!-- Responsive refactor: added to allow content to reflow and scroll on different screen sizes -->
+<style id="responsive-refactor">
+  /* Global responsive safeguards */
+  html,
+  body{
+    max-width:100%;
+  }
+
+  img{
+    max-width:100%;
+  }
+
+  header h1,
+  .season,
+  .season-block .season,
+  .subtitle,
+  header .small{
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .scroll-area,
+  .teams,
+  .fixtures-list,
+  main{
+    scrollbar-width:auto;
+  }
+
+  /* Allow header/footer content to wrap instead of forcing overflow */
+  @media (max-width:900px){
+    header{
+      gap:8px !important;
+    }
+
+    header h1{
+      white-space:normal !important;
+      letter-spacing:1.5px !important;
+      font-size:clamp(18px, 5vw, 24px) !important;
+    }
+
+    .season,
+    .season-block .season{
+      white-space:normal !important;
+      font-size:clamp(18px, 5vw, 24px) !important;
+    }
+
+    .brand{
+      width:100%;
+    }
+  }
+</style>
+
+<style id="responsive-league-refactor">
+  /* League table pages */
+  main#tables-grid{
+    overflow:auto !important;
+    align-content:start !important;
+  }
+
+  .table-container{
+    min-height:260px !important;
+  }
+
+  .scroll-area{
+    overflow:auto !important;
+  }
+
+  table{
+    min-width:760px !important;
+  }
+
+  td.team-col span{
+    white-space:normal !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  @media (min-width:1101px){
+    main#tables-grid{
+      grid-auto-rows:minmax(300px, 1fr) !important;
+    }
+  }
+
+  @media (max-width:1100px){
+    html, body{
+      overflow:auto !important;
+      height:auto !important;
+      min-height:100vh !important;
+    }
+
+    header,
+    footer{
+      position:static !important;
+      height:auto !important;
+      flex-wrap:wrap !important;
+    }
+
+    main#tables-grid{
+      position:static !important;
+      grid-template-columns:1fr !important;
+      grid-template-rows:none !important;
+      overflow:visible !important;
+      padding:10px !important;
+    }
+
+    .table-container,
+    .league-table-team-213007{
+      grid-column:auto !important;
+      min-height:420px !important;
+    }
+  }
+
+  @media (max-width:700px){
+    table{
+      min-width:680px !important;
+      font-size:12px !important;
+    }
+
+    .table-header{
+      align-items:flex-start !important;
+      flex-direction:column !important;
+      gap:4px !important;
+    }
+
+    .division-name{
+      text-align:left !important;
+      white-space:normal !important;
+    }
+  }
+</style>
+
+</head>
+<body>
+<header>
+  <div class="brand">
+    <img src="https://img-res.pitchero.com/?url=images.pitchero.com%2Fclub_logos%2F78190%2FV4VHWNHTvWksHRqonMJ9_Website%20logo%20no%20bg2.png&h=180&w=180&t=square" alt="Chelmsford Cricket Club logo" />
+    <div><h1>Saturday XI League Tables</h1><div class="subtitle">Chelmsford Cricket Club</div></div>
+  </div>
+  <div class="season-block"><div class="season">SEASON 2026</div><div class="updated" id="last-updated">Loading latest tables…</div></div>
+</header>
+<main id="tables-grid" aria-live="polite"></main>
+<footer><span>Data generated from Play-Cricket via GitHub Actions</span><span id="footer-clock"></span></footer>
+<script>
+const TARGET_TEAM_IDS = [24293, 24294, 24295, 30461];
+
+const DATA_URL = "../data/cricket-league-tables-all.json";
+const REFRESH_MS = 5 * 60 * 1000;
+const CLUB_NAME_MATCH = "chelmsford";
+
+const DISPLAY_COLUMNS = [
+  { label:"Team", type:"team", source:["Team"] },
+  { label:"P", title:"Played", source:["p", "P", "Played"] },
+  { label:"W", title:"Won", source:["W", "w", "Won"], fallbackSource:["w1", "w2", "w3", "wcn", "w24", "w20", "wd"], combineFallback:true },
+  { label:"L", title:"Lost", source:["L", "l", "Lost"], fallbackSource:["l1", "l2", "l3", "lcn", "ld"], combineFallback:true },
+  { label:"D", title:"Drawn / Tied", source:["d", "D", "t", "T"], combine:true },
+  { label:"Canc", title:"Cancelled / Abandoned", source:["c", "C", "a", "A"], combine:true },
+  { label:"BP", title:"Bonus Points", source:["BP", "Bonus", "Bonus Points", "BatP", "BowlP"], combine:true },
+  { label:"Pen", title:"Penalties", source:["Pen", "Penalty", "Penalty Points"] },
+  { label:"Pts", title:"Points", source:["Pts", "Points"] },
+  { label:"NRR", title:"Net Run Rate", source:["NRR", "Net Run Rate"] },
+  { label:"Ave", title:"Average Points", source:["Ave", "Average", "Average Points"] }
+];
+
+function escapeHtml(value){
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function decodeBasicEntities(value){
+  return String(value ?? "")
+    .replaceAll("&amp;", "&")
+    .replaceAll("&#39;", "'")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&nbsp;", " ");
+}
+
+function formatDateTime(value){
+  if(!value) return "";
+  const d = new Date(value);
+  if(Number.isNaN(d.getTime())) return "";
+  return d.toLocaleString("en-GB", { weekday:"short", day:"2-digit", month:"short", hour:"2-digit", minute:"2-digit" });
+}
+
+function updateClock(){
+  const el = document.getElementById("footer-clock");
+  if(!el) return;
+  el.textContent = new Date().toLocaleString("en-GB", {
+    weekday:"short", day:"2-digit", month:"short", year:"numeric", hour:"2-digit", minute:"2-digit", second:"2-digit"
+  });
+}
+
+function normaliseHeading(value){
+  return String(value || "").trim().toLowerCase();
+}
+
+function findColumnByHeading(headings, wantedHeading){
+  const wanted = normaliseHeading(wantedHeading);
+  return Object.keys(headings || {}).find(columnKey => normaliseHeading(headings[columnKey]) === wanted);
+}
+
+function numericValue(value){
+  const n = Number(value);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function cssSafeTeamId(item){
+  return `league-table-team-${String(item?.config?.team_id || "missing")}`;
+}
+
+function resolveDisplayColumns(headings){
+  return DISPLAY_COLUMNS
+    .map(displayColumn => {
+      const primaryColumns = [...new Set((displayColumn.source || []).map(sourceHeading => findColumnByHeading(headings, sourceHeading)).filter(Boolean))];
+      if(primaryColumns.length > 0){
+        return { ...displayColumn, sourceColumns:primaryColumns, combineActive:displayColumn.combine && primaryColumns.length > 1 };
+      }
+      const fallbackColumns = [...new Set((displayColumn.fallbackSource || []).map(sourceHeading => findColumnByHeading(headings, sourceHeading)).filter(Boolean))];
+      return { ...displayColumn, sourceColumns:fallbackColumns, combineActive:displayColumn.combineFallback && fallbackColumns.length > 1 };
+    })
+    .filter(displayColumn => displayColumn.type === "team" || displayColumn.sourceColumns.length > 0);
+}
+
+function getDisplayValue(row, displayColumn){
+  if(!displayColumn.sourceColumns.length) return "";
+  if(displayColumn.combineActive){
+    return displayColumn.sourceColumns.reduce((total, columnKey) => total + numericValue(row[columnKey]), 0);
+  }
+  return row[displayColumn.sourceColumns[0]] ?? "";
+}
+
+function buildTableHtml(item){
+  const label = item?.config?.label || "League table";
+  const cardClass = cssSafeTeamId(item);
+
+  if(item?.error || !item?.data){
+    return `
+      <section class="table-container ${cardClass}">
+        <div class="table-header"><span class="team-label">${escapeHtml(label)}</span><span class="division-name">Not available</span></div>
+        <div class="message warning">${escapeHtml(item?.error || "No table data was generated for this team.")}</div>
+      </section>`;
+  }
+
+  const tableData = item.data || {};
+  const headings = tableData.headings || {};
+  const values = Array.isArray(tableData.values) ? tableData.values : [];
+  const displayColumns = resolveDisplayColumns(headings);
+
+  if(!displayColumns.length){
+    return `
+      <section class="table-container ${cardClass}">
+        <div class="table-header"><span class="team-label">${escapeHtml(label)}</span><span class="division-name">No display columns found</span></div>
+        <div class="message warning">No matching columns were found in the generated JSON.</div>
+      </section>`;
+  }
+
+  const rows = values.map(row => {
+    const teamColumn = findColumnByHeading(headings, "Team") || "column_1";
+    const teamName = decodeBasicEntities(row[teamColumn] || row.column_1 || "");
+    const isChelmsford = teamName.toLowerCase().includes(CLUB_NAME_MATCH);
+
+    const cells = displayColumns.map(displayColumn => {
+      const rawValue = getDisplayValue(row, displayColumn);
+      const value = displayColumn.type === "team" ? escapeHtml(decodeBasicEntities(rawValue)) : escapeHtml(rawValue);
+      return displayColumn.type === "team"
+        ? `<td class="team-col bold"><span title="${value}">${value}</span></td>`
+        : `<td>${value}</td>`;
+    }).join("");
+
+    return `<tr class="${isChelmsford ? "highlight" : ""}"><td class="bold">${escapeHtml(row.position)}</td>${cells}</tr>`;
+  }).join("");
+
+  const headerCells = displayColumns.map(displayColumn => {
+    const isTeam = displayColumn.type === "team";
+    const title = escapeHtml(displayColumn.title || displayColumn.label);
+    return `<th class="${isTeam ? "team-col" : ""}" title="${title}">${escapeHtml(displayColumn.label)}</th>`;
+  }).join("");
+
+  return `
+    <section class="table-container ${cardClass}">
+      <div class="table-header">
+        <span class="team-label">${escapeHtml(label)}</span>
+        <span class="division-name" title="${escapeHtml(tableData.name || "")}">${escapeHtml(tableData.name || "")}</span>
+      </div>
+      <div class="scroll-area">
+        <table>
+          <thead><tr><th>Pos</th>${headerCells}</tr></thead>
+          <tbody>${rows || `<tr><td colspan="${displayColumns.length + 1}">No rows found in league table.</td></tr>`}</tbody>
+        </table>
+      </div>
+    </section>`;
+}
+
+function setLoadingState(){
+  document.getElementById("tables-grid").innerHTML = TARGET_TEAM_IDS.map(teamId => `
+    <section class="table-container league-table-team-${teamId}"><div class="skeleton-box"></div><div class="skeleton-box"></div><div class="skeleton-box"></div><div class="skeleton-box"></div></section>`).join("");
+}
+
+function setErrorState(message){
+  document.getElementById("tables-grid").innerHTML = `<div class="message error" style="grid-column:1 / -1;">${escapeHtml(message)}</div>`;
+}
+
+async function loadLeagueTables(){
+  const response = await fetch(`${DATA_URL}?v=${Date.now()}`, { cache:"no-store" });
+  if(!response.ok) throw new Error(`Could not load ${DATA_URL}. HTTP status ${response.status}.`);
+  const json = await response.json();
+  if(!Array.isArray(json)) throw new Error(`${DATA_URL} must contain a JSON array.`);
+  return json;
+}
+
+function selectTables(allTables){
+  return TARGET_TEAM_IDS.map(teamId => {
+    const found = allTables.find(item => String(item?.config?.team_id) === String(teamId));
+    return found || { config:{ label:`Team ${teamId}`, team_id:teamId }, data:null, error:"No matching item was found in the generated JSON." };
+  });
+}
+
+async function renderLeagueTables({showLoading = false} = {}){
+  const updatedEl = document.getElementById("last-updated");
+  if(showLoading) setLoadingState();
+
+  try{
+    const allTables = await loadLeagueTables();
+    const selectedTables = selectTables(allTables);
+    document.getElementById("tables-grid").innerHTML = selectedTables.map(buildTableHtml).join("");
+
+    const fetchedDates = allTables.map(item => item?.config?.fetched_at).filter(Boolean).sort();
+    const latestFetched = fetchedDates.length ? fetchedDates[fetchedDates.length - 1] : null;
+    updatedEl.textContent = latestFetched ? `Last updated: ${formatDateTime(latestFetched)}` : "Last updated time not supplied";
+  }catch(err){
+    console.error(err);
+    setErrorState(`League tables could not be loaded. Check that ${DATA_URL} exists and is valid JSON.`);
+    updatedEl.textContent = "League tables failed to load";
+  }
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+renderLeagueTables({showLoading:true});
+setInterval(() => renderLeagueTables(), REFRESH_MS);
+
+</script>
+</body>
+</html>

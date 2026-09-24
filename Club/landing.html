@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Services - Chelmsford Sports Club</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="page-title">
+            <h1 class="title">Club Services</h1>
+            <p class="subtitle">Book facilities and manage your club activities</p>
+        </section>
+
+        <div class="content-section club-block">
+            <div class="section-header">
+                <h2 class="section-title">Available Services</h2>
+            </div>
+            <div class="section-content">
+                <ul class="block-links">
+                    <li><a href="Booking.html" class="block-link">Clubhouse Bookings</a></li>
+                    <li><a href="Calendar.html" class="block-link">Calendar</a></li>
+                    <li><a href="Displays.html" class="block-link">Displays</a></li>
+                    <li><a href="Keys.html" class="block-link">Requesting Keys</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Chelmsford Sports Club, Sports Pavilion, Chelmer Park, Beehive Lane, Galleywood, Chelmsford, Essex, CM2 8RL</p>
+            <p class="footer-text">© 2026 Chelmsford Sports Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load header.html from root -->
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error('Error loading header:', err));
+    </script>
+</body>
+</html>

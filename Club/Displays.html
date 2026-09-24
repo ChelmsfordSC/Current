@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displays - Chelmsford Sports Club</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /*
+         * Small, page-local additions for the password gate -- kept out of
+         * the shared style.css since nothing else on the site needs a
+         * password form. Colours match the .club-block accent (#2980b9)
+         * already used for this section.
+         */
+        .gate-form {
+            max-width: 340px;
+        }
+
+        .gate-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .gate-input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .gate-input:focus {
+            outline: none;
+            border-color: #2980b9;
+            box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.15);
+        }
+
+        .gate-submit {
+            background: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 18px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .gate-submit:hover {
+            background: #23699b;
+        }
+
+        .gate-error {
+            display: none;
+            color: #c0392b;
+            font-size: 13px;
+            margin-top: -4px;
+            margin-bottom: 12px;
+        }
+
+        .lock-again {
+            margin-top: 16px;
+            background: none;
+            border: none;
+            color: #6b7280;
+            font-size: 13px;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="page-title">
+            <h1 class="title">Displays</h1>
+            <p class="subtitle">Manage the club's TV and clubhouse display pages</p>
+        </section>
+
+        <div class="content-section club-block" id="gateSection">
+            <div class="section-header">
+                <h2 class="section-title">Enter Password</h2>
+            </div>
+            <div class="section-content">
+                <form class="gate-form" id="gateForm">
+                    <label class="gate-label" for="gatePassword">This section is for club committee use.</label>
+                    <input class="gate-input" type="password" id="gatePassword" autocomplete="current-password" placeholder="Password">
+                    <p class="gate-error" id="gateError">Incorrect password — try again.</p>
+                    <button class="gate-submit" type="submit">Enter</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="content-section club-block" id="unlockedSection" style="display: none;">
+            <div class="section-header">
+                <h2 class="section-title">Display Manager</h2>
+            </div>
+            <div class="section-content">
+                <ul class="block-links">
+                    <li><a href="https://displays.chelmsfordsc.org.uk/" class="block-link" target="_blank" rel="noopener">Open Display Manager</a></li>
+                </ul>
+                <button class="lock-again" id="lockAgainBtn" type="button">Lock this section again</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">
+                © 2026 Chelmsford Sports Club. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Load header.html from root -->
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error('Error loading header:', err));
+    </script>
+
+    <!--
+      Password gate -- deliberately simple, client-side only, matching the
+      "no heavy auth" approach already used elsewhere on this site (e.g.
+      the Changing Rooms Worker has no login either). This is a casual
+      deterrent, NOT real security: anyone who views this page's source
+      (or just opens browser dev tools) can read PASSWORD below or skip
+      the check entirely. Don't put anything here you wouldn't be OK with
+      a determined visitor seeing.
+
+      For real access control later, Cloudflare Access (already on the
+      project's "someday" list) would gate this at the network level
+      instead of in the page's own JS.
+
+      *** CHANGE THIS PASSWORD before/after this goes live. ***
+    -->
+    <script>
+        (function () {
+            const PASSWORD = 'chelmerpark';
+            const SESSION_KEY = 'displaysGateOK';
+
+            const gateSection = document.getElementById('gateSection');
+            const unlockedSection = document.getElementById('unlockedSection');
+            const form = document.getElementById('gateForm');
+            const input = document.getElementById('gatePassword');
+            const error = document.getElementById('gateError');
+            const lockAgainBtn = document.getElementById('lockAgainBtn');
+
+            function showUnlocked() {
+                gateSection.style.display = 'none';
+                unlockedSection.style.display = 'block';
+            }
+
+            function showGate() {
+                unlockedSection.style.display = 'none';
+                gateSection.style.display = 'block';
+            }
+
+            // Remembered only for this browser tab's session -- closing the
+            // tab (not just the site) asks again next time.
+            try {
+                if (sessionStorage.getItem(SESSION_KEY) === '1') {
+                    showUnlocked();
+                }
+            } catch (e) {
+                // Private browsing / storage blocked -- just show the form.
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (input.value === PASSWORD) {
+                    error.style.display = 'none';
+                    try { sessionStorage.setItem(SESSION_KEY, '1'); } catch (e) { /* ignore */ }
+                    showUnlocked();
+                } else {
+                    error.style.display = 'block';
+                    input.value = '';
+                    input.focus();
+                }
+            });
+
+            if (lockAgainBtn) {
+                lockAgainBtn.addEventListener('click', function () {
+                    try { sessionStorage.removeItem(SESSION_KEY); } catch (e) { /* ignore */ }
+                    input.value = '';
+                    showGate();
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

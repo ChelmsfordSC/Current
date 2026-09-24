@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Chelmsford CC – Forthcoming Fixtures (2026)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root{
+      --green:#1f6b3a;
+      --green-dark:#16522c;
+      --league-bg:#e3f2e7; /* light green */
+      --cup-bg:#f3c6c6;    /* light red */
+      --bg:#f2f4f1;
+      --card:#ffffff;
+      --border:#d8ddd6;
+      --muted:#7f887f;
+      --ink:#1a1a1a;
+
+      /* Layout vars measured in JS; tuned fallbacks for 1920x1080 TV */
+      --header-h: 74px;
+      --footer-h: 34px;
+      --main-pad: 10px;
+      --grid-gap: 10px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    html,
+    body{
+      height:100vh;
+      width:100vw;
+      margin:0;
+      overflow:hidden;
+      background:var(--bg);
+    }
+
+    body{
+      font-family:"Segoe UI", system-ui, sans-serif;
+      color:var(--ink);
+    }
+
+    /* ---------- HEADER: fixed and compact for 1080p ---------- */
+    header{
+      background:var(--green);
+      color:#fff;
+      padding:10px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:50;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand img{
+      width:50px;
+      height:50px;
+      object-fit:contain;
+      background:rgba(255,255,255,.12);
+      border-radius:12px;
+      padding:5px;
+      flex-shrink:0;
+    }
+
+    header h1{
+      margin:0;
+      letter-spacing:3px;
+      font-size:24px;
+      line-height:1.05;
+      white-space:nowrap;
+      text-transform:uppercase;
+    }
+
+    header .small{
+      font-size:13px;
+      color:#fff;
+      white-space:nowrap;
+      margin-top:2px;
+    }
+
+    /* ---------- MAIN: fixed between header and footer ---------- */
+    main{
+      position:fixed;
+      top:var(--header-h);
+      bottom:var(--footer-h);
+      left:0;
+      right:0;
+      overflow:hidden;
+      padding:var(--main-pad);
+      display:grid;
+      grid-template-columns:repeat(5, minmax(0, 1fr));
+      grid-template-rows:repeat(2, minmax(0, 1fr));
+      gap:var(--grid-gap);
+    }
+
+    .match{
+      border:2px solid var(--border);
+      border-radius:14px;
+      background:var(--card);
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+      min-height:0;
+      box-shadow:0 2px 8px rgba(0,0,0,.05);
+    }
+
+    .match-header{
+      padding:7px 10px;
+      background:var(--green);
+      color:#fff;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      flex-shrink:0;
+      min-height:42px;
+      display:flex;
+      align-items:center;
+      font-size:18px;
+      line-height:1.1;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    .fixtures-list{
+      min-height:0;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .fixture-row{
+      padding:6px 10px;
+      border-bottom:1px solid var(--border);
+      font-size:14px;
+      line-height:1.15;
+      overflow:hidden;
+      flex-shrink:0;
+      background:#fff; /* away/default fixtures */
+      color:var(--ink);
+    }
+
+    .fixture-row:last-child{ border-bottom:none; }
+
+    .fixture-line-1{
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
+      margin-bottom:2px;
+      font-weight:800; /* date and opposition bold */
+    }
+
+    .fixture-line-2{
+      font-size:12px;
+      color:inherit;
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
+      font-weight:400; /* location and league not bold */
+    }
+
+    .fixture-line-1 span,
+    .fixture-line-2 span{
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    .fixture-line-1 span:last-child,
+    .fixture-line-2 span:last-child{
+      text-align:right;
+    }
+
+    /* Fixture formatting logic */
+    .fixture-row.is-chelmer{ background-color:var(--league-bg); } /* home at Chelmer Park */
+    .fixture-row.is-cup{ color:#ff3300; }      /* red text for cup matches */
+    .fixture-row.is-friendly{ color:#0057b8; } /* blue text for friendly matches */
+
+    .muted{
+      color:var(--muted);
+      font-weight:600;
+      font-size:15px;
+    }
+
+    /* ---------- FOOTER: fixed and compact ---------- */
+    .footer{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      height:34px;
+      background:#eef2ec;
+      border-top:2px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 14px;
+      font-size:12px;
+      color:#4a514a;
+      z-index:50;
+    }
+
+    .footer .left{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      min-width:0;
+    }
+
+    .small_footer{
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .pill{
+      background:#fff;
+      border:1px solid var(--border);
+      padding:4px 9px;
+      border-radius:999px;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    .skeleton{
+      background:linear-gradient(90deg, #f1f3f0, #e7ebe6, #f1f3f0);
+      background-size:200% 100%;
+      animation:shimmer 1.1s infinite;
+      border-radius:10px;
+      height:14px;
+      width:70%;
+    }
+
+    @keyframes shimmer{
+      0%{ background-position:200% 0; }
+      100%{ background-position:-200% 0; }
+    }
+
+    /* Exact target profile: 1920x1080 widescreen TV */
+    @media (width:1920px) and (height:1080px){
+      html, body{ width:1920px; height:1080px; }
+    }
+
+    @media (max-width:1400px){
+      main{
+        grid-template-columns:repeat(3, minmax(0, 1fr));
+        grid-template-rows:none;
+        overflow-y:auto;
+      }
+    }
+
+    @media (max-width:900px){
+      html, body{
+        overflow:auto;
+        height:auto;
+        min-height:100vh;
+      }
+
+      header{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      main{
+        position:static;
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:none;
+        overflow:visible;
+        padding-top:calc(var(--header-h) + 10px);
+        padding-bottom:calc(var(--footer-h) + 10px);
+      }
+    }
+  </style>
+
+
+<!-- Responsive refactor: added to allow content to reflow and scroll on different screen sizes -->
+<style id="responsive-refactor">
+  /* Global responsive safeguards */
+  html,
+  body{
+    max-width:100%;
+  }
+
+  img{
+    max-width:100%;
+  }
+
+  header h1,
+  .season,
+  .season-block .season,
+  .subtitle,
+  header .small{
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .scroll-area,
+  .teams,
+  .fixtures-list,
+  main{
+    scrollbar-width:auto;
+  }
+
+  /* Allow header/footer content to wrap instead of forcing overflow */
+  @media (max-width:900px){
+    header{
+      gap:8px !important;
+    }
+
+    header h1{
+      white-space:normal !important;
+      letter-spacing:1.5px !important;
+      font-size:clamp(18px, 5vw, 24px) !important;
+    }
+
+    .season,
+    .season-block .season{
+      white-space:normal !important;
+      font-size:clamp(18px, 5vw, 24px) !important;
+    }
+
+    .brand{
+      width:100%;
+    }
+  }
+</style>
+
+<style id="responsive-cards-refactor">
+  /* Card/grid pages: scores and fixtures */
+  main#grid{
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)) !important;
+    grid-template-rows:none !important;
+    grid-auto-rows:minmax(260px, 1fr) !important;
+    overflow:auto !important;
+    align-content:start !important;
+  }
+
+  .match{
+    min-height:260px !important;
+    max-height:none !important;
+  }
+
+  .teams,
+  .fixtures-list{
+    overflow:auto !important;
+    min-height:0 !important;
+  }
+
+  .team-name,
+  .perf-item,
+  .fixture-line-1 span,
+  .fixture-line-2 span{
+    overflow-wrap:anywhere !important;
+  }
+
+  .team-name{
+    -webkit-line-clamp:unset !important;
+  }
+
+  @media (min-width:1500px){
+    main#grid{
+      grid-template-columns:repeat(auto-fit, minmax(330px, 1fr)) !important;
+    }
+  }
+
+  @media (max-width:900px){
+    html, body{
+      overflow:auto !important;
+      height:auto !important;
+      min-height:100vh !important;
+    }
+
+    header,
+    footer.footer{
+      position:static !important;
+    }
+
+    main#grid{
+      position:static !important;
+      padding:10px !important;
+      grid-template-columns:1fr !important;
+      grid-auto-rows:auto !important;
+      overflow:visible !important;
+    }
+
+    .match{
+      min-height:unset !important;
+    }
+
+    .teams,
+    .fixtures-list{
+      max-height:65vh !important;
+    }
+  }
+</style>
+
+</head>
+<body>
+<header>
+  <div class="brand">
+    <img src="https://img-res.pitchero.com/?url=images.pitchero.com%2Fclub_logos%2F78190%2FV4VHWNHTvWksHRqonMJ9_Website%20logo%20no%20bg2.png&bg=null&h=180&w=180&t=square&q=null" alt="Chelmsford Cricket Club badge" />
+    <div>
+      <h1>FORTHCOMING FIXTURES</h1>
+      <div class="small">Chelmsford Cricket Club</div>
+    </div>
+  </div>
+  <h1>SEASON 2026</h1>
+</header>
+
+<main id="grid"></main>
+
+<footer class="footer">
+  <div class="left">
+    <span class="pill">Refresh in <strong id="countdown">300</strong>s</span>
+    <span class="small_footer" id="lastRefreshed">Last refreshed: —</span>
+  </div>
+  <div class="right">
+    <span class="pill" id="clock">—</span>
+  </div>
+</footer>
+
+<script>
+// ------------------------
+// Layout sync
+// Measures actual header/footer heights and sets CSS vars so main sits correctly.
+// ------------------------
+function syncFixedLayoutHeights(){
+  const h = document.querySelector("header");
+  const f = document.querySelector("footer.footer");
+  if (h) document.documentElement.style.setProperty("--header-h", h.offsetHeight + "px");
+  if (f) document.documentElement.style.setProperty("--footer-h", f.offsetHeight + "px");
+}
+window.addEventListener("resize", syncFixedLayoutHeights);
+window.addEventListener("load", syncFixedLayoutHeights);
+
+const DATA_URL = "../data/cricket-fixtures.json";
+
+const TEAMS = [
+  { name:"Sat 1st XI", id:24293 },
+  { name:"Sat 2nd XI", id:24294 },
+  { name:"Sat 3rd XI", id:24295 },
+  { name:"Sat 4th XI", id:30461 },
+  { name:"Sat 5th XI", id:45348 },
+  { name:"Sat 6th XI", id:105976 },
+  { name:"NECL 1st XI", id:324716 },
+  { name:"Sun 1st XI", id:30938 },
+  { name:"Twenty20", id:133549 },
+  { name:"Womens 1st XI", id:213007 }
+];
+
+const REFRESH_SECONDS = 300;
+
+function pad2(n){ return String(n).padStart(2, "0"); }
+
+function nowLocalString(){
+  const d = new Date();
+  const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  return `${days[d.getDay()]} ${d.getDate()} ${months[d.getMonth()]} ${pad2(d.getHours())}:${pad2(d.getMinutes())}:${pad2(d.getSeconds())}`;
+}
+
+function stripChelmsford(n){
+  return String(n || "")
+    .replace(/^\s*Chelmsford\s+(?:CC|Cricket\s+Club)?\s*/i, "")
+    .trim();
+}
+
+function escapeHtml(str){
+  return String(str ?? "").replace(/[&<>"']/g, ch => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#039;"
+  }[ch]));
+}
+
+function renderSkeletonCard(teamName){
+  return `
+    <div class="match">
+      <div class="match-header">${escapeHtml(teamName)}</div>
+      <div class="fixtures-list">
+        <div class="fixture-row"><div class="skeleton"></div></div>
+        <div class="fixture-row"><div class="skeleton" style="width:90%"></div></div>
+      </div>
+    </div>`;
+}
+
+function renderCard(team, fixtures) {
+  const fixtureHtml = (fixtures || []).map(f => {
+    const isChelmsfordHome = String(f.home_club_id) === "1786";
+    const oppName = isChelmsfordHome ? f.away_club_name : f.home_club_name;
+    const ground = f.ground_name || "TBC";
+    const compType = (f.competition_type || "").toLowerCase();
+    const compName = f.competition_name || "Friendly";
+    const isChelmer = ground.includes("Chelmer Park");
+    const isCup = compType === "cup" || compName.toLowerCase().includes("cup");
+    const isFriendly = compType === "friendly" || compName.toLowerCase().includes("friendly");
+    const rowClass = [
+      "fixture-row",
+      isChelmer ? "is-chelmer" : "",
+      isCup ? "is-cup" : "",
+      isFriendly ? "is-friendly" : ""
+    ].filter(Boolean).join(" ");
+
+    return `
+      <div class="${rowClass}">
+        <div class="fixture-line-1">
+          <span title="${escapeHtml(f.match_date)}">${escapeHtml(f.match_date)}</span>
+          <span title="${escapeHtml(stripChelmsford(oppName))}">${escapeHtml(stripChelmsford(oppName))}</span>
+        </div>
+        <div class="fixture-line-2">
+          <span title="${escapeHtml(ground)}">${escapeHtml(ground)}</span>
+          <span title="${escapeHtml(compName)}">${escapeHtml(compName)}</span>
+        </div>
+      </div>`;
+  }).join('');
+
+  return `
+    <div class="match">
+      <div class="match-header">${escapeHtml(team.name)}</div>
+      <div class="fixtures-list">
+        ${fixtureHtml || '<div class="fixture-row muted">No upcoming fixtures</div>'}
+      </div>
+    </div>`;
+}
+
+async function loadFixturesData() {
+  const res = await fetch(`${DATA_URL}?v=${Date.now()}`, { cache: "no-store" });
+  if (!res.ok) {
+    throw new Error(`Could not load ${DATA_URL}. HTTP status ${res.status}`);
+  }
+  return await res.json();
+}
+
+async function loadAndRender() {
+  const grid = document.getElementById("grid");
+  grid.innerHTML = TEAMS.map(t => renderSkeletonCard(t.name)).join("");
+
+  try {
+    const data = await loadFixturesData();
+    grid.innerHTML = data.map(d => renderCard(d.team, d.fix)).join("");
+  } catch (e) {
+    console.error(e);
+    grid.innerHTML = TEAMS.map(t => `
+      <div class="match">
+        <div class="match-header">${escapeHtml(t.name)}</div>
+        <div class="fixtures-list">
+          <div class="fixture-row muted">Could not load fixtures JSON</div>
+        </div>
+      </div>`).join("");
+  }
+
+  const lastEl = document.getElementById("lastRefreshed");
+  if (lastEl) lastEl.textContent = `Last refreshed: ${nowLocalString()}`;
+  setTimeout(syncFixedLayoutHeights, 50);
+}
+
+let cd = REFRESH_SECONDS;
+setInterval(() => {
+  document.getElementById("clock").textContent = nowLocalString();
+  if (--cd < 0) {
+    cd = REFRESH_SECONDS;
+    loadAndRender();
+  }
+  document.getElementById("countdown").textContent = cd;
+}, 1000);
+
+syncFixedLayoutHeights();
+document.getElementById("clock").textContent = nowLocalString();
+loadAndRender();
+</script>
+</body>
+</html>

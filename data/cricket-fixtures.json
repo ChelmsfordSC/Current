@@ -1,0 +1,82 @@
+[
+  {
+    "team": {
+      "name": "Sat 1st XI",
+      "id": 24293
+    },
+    "fix": [],
+    "fetched_at": "2026-09-21T19:38:52.118Z"
+  },
+  {
+    "team": {
+      "name": "Sat 2nd XI",
+      "id": 24294
+    },
+    "fix": [],
+    "fetched_at": "2026-09-21T19:38:52.614Z"
+  },
+  {
+    "team": {
+      "name": "Sat 3rd XI",
+      "id": 24295
+    },
+    "fix": [],
+    "fetched_at": "2026-09-21T19:38:53.071Z"
+  },
+  {
+    "team": {
+      "name": "Sat 4th XI",
+      "id": 30461
+    },
+    "fix": [],
+    "fetched_at": "2026-09-21T19:38:53.296Z"
+  },
+  {
+    "team": {
+      "name": "Sat 5th XI",
+      "id": 45348
+    },
+    "fix": [],
+    "fetched_at": "2026-09-21T19:38:53.771Z"
+  },
+  {
+    "team": {
+      "name": "Sat 6th XI",
+      "id": 105976
+    },
+    "fix": [],
+    "fetched_at": "2026-09-21T19:38:54.217Z"
+  },
+  {
+    "team": {
+      "name": "NECL 1st XI",
+      "id": 324716
+    },
+    "fix": [],
+    "fetched_at": "2026-09-21T19:38:54.481Z"
+  },
+  {
+    "team": {
+      "name": "Sun 1st XI",
+      "id": 30938
+    },
+    "fix": [],
+    "fetched_at": "2026-09-21T19:38:54.933Z"
+  },
+  {
+    "team": {
+      "name": "Twenty20",
+      "id": 133549
+    },
+    "fix": [],
+    "fetched_at": "2026-09-21T19:38:55.403Z"
+  },
+  {
+    "team": {
+      "name": "Womens 1st XI",
+      "id": 213007
+    },
+    "fix": [],
+    "fetched_at": "2026-09-21T19:38:55.665Z"
+  }
+]

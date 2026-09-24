@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubhouse Keys - Chelmsford Sports Club</title>
+    <!-- Use external stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="page-title">
+            <h1 class="title">Clubhouse Key Information</h1>
+            <p class="subtitle">Everything you need to know about requesting, managing and using keys for our clubhouse facilities</p>
+        </section>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Getting Started</h2>
+            </div>
+            <div class="section-content">
+                <p>If as a club member (of either the cricket or hockey clubs) you require regular access to the clubhouse, then you are able to request a key to enable access to the appropriate areas. Keys can be requested through the <a href="https://forms.gle/WAmNXmFTuGfWWukk8">Key Request Form</a>.</p>
+                  
+                <div class="contact-box">
+                    <strong>Contact Information:</strong><br>
+                    If you require any further information or have any questions, then please contact:<br>
+                    <strong>Tom Pegrum</strong><br>
+                    📞 07469 773700<br>
+                    ✉️ <a href="mailto:chelmsfordsc.facilities@gmail.com">chelmsfordsc.facilities@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Terms & Responsibilities</h2>
+            </div>
+            <div class="section-content">
+                <h3>Key Usage Agreement</h3>
+                <p>By requesting and owning a key, you should always adhere to the <a href="https://docs.google.com/document/d/1ooU_UDhtsgvBgMdlYJO7xho6l42w0zkpCQaXbN9tT88/edit?usp=sharing">Key Usage Agreement</a>, noting the guidance on what process to follow if you either lose your key, or no longer need access.</p>
+
+                <h3>Responsibilities</h3>
+                <p>Please remember that if you require the bar to be open then you responsible for providing someone to run the bar for the duration of your usage. These people need to be <strong>at least 18 years old</strong> and have received the <strong>bar/till induction/training</strong>.</p>
+                <p>If you are responsible for closing up the clubhouse and/or bar after your usage, then you must ensure that all Bar Closing and Clubhouse Locking-Up procedures are followed. They are clearly displayed by the bar door and on the front door, this includes removing rubbish to the council compound (a key for the compoiund is in each club's key lockbox in the pool room).</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Key Request Form</h2>
+            </div>
+            <div class="section-content">
+                <div class="form-container">
+                    <p>Use the form below to submit your clubhouse booking request:</p>
+                    <iframe src="https://forms.gle/WAmNXmFTuGfWWukk8?embedded=true" width="100%" height="1556" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Chelmsford Sports Club, Sports Pavilion, Chelmer Park, Beehive Lane, Galleywood, Chelmsford, Essex, CM2 8RL</p>
+            <p class="footer-text">© 2026 Chelmsford Sports Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load header via JavaScript -->
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error('Error loading header:', err));
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports - Chelmsford Sports Club</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header-placeholder"></div>
+    
+    <main class="main-content">
+        <section class="page-title">
+            <h1 class="title">Cricket</h1>
+            <p class="subtitle">Follow our teams and stay updated with fixtures, results, and game summaries</p>
+        </section>
+
+        <div class="content-section cricket-block">
+            <div class="section-header">
+                <h2 class="section-title">Chelmsford Cricket Club</h2>
+            </div>
+            <div class="section-content">
+                <p>Follow our cricket teams and stay updated with the latest fixtures and results throughout the season.</p>
+                <ul class="block-links">
+                    <li><a href="/Cricket/cricket scores responsive.html" class="block-link">Latest Scores</a></li>
+                    <li><a href="/Cricket/cricket fixtures responsive.html" class="block-link">Fixtures</a></li>
+                    <li><a href="/Cricket/cricket league tables 1 responsive.html" class="block-link">League Tables: 1st, 2nd, 3rd & 4th XI's</a></li>
+                    <li><a href="/Cricket/cricket league tables 2 responsive.html" class="block-link">League Tables: 5th, NECL & Women's 1st XI's</a></li>
+                    <li><a href="/Cricket/batting top25 responsive.html" class="block-link">Top Batting Figures</a></li>
+                    <li><a href="/Cricket/bowling top25 responsive.html" class="block-link">Top Bowling Figures</a></li>
+                    <li><a href="/Cricket/cricket season highlights responsive.html" class="block-link">Club Statistics</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Chelmsford Sports Club, Sports Pavilion, Chelmer Park, Beehive Lane, Galleywood, Chelmsford, Essex, CM2 8RL</p>
+            <p class="footer-text">© 2026 Chelmsford Sports Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load header.html from root -->
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error('Error loading header:', err));
+    </script>
+</body>
+</html>

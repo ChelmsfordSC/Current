@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chelmsford Sports Club</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/csc.png">
+</head>
+<body>
+        <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="featured-content">
+            <h2 class="welcome-title">Welcome to Chelmsford Sports Club</h2>
+            <p class="welcome-text">
+                Your local sports community hub offering excellent facilities and competitive teams across multiple sports.
+                Stay up to date with fixtures, results, and club activities.
+            </p>
+            <p>
+                The home of both <a href="http://chelmsfordcc.co.uk/">Chelmsford Cricket Club</a> and <a href="http://chelmsfordhc.org.uk/">Chelmsford Hockey Club</a>.
+            </p>
+        </section>
+        <div class="content-grid">
+            <!-- Cricket Block -->
+            <div class="content-block cricket-block" id="cricket">
+                <div class="block-header">
+                    <h3 class="block-title"><a href="/Cricket/landing.html">Cricket</a></h3>
+                    <p class="block-description">Follow our cricket teams and stay updated with the latest fixtures and results</p>
+                </div>
+                <div class="block-content">
+                    <ul class="block-links">
+                        <li><a href="https://chelmsfordcc.co.uk/" class="block-link" target="_blank" rel="noopener">Club Website</a></li>
+                        <li><a href="https://www.pitchero.com/clubs/chelmsfordcricketclub/" class="block-link" target="_blank" rel="noopener">Pitchero</a></li>
+                        <li class="link-divider"></li>
+                        <li><a href="/Cricket/cricket fixtures responsive.html" class="block-link">Fixtures</a></li>
+                        <li><a href="/Cricket/cricket scores responsive.html" class="block-link">Latest Scores</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Hockey Block -->
+            <div class="content-block hockey-block" id="hockey">
+                <div class="block-header">
+                    <h3 class="block-title"><a href="/Hockey/landing.html">Hockey</a></h3>
+                    <p class="block-description">Get the latest updates on our hockey teams and upcoming matches</p>
+                </div>
+                <div class="block-content">
+                    <!-- Fixtures/Results now point at the live display pages on
+                         displays.chelmsfordsc.org.uk rather than this repo's own
+                         (out of date) local copies -- see Hockey/landing.html for
+                         the full list including Changing Rooms. -->
+                    <ul class="block-links">
+                        <li><a href="https://chelmsfordhc.org.uk/" class="block-link" target="_blank" rel="noopener">Club Website</a></li>
+                        <li><a href="https://www.pitchero.com/clubs/chelmsfordhockeyclub" class="block-link" target="_blank" rel="noopener">Pitchero</a></li>
+                        <li><a href="/Hockey/GMS-API.html" class="block-link">GMS API</a></li>
+                        <li class="link-divider"></li>
+                        <li>Fixtures - <a href="https://displays.chelmsfordsc.org.uk/Hockey/OpenLeague/Fixtures.html" class="block-link" target="_blank" rel="noopener">Men's</a><a href="https://displays.chelmsfordsc.org.uk/Hockey/Womens/Fixtures.html" class="block-link" target="_blank" rel="noopener">Women's</a></li>
+                        <li>Results - <a href="https://displays.chelmsfordsc.org.uk/Hockey/OpenLeague/Results.html" class="block-link" target="_blank" rel="noopener">Men's</a><a href="https://displays.chelmsfordsc.org.uk/Hockey/Womens/Results.html" class="block-link" target="_blank" rel="noopener">Women's</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Club Services Block -->
+            <div class="content-block club-block" id="club">
+                <div class="block-header">
+                    <h3 class="block-title"><a href="/Club/landing.html">Club Services</a></h3>
+                    <p class="block-description">Book facilities and manage your club activities</p>
+                </div>
+                <div class="block-content">
+                    <ul class="block-links">
+                        <li><a href="/Club/Booking.html" class="block-link">Clubhouse Booking</a></li>
+                        <li><a href="/Club/Calendar.html" class="block-link">Calendar</a></li>
+                        <li><a href="/Club/Displays.html" class="block-link">Displays</a></li>
+                        <li><a href="/Club/Keys.html" class="block-link">Requesting Keys</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Chelmsford Sports Club, Sports Pavilion, Chelmer Park, Beehive Lane, Galleywood, Chelmsford, Essex, CM2 8RL</p>
+            <p class="footer-text">© 2026 Chelmsford Sports Club. All rights reserved.</p>
+
+        </div>
+    </footer>
+    <!-- Load header via JavaScript -->
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error('Error loading header:', err));
+    </script>
+</body>
+</html>

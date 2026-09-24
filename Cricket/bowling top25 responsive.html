@@ -1,0 +1,609 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Chelmsford CC – Bowling Statistics (2026)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<style>
+  :root{
+    --green:#1f6b3a;
+    --green-dark:#15512b;
+    --bg:#f2f4f1;
+    --card:#ffffff;
+    --border:#d8ddd6;
+    --muted:#5f6a5f;
+    --ink:#101510;
+    --danger:#b42318;
+
+    --header-h:70px;
+    --footer-h:30px;
+    --page-pad:10px;
+    --table-font:21px;
+    --head-font:18px;
+    --cell-y:4px;
+    --cell-x:5px;
+    --row-gap:18px; /* larger readable gaps, including between rows 20 and 21 */
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,
+  body{
+    height:100vh;
+    width:100vw;
+    margin:0;
+    overflow:hidden;
+    background:var(--bg);
+    font-family:"Segoe UI", Arial, sans-serif;
+    color:var(--ink);
+  }
+
+  body{
+    display:flex;
+    flex-direction:column;
+  }
+
+  header{
+    height:var(--header-h);
+    background:var(--green);
+    color:#fff;
+    padding:8px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-shrink:0;
+    gap:16px;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    min-width:0;
+  }
+
+  .brand img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    background:rgba(255,255,255,.12);
+    border-radius:12px;
+    padding:5px;
+    flex-shrink:0;
+  }
+
+  header h1{
+    margin:0;
+    letter-spacing:4px;
+    font-size:28px;
+    line-height:1;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+
+  .subtitle{
+    margin-top:4px;
+    font-size:14px;
+    opacity:.95;
+    white-space:nowrap;
+  }
+
+  .season-block{
+    text-align:right;
+    flex-shrink:0;
+  }
+
+  .season-block .season{
+    font-size:24px;
+    letter-spacing:4px;
+    font-weight:900;
+    white-space:nowrap;
+    line-height:1;
+  }
+
+  .season-block .updated{
+    margin-top:7px;
+    font-size:12px;
+    opacity:.95;
+    white-space:nowrap;
+  }
+
+  main{
+    height:calc(100vh - var(--header-h) - var(--footer-h));
+    min-height:0;
+    padding:var(--page-pad);
+    overflow:hidden;
+  }
+
+  .stats-container{
+    height:100%;
+    min-height:540px; /* keeps the statistics area over 50% of a 1920x1080 display */
+    background:var(--card);
+    border:2px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+
+  .table-header{
+    height:42px;
+    background:var(--green);
+    color:#fff;
+    padding:7px 18px;
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    align-items:center;
+    font-weight:900;
+    font-size:25px;
+    text-transform:uppercase;
+    flex-shrink:0;
+    line-height:1;
+  }
+
+  .table-header .summary{
+    text-align:right;
+    min-width:0;
+    font-size:24px;
+    letter-spacing:.5px;
+    opacity:.95;
+    white-space:nowrap;
+  }
+
+  .scroll-area{
+    flex:1;
+    min-height:0;
+    overflow:hidden; /* TV display: no scrollbars */
+  }
+
+  table{
+    width:100%;
+    table-layout:fixed;
+    border-collapse:collapse;
+    font-size:var(--table-font);
+  }
+
+  th{
+    background:#f8f9f7;
+    text-align:center;
+    padding:6px var(--cell-x);
+    border-bottom:2px solid var(--border);
+    color:var(--muted);
+    white-space:nowrap;
+    font-weight:900;
+    font-size:var(--head-font);
+    line-height:1.2;
+    vertical-align:top;
+  }
+
+  td{
+    padding:var(--cell-y) var(--cell-x);
+    border-bottom:1px solid var(--border);
+    text-align:center;
+    line-height:1.08;
+    height:27px;
+    overflow:visible;
+    text-overflow:clip;
+    vertical-align:top;
+  }
+
+  td.player-col,
+  th.player-col{
+    text-align:center;
+  }
+
+  td.player-col span{
+    display:block;
+    white-space:nowrap;       /* player names fully shown on one line */
+    overflow:visible;
+    text-overflow:clip;
+  }
+
+  td.team-col,
+  th.team-col{
+    text-align:center;
+  }
+
+  td.team-col span{
+    display:block;
+    white-space:normal;       /* teams can wrap where required */
+    overflow:visible;
+    text-overflow:clip;
+    line-height:1.05;
+  }
+
+  .bold{ font-weight:900; }
+
+  tr.gap-top td{
+    padding-top:calc(var(--cell-y) + var(--row-gap));
+  }
+
+  .message{
+    background:#fff;
+    border:2px solid var(--border);
+    border-radius:14px;
+    padding:24px;
+    text-align:center;
+    font-size:18px;
+  }
+
+  .message.error{
+    color:var(--danger);
+    border-color:#f0b8b2;
+    background:#fff7f6;
+  }
+
+  .skeleton-box{
+    background:#eee;
+    height:24px;
+    margin:12px;
+    border-radius:4px;
+    animation:pulse 1.5s infinite;
+  }
+
+  @keyframes pulse{
+    0%{ opacity:1; }
+    50%{ opacity:.5; }
+    100%{ opacity:1; }
+  }
+
+  footer{
+    height:var(--footer-h);
+    background:var(--green-dark);
+    color:#fff;
+    padding:4px 14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    font-size:12px;
+    flex-shrink:0;
+  }
+
+  footer span:last-child{ text-align:right; }
+
+  /* 1920x1080 TV optimisation: exactly one full-width statistics panel */
+  @media (min-width:1501px){
+    body{ width:100vw; height:100vh; }
+    main{ width:100vw; }
+  }
+
+  /* Fallback for smaller screens */
+  @media (max-width:1500px){
+    html, body{ overflow:auto; height:auto; min-height:100vh; }
+    body{ min-height:100vh; }
+    main{ height:auto; overflow:visible; }
+    .stats-container{ min-height:620px; }
+    .scroll-area{ overflow:auto; }
+    td{ height:auto; }
+  }
+</style>
+
+
+<style>
+  .bowling-table{ font-size:20px; }
+  .bowling-table th{ font-size:17px; }
+  .bowling-table th:nth-child(1), .bowling-table td:nth-child(1){ width:4%; }
+  .bowling-table th:nth-child(2), .bowling-table td:nth-child(2){ width:22%; }
+  .bowling-table th:nth-child(3), .bowling-table td:nth-child(3){ width:24%; }
+  .bowling-table th:nth-child(4), .bowling-table td:nth-child(4){ width:5%; }
+  .bowling-table th:nth-child(5), .bowling-table td:nth-child(5){ width:6%; }
+  .bowling-table th:nth-child(6), .bowling-table td:nth-child(6){ width:4%; }
+  .bowling-table th:nth-child(7), .bowling-table td:nth-child(7){ width:5%; }
+  .bowling-table th:nth-child(8), .bowling-table td:nth-child(8){ width:5%; }
+  .bowling-table th:nth-child(9), .bowling-table td:nth-child(9){ width:6%; }
+  .bowling-table th:nth-child(10), .bowling-table td:nth-child(10){ width:5%; }
+  .bowling-table th:nth-child(11), .bowling-table td:nth-child(11){ width:5%; }
+  .bowling-table th:nth-child(12), .bowling-table td:nth-child(12){ width:5%; }
+  .bowling-table th:nth-child(13), .bowling-table td:nth-child(13){ width:2%; }
+  .bowling-table th:nth-child(14), .bowling-table td:nth-child(14){ width:2%; }
+</style>
+
+
+
+<!-- Responsive refactor: added to allow content to reflow and scroll on different screen sizes -->
+<style id="responsive-refactor">
+  /* Global responsive safeguards */
+  html,
+  body{
+    max-width:100%;
+  }
+
+  img{
+    max-width:100%;
+  }
+
+  header h1,
+  .season,
+  .season-block .season,
+  .subtitle,
+  header .small{
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .scroll-area,
+  .teams,
+  .fixtures-list,
+  main{
+    scrollbar-width:auto;
+  }
+
+  /* Allow header/footer content to wrap instead of forcing overflow */
+  @media (max-width:900px){
+    header{
+      gap:8px !important;
+    }
+
+    header h1{
+      white-space:normal !important;
+      letter-spacing:1.5px !important;
+      font-size:clamp(18px, 5vw, 24px) !important;
+    }
+
+    .season,
+    .season-block .season{
+      white-space:normal !important;
+      font-size:clamp(18px, 5vw, 24px) !important;
+    }
+
+    .brand{
+      width:100%;
+    }
+  }
+</style>
+
+<style id="responsive-stats-refactor">
+  /* Full-width batting/bowling table pages */
+  main#stats-main{
+    overflow:auto !important;
+  }
+
+  .stats-container{
+    min-height:0 !important;
+    height:100% !important;
+  }
+
+  .scroll-area{
+    overflow:auto !important;
+  }
+
+  table{
+    min-width:1050px !important;
+  }
+
+  td,
+  th{
+    overflow:visible !important;
+  }
+
+  td.player-col span,
+  td.team-col span{
+    white-space:normal !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  @media (max-width:1500px){
+    html, body{
+      overflow:auto !important;
+      height:auto !important;
+      min-height:100vh !important;
+    }
+
+    header,
+    footer{
+      position:static !important;
+      height:auto !important;
+      flex-wrap:wrap !important;
+    }
+
+    main#stats-main{
+      height:auto !important;
+      min-height:calc(100vh - 140px) !important;
+      overflow:visible !important;
+    }
+
+    .stats-container{
+      min-height:520px !important;
+    }
+  }
+
+  @media (max-width:700px){
+    table{
+      min-width:900px !important;
+      font-size:14px !important;
+    }
+
+    .table-header,
+    .table-header .summary{
+      font-size:clamp(16px, 4vw, 21px) !important;
+      white-space:normal !important;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <img src="https://img-res.pitchero.com/?url=images.pitchero.com%2Fclub_logos%2F78190%2FV4VHWNHTvWksHRqonMJ9_Website%20logo%20no%20bg2.png&h=180&w=180&t=square" alt="Chelmsford Cricket Club logo" />
+    <div>
+      <h1>Bowling Statistics</h1>
+      <div class="subtitle">Chelmsford Cricket Club</div>
+    </div>
+  </div>
+  <div class="season-block">
+    <div class="season">SEASON 2026</div>
+    <div class="updated" id="last-updated">Loading latest statistics…</div>
+  </div>
+</header>
+
+<main id="stats-main" aria-live="polite"></main>
+
+<footer>
+  <span>Data generated from Play-Cricket via GitHub Actions</span>
+  <span id="footer-clock"></span>
+</footer>
+
+
+<script>
+const DATA_URL = "../data/cricket-club-statistics.json";
+const REFRESH_MS = 5 * 60 * 1000;
+const TOP_N = 20;
+
+function escapeHtml(value){
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function formatDateTime(value){
+  if(!value) return "";
+  const d = new Date(value);
+  if(Number.isNaN(d.getTime())) return "";
+  return d.toLocaleString("en-GB", {
+    weekday:"short",
+    day:"2-digit",
+    month:"short",
+    hour:"2-digit",
+    minute:"2-digit"
+  });
+}
+
+function updateClock(){
+  const el = document.getElementById("footer-clock");
+  if(!el) return;
+  el.textContent = new Date().toLocaleString("en-GB", {
+    weekday:"short",
+    day:"2-digit",
+    month:"short",
+    year:"numeric",
+    hour:"2-digit",
+    minute:"2-digit",
+    second:"2-digit"
+  });
+}
+
+function fmt(value, decimals = null){
+  if(value === null || value === undefined || value === "") return "—";
+  if(typeof value === "number" && Number.isFinite(value)){
+    return decimals === null ? String(value) : value.toFixed(decimals);
+  }
+  return String(value);
+}
+
+function rowGapClass(index){
+  // gaps above 1st, 6th, 11th, 16th and 21st rows
+  return (index === 0 || index === 5 || index === 10 || index === 15 || index === 20) ? "gap-top" : "";
+}
+
+function setLoadingState(){
+  const main = document.getElementById("stats-main");
+  main.innerHTML = `
+    <section class="stats-container">
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+    </section>`;
+}
+
+function setErrorState(message){
+  const main = document.getElementById("stats-main");
+  main.innerHTML = `<div class="message error">${escapeHtml(message)}</div>`;
+}
+
+async function loadStats(){
+  const response = await fetch(`${DATA_URL}?v=${Date.now()}`, { cache:"no-store" });
+  if(!response.ok){
+    throw new Error(`Could not load ${DATA_URL}. HTTP status ${response.status}.`);
+  }
+  return await response.json();
+}
+
+
+function buildTable(rows){
+  const topRows = (rows || []).slice(0, TOP_N);
+  const body = topRows.map((r, index) => `
+    <tr class="${rowGapClass(index)}">
+      <td class="bold">${index + 1}</td>
+      <td class="player-col bold"><span title="${escapeHtml(r.player)}">${escapeHtml(r.player)}</span></td>
+      <td class="team-col"><span title="${escapeHtml(r.teams)}">${escapeHtml(r.teams)}</span></td>
+      <td>${fmt(r.innings)}</td>
+      <td>${fmt(r.overs, 1)}</td>
+      <td>${fmt(r.maidens)}</td>
+      <td>${fmt(r.runs)}</td>
+      <td class="bold">${fmt(r.wickets)}</td>
+      <td>${escapeHtml(r.best || "—")}</td>
+      <td>${fmt(r.average, 2)}</td>
+      <td>${fmt(r.economy, 2)}</td>
+      <td>${fmt(r.strike_rate, 1)}</td>
+      <td>${fmt(r.three_wickets)}</td>
+      <td>${fmt(r.five_wickets)}</td>
+    </tr>`).join("");
+
+  return `
+    <section class="stats-container bowling-panel">
+      <div class="table-header">
+        <span class="label">Bowling</span>
+        <span class="summary">Top 20 by wickets</span>
+      </div>
+      <div class="scroll-area">
+        <table class="bowling-table">
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th class="player-col">Player</th>
+              <th class="team-col">Teams</th>
+              <th>Inns</th>
+              <th>Overs</th>
+              <th>M</th>
+              <th>Runs</th>
+              <th>Wkts</th>
+              <th>BB</th>
+              <th>Avg</th>
+              <th>Econ</th>
+              <th>SR</th>
+              <th>3w</th>
+              <th>5w</th>
+            </tr>
+          </thead>
+          <tbody>${body || `<tr><td colspan="14">No bowling statistics found.</td></tr>`}</tbody>
+        </table>
+      </div>
+    </section>`;
+}
+
+async function renderStats({showLoading = false} = {}){
+  const updatedEl = document.getElementById("last-updated");
+  if(showLoading) setLoadingState();
+  try{
+    const data = await loadStats();
+    document.getElementById("stats-main").innerHTML = buildTable(data.bowling || []);
+    updatedEl.textContent = data.generated_at
+      ? `Last updated: ${formatDateTime(data.generated_at)}`
+      : "Last updated time not supplied";
+  }catch(err){
+    console.error(err);
+    setErrorState(`Bowling statistics could not be loaded. Check that ${DATA_URL} exists and is valid JSON.`);
+    updatedEl.textContent = "Statistics failed to load";
+  }
+}
+
+
+updateClock();
+setInterval(updateClock, 1000);
+renderStats({showLoading:true});
+setInterval(() => renderStats(), REFRESH_MS);
+</script>
+
+</body>
+</html>

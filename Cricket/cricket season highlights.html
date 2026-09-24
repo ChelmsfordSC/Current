@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Chelmsford CC – Season Highlights 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{
+    --green:#1f6b3a;
+    --green-dark:#15512b;
+    --green-soft:#e3f2e7;
+    --bg:#f2f4f1;
+    --card:#ffffff;
+    --border:#d8ddd6;
+    --muted:#6f786f;
+    --ink:#1a1a1a;
+    --danger:#b42318;
+    --warning:#8a5a00;
+    --header-h:78px;
+    --footer-h:32px;
+    --gap:10px;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,
+  body{
+    height:100vh;
+    width:100vw;
+    margin:0;
+    overflow:hidden;
+    background:var(--bg);
+    font-family:"Segoe UI", Arial, sans-serif;
+    color:var(--ink);
+  }
+
+  header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:var(--header-h);
+    background:var(--green);
+    color:#fff;
+    padding:10px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    z-index:50;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    min-width:0;
+  }
+
+  .brand img{
+    width:54px;
+    height:54px;
+    object-fit:contain;
+    background:rgba(255,255,255,.12);
+    border-radius:12px;
+    padding:6px;
+    flex-shrink:0;
+  }
+
+  header h1{
+    margin:0;
+    letter-spacing:2.5px;
+    font-size:24px;
+    line-height:1.05;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+
+  .subtitle{
+    margin-top:3px;
+    font-size:13px;
+    opacity:.92;
+  }
+
+  .season-block{
+    text-align:right;
+    flex-shrink:0;
+  }
+
+  .season{
+    font-size:24px;
+    letter-spacing:2.5px;
+    font-weight:900;
+    white-space:nowrap;
+  }
+
+  .updated{
+    margin-top:3px;
+    font-size:12px;
+    opacity:.92;
+    white-space:nowrap;
+  }
+
+  main{
+    position:fixed;
+    top:var(--header-h);
+    bottom:var(--footer-h);
+    left:0;
+    right:0;
+    padding:var(--gap);
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    /* Larger top boxes; compact duck section sized for exactly 4 rows of 5 names */
+    grid-template-rows:81fr 19fr;
+    gap:var(--gap);
+    overflow:hidden;
+  }
+
+  .stat-box{
+    background:var(--card);
+    border:2px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+  }
+
+  .duck-box{
+    grid-column:1 / -1;
+  }
+
+  .box-header{
+    background:var(--green);
+    color:#fff;
+    padding:6px 12px;
+    min-height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    flex-shrink:0;
+  }
+
+  .box-title{
+    font-size:18px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    white-space:nowrap;
+  }
+
+  .box-count{
+    font-size:11px;
+    font-weight:900;
+    background:rgba(255,255,255,.18);
+    border-radius:999px;
+    padding:3px 8px;
+    white-space:nowrap;
+  }
+
+  .scroll-area{
+    flex:1;
+    overflow:auto;
+    min-height:0;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:12.5px;
+  }
+
+  th{
+    position:sticky;
+    top:0;
+    background:#f8f9f7;
+    color:var(--muted);
+    text-align:left;
+    padding:5px 5px;
+    border-bottom:2px solid var(--border);
+    z-index:2;
+    white-space:nowrap;
+    font-weight:900;
+  }
+
+  td{
+    padding:4px 5px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+    font-weight:600;
+    line-height:1.12;
+  }
+
+  .num-col{
+    width:56px;
+    text-align:right;
+    font-size:15px;
+    font-weight:900;
+    color:var(--green-dark);
+    white-space:nowrap;
+  }
+
+  .player-col{
+    font-weight:900;
+    min-width:105px;
+  }
+
+  .team-col,
+  .opp-col{
+    color:#263126;
+  }
+
+  .date-col{
+    color:var(--muted);
+    white-space:nowrap;
+    width:50px;
+  }
+
+  .empty{
+    padding:18px;
+    color:var(--muted);
+    text-align:center;
+    font-weight:800;
+    font-size:13px;
+  }
+
+  /* ==========================================================
+     DUCK HUNT LAYOUT CONTROLS
+     To change the number of boxes across, amend grid-template-columns.
+     Example: repeat(5, ...) = 5 boxes across.
+     To change the number of rows, amend grid-template-rows.
+     Example: repeat(4, ...) = 4 rows deep.
+     ========================================================== */
+  .duck-box .scroll-area{
+    overflow:hidden;
+  }
+
+  .duck-list{
+    height:100%;
+    padding:6px;
+    display:grid;
+    grid-template-columns:repeat(5, minmax(0, 1fr)); /* CHANGE THIS to alter boxes across */
+    grid-template-rows:repeat(4, minmax(0, 1fr));    /* CHANGE THIS to alter rows deep */
+    gap:5px;
+    align-content:stretch;
+  }
+
+  /* ==========================================================
+     DUCK HUNT PLAYER BOUNDARY BOX CONTROLS
+     To make each player's boundary box larger/smaller, amend:
+       - padding
+       - border-radius
+       - gap
+     ========================================================== */
+  .duck-card{
+    border:1px solid var(--border);
+    background:#fffdf2;
+    border-radius:9px;     /* CHANGE THIS for rounder/squarer boundary boxes */
+    padding:7px 9px;       /* CHANGE THIS to alter boundary box internal size */
+    min-width:0;
+    min-height:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:7px;               /* CHANGE THIS to alter gap between name and ducks */
+    overflow:hidden;
+  }
+
+  /* ==========================================================
+     DUCK HUNT PLAYER NAME TEXT CONTROL
+     To make player names larger/smaller, amend font-size below.
+     ========================================================== */
+  .duck-name{
+    font-size:14px;        /* CHANGE THIS to alter Duck Hunt player name size */
+    line-height:1;
+    font-weight:900;
+    min-width:0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  .duck-icons{
+    display:flex;
+    align-items:center;
+    gap:1px;
+    flex-wrap:nowrap;
+    justify-content:flex-end;
+    max-width:52%;
+    overflow:hidden;
+    flex-shrink:0;
+  }
+
+  .duck-icon{
+    width:12px;
+    height:12px;
+    object-fit:contain;
+    display:block;
+    flex:0 0 auto;
+  }
+
+  .duck-count{
+    font-size:10px;
+    font-weight:900;
+    color:var(--warning);
+    margin-left:2px;
+    flex:0 0 auto;
+  }
+
+  .message{
+    margin:12px;
+    border:2px solid var(--border);
+    border-radius:14px;
+    padding:20px;
+    text-align:center;
+    font-size:13px;
+    font-weight:800;
+  }
+
+  .message.error{
+    color:var(--danger);
+    border-color:#f0b8b2;
+    background:#fff7f6;
+  }
+
+  .skeleton{
+    height:16px;
+    margin:10px;
+    border-radius:8px;
+    background:linear-gradient(90deg, #f1f3f0, #e7ebe6, #f1f3f0);
+    background-size:200% 100%;
+    animation:shimmer 1.1s infinite;
+  }
+
+  @keyframes shimmer{
+    0%{ background-position:200% 0; }
+    100%{ background-position:-200% 0; }
+  }
+
+  footer{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    height:var(--footer-h);
+    background:var(--green-dark);
+    color:#fff;
+    padding:6px 14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    font-size:12px;
+    z-index:50;
+  }
+
+  footer span:last-child{
+    text-align:right;
+  }
+
+  @media (max-width:1200px){
+    html, body{ overflow:auto; height:auto; min-height:100vh; }
+    header,
+    footer{
+      position:static;
+      height:auto;
+    }
+    header{
+      align-items:flex-start;
+      flex-direction:column;
+    }
+    .season-block{ text-align:left; }
+    main{
+      position:static;
+      grid-template-columns:1fr;
+      grid-template-rows:none;
+      overflow:visible;
+    }
+    .duck-box{ grid-column:auto; }
+    .stat-box{ min-height:380px; }
+    .duck-box .scroll-area{ overflow:auto; }
+    .duck-list{
+      height:auto;
+      grid-template-columns:1fr;
+      grid-template-rows:none;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <img src="https://img-res.pitchero.com/?url=images.pitchero.com%2Fclub_logos%2F78190%2FV4VHWNHTvWksHRqonMJ9_Website%20logo%20no%20bg2.png&h=180&w=180&t=square" alt="Chelmsford Cricket Club logo" />
+    <div>
+      <h1>Season Highlights</h1>
+      <div class="subtitle">Chelmsford Cricket Club</div>
+    </div>
+  </div>
+  <div class="season-block">
+    <div class="season">SEASON 2026</div>
+    <div class="updated" id="last-updated">Loading statistics…</div>
+  </div>
+</header>
+
+<main id="stats-grid" aria-live="polite"></main>
+
+<footer>
+  <span>Data generated from Play-Cricket via GitHub Actions</span>
+  <span id="footer-clock"></span>
+</footer>
+
+<script>
+const DATA_URL = "../data/cricket-player-season-highlights.json";
+const REFRESH_MS = 5 * 60 * 1000;
+const TOP_DUCK_HUNTERS_LIMIT = 20; // CHANGE THIS to alter how many Duck Hunt players are shown
+
+function escapeHtml(value){
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function shortDate(value){
+  const text = String(value || "").trim();
+  const m = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if(!m) return text;
+  return `${m[1].padStart(2, "0")}/${m[2].padStart(2, "0")}`;
+}
+
+function formatDateTime(value){
+  if(!value) return "";
+  const d = new Date(value);
+  if(Number.isNaN(d.getTime())) return "";
+  return d.toLocaleString("en-GB", {
+    weekday:"short",
+    day:"2-digit",
+    month:"short",
+    hour:"2-digit",
+    minute:"2-digit"
+  });
+}
+
+function updateClock(){
+  const el = document.getElementById("footer-clock");
+  if(!el) return;
+  el.textContent = new Date().toLocaleString("en-GB", {
+    weekday:"short",
+    day:"2-digit",
+    month:"short",
+    year:"numeric",
+    hour:"2-digit",
+    minute:"2-digit",
+    second:"2-digit"
+  });
+}
+
+function buildPerformanceBox(title, count, rows, columns){
+  const headerHtml = columns.map(col => `<th>${escapeHtml(col.label)}</th>`).join("");
+
+  const rowsHtml = rows.map(row => {
+    const cells = columns.map(col => {
+      const cls = col.className || "";
+      const value = col.value(row);
+      return `<td class="${cls}">${escapeHtml(value)}</td>`;
+    }).join("");
+    return `<tr>${cells}</tr>`;
+  }).join("");
+
+  return `
+    <section class="stat-box">
+      <div class="box-header">
+        <div class="box-title">${escapeHtml(title)}</div>
+        <div class="box-count">${count}</div>
+      </div>
+      <div class="scroll-area">
+        ${rows.length ? `
+          <table>
+            <thead><tr>${headerHtml}</tr></thead>
+            <tbody>${rowsHtml}</tbody>
+          </table>` : `<div class="empty">No qualifying performances yet.</div>`}
+      </div>
+    </section>`;
+}
+
+function buildDuckBox(rows){
+  const allRows = Array.isArray(rows) ? rows : [];
+  const topRows = allRows.slice(0, TOP_DUCK_HUNTERS_LIMIT);
+
+  const cards = topRows.map(row => {
+    const duckIcons = Array.from(
+      {length: row.count},
+      () => `<img class="duck-icon" src="duck.png" alt="Duck" aria-hidden="true">`
+      ).join("");
+    return `
+      <div class="duck-card" title="${escapeHtml(row.player)} - ${row.count} duck${row.count === 1 ? "" : "s"}">
+        <div class="duck-name">${escapeHtml(row.player)}</div>
+        <div class="duck-icons">${duckIcons}<span class="duck-count">${row.count}</span></div>
+      </div>`;
+  }).join("");
+
+  return `
+    <section class="stat-box duck-box">
+      <div class="box-header">
+        <div class="box-title">TOP DUCK HUNTERS</div>
+        <div class="box-count">Top ${Math.min(TOP_DUCK_HUNTERS_LIMIT, allRows.length)} of ${allRows.length}</div>
+      </div>
+      <div class="scroll-area">
+        ${topRows.length ? `<div class="duck-list">${cards}</div>` : `<div class="empty">No ducks recorded yet.</div>`}
+      </div>
+    </section>`;
+}
+
+function buildPage(data){
+  const battingColumns = [
+    { label:"Score", className:"num-col", value:r => r.score },
+    { label:"Name", className:"player-col", value:r => r.player },
+    { label:"Team", className:"team-col", value:r => r.team },
+    { label:"Opposition", className:"opp-col", value:r => r.opposition },
+    { label:"Date", className:"date-col", value:r => shortDate(r.date) }
+  ];
+
+  const bowlingColumns = [
+    { label:"Figures", className:"num-col", value:r => r.figures },
+    { label:"Name", className:"player-col", value:r => r.player },
+    { label:"Team", className:"team-col", value:r => r.team },
+    { label:"Opposition", className:"opp-col", value:r => r.opposition },
+    { label:"Date", className:"date-col", value:r => shortDate(r.date) }
+  ];
+
+  return [
+    buildPerformanceBox("Centuries", data.centuries?.length || 0, data.centuries || [], battingColumns),
+    buildPerformanceBox("Half-Centuries", data.half_centuries?.length || 0, data.half_centuries || [], battingColumns),
+    buildPerformanceBox("Five-fors", data.five_fors?.length || 0, data.five_fors || [], bowlingColumns),
+    buildDuckBox(data.duck_hunt || [])
+  ].join("");
+}
+
+function setLoadingState(){
+  const grid = document.getElementById("stats-grid");
+  grid.innerHTML = Array.from({length:4}, (_, i) => `
+    <section class="stat-box ${i === 3 ? "duck-box" : ""}">
+      <div class="box-header"><div class="box-title">Loading</div><div class="box-count">—</div></div>
+      <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+    </section>`).join("");
+}
+
+function setErrorState(message){
+  document.getElementById("stats-grid").innerHTML = `
+    <section class="stat-box duck-box">
+      <div class="box-header"><div class="box-title">Statistics unavailable</div><div class="box-count">Error</div></div>
+      <div class="message error">${escapeHtml(message)}</div>
+    </section>`;
+}
+
+async function loadStats(){
+  const response = await fetch(`${DATA_URL}?v=${Date.now()}`, { cache:"no-store" });
+  if(!response.ok){
+    throw new Error(`Could not load ${DATA_URL}. HTTP status ${response.status}.`);
+  }
+  return await response.json();
+}
+
+async function renderStats({showLoading = false} = {}){
+  const updatedEl = document.getElementById("last-updated");
+  if(showLoading) setLoadingState();
+
+  try{
+    const data = await loadStats();
+    document.getElementById("stats-grid").innerHTML = buildPage(data);
+    updatedEl.textContent = data.generated_at
+      ? `Last updated: ${formatDateTime(data.generated_at)}`
+      : "Last updated time not supplied";
+  }catch(err){
+    console.error(err);
+    setErrorState(`Player statistics could not be loaded. Check that ${DATA_URL} exists and is valid JSON.`);
+    updatedEl.textContent = "Statistics failed to load";
+  }
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+renderStats({showLoading:true});
+setInterval(() => renderStats(), REFRESH_MS);
+</script>
+</body>
+</html>

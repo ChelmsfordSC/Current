@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chelmsford Hockey Club</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            padding: 1vh 1.5vw;
+            line-height: 1.4;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 1vh;
+            flex-shrink: 0;
+        }
+
+        h3 {
+            color: #16a34a;
+            font-size: 3.5vh;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        section {
+            display: flex;
+            gap: 1.5vw;
+            margin-bottom: 1vh;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .column {
+            background: white;
+            padding: 1.5vh 1vw;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .column-left, .column-right {
+            padding: 1.5vh 0.5vw;
+        }
+
+        .column b {
+            color: #16a34a;
+            font-size: 1.2vh;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            display: block;
+            margin-bottom: 0.8vh;
+            text-align: center;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .column-middle {
+            flex: 0 0 60%;
+            width: 60%;
+            overflow: hidden;
+        }
+
+        .column-left, .column-right {
+            flex: 0 0 20%;
+            width: 20%;
+            align-items: center;
+        }
+
+        .dropdown-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6vh;
+            width: 100%;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .dropdown-wrapper {
+            height: auto;
+            min-height: 8vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .dropdown-options {
+            padding: 0.3vh;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            width: 5vw;
+            height: 5vh;
+            font-size: 3vh;
+            font-weight: bold;
+            visibility: hidden;
+            text-align: center;
+            background: #f9fafb;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            color: #1f2937;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dropdown-options:hover {
+            border-color: #16a34a;
+            background: #f1f8f1;
+        }
+
+        .gms-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 0.5vw;
+        }
+
+        .gms-card {
+            background: #f9f9f9;
+            padding: 1.2vh 1vw;
+            margin: 0.8vh 0;
+            border-radius: 10px;
+            border-left: 4px solid #16a34a;
+            transition: background-color 0.2s;
+            min-height: 8vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .gms-card:hover {
+            background-color: #f1f8f1;
+        }
+
+        .gms-carddate {
+            font-weight: 600;
+            color: #16a34a;
+            margin-bottom: 0.5vh;
+            font-size: 1vh;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .gms-cardfixture {
+            display: flex;
+            align-items: center;
+            gap: 0.8vw;
+            margin: 0.6vh 0;
+        }
+
+        .gms-clubteam {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.3vh;
+            letter-spacing: 0.2px;
+        }
+
+        .gms-cardtime {
+            color: #6b7280;
+            font-weight: 500;
+            font-size: 1.1vh;
+        }
+
+        .gms-cardvenue a {
+            color: #1d4ed8;
+            text-decoration: none;
+            font-size: 1vh;
+        }
+
+        .gms-cardvenue a:hover {
+            text-decoration: underline;
+        }
+
+        .sponsors {
+            text-align: center;
+            margin: 0.5vh 0 0.3vh;
+            flex-shrink: 0;
+        }
+
+        .sponsors h1 {
+            color: #16a34a;
+            font-size: 1.5vh;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.3vh;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8vw;
+            padding: 0.8vh 1.2vw;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0.5vh;
+            flex-shrink: 0;
+        }
+
+        .grid-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.3vh 0.3vw;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            max-height: 3.5vh;
+        }
+
+        .grid-item-span {
+            grid-column: span 2;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 0.5vh;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2vw;
+            flex-shrink: 0;
+        }
+
+        .footer p {
+            font-size: 0.7vh;
+            color: #6b7280;
+        }
+
+        .refresh-timer {
+            font-size: 0.7vh;
+            color: #6b7280;
+        }
+
+        .gms-footnote {
+            margin-top: 0.5vh;
+            font-size: 1.2vh;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>Welcome to Chelmsford Hockey Club</h3>
+    </header>
+
+    <section>
+        <!-- Left Changing Room Column -->
+        <div class="column column-left" align="center">
+            <b>Changing Room</b>
+            <div id="dynamicDropdownsLeft" class="dropdown-container"></div>
+        </div>
+
+        <!-- Middle Fixtures Column -->
+        <div class="column column-middle">
+            <div id="gmsFixtures" class="gms-wrapper gms-ajax" 
+                 data-method="api" 
+                 data-show="fixtures" 
+                 data-club_id="e9ba26d3-7e18-4772-abb0-584e887c9d38" 
+                 data-sort_by="fixtureTime" 
+                 data-options="showGender:yes,showList:yes,filter:home">
+            </div>
+            <script src="https://gmsfeed.co.uk/js/api.js"></script>
+        </div>
+
+        <!-- Right Changing Room Column -->
+        <div class="column column-right" align="center">
+            <b>Changing Room</b>
+            <div id="dynamicDropdownsRight" class="dropdown-container"></div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <div class="sponsors">
+        <h1>Thank you to our Sponsors:</h1>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="//fixtures.chelmsfordhc.org.uk/img/gray and sons.png" alt="Gray and Sons">
+        </div>
+        <div class="grid-item">
+            <img src="//fixtures.chelmsfordhc.org.uk/img/skippers.png" alt="Skippers">
+        </div>
+        <div class="grid-item">
+            <img src="//fixtures.chelmsfordhc.org.uk/img/birketts.png" alt="Birketts">
+        </div>
+        <div class="grid-item">
+            <img src="//fixtures.chelmsfordhc.org.uk/img/green recycling.png" alt="Green Recycling">
+        </div>
+        <div class="grid-item">
+            <img src="//fixtures.chelmsfordhc.org.uk/img/st-cedds.png" alt="St Cedds">
+        </div>
+        <div class="grid-item">
+            <img src="//fixtures.chelmsfordhc.org.uk/img/new-hall.png" alt="New Hall">
+        </div>
+        <div class="grid-item">
+            <img src="//fixtures.chelmsfordhc.org.uk/img/old_park_meadow.svg" alt="Old Park Meadow">
+        </div>
+        <div class="grid-item grid-item-span">
+            <img src="//fixtures.chelmsfordhc.org.uk/img/meadow-oak.png" alt="Meadow Oak">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p id="datetime">7:42 pm - 30 September 2025</p>
+        <p class="refresh-timer" id="refreshTimer">Next refresh in: 48:00:00</p>
+    </div>
+
+    <script>
+        function displayTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString('en-GB', { 
+                hour: 'numeric', 
+                minute: '2-digit', 
+                hour12: true 
+            }) + ' - ' + now.toLocaleDateString('en-GB', { 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric' 
+            });
+            document.getElementById('datetime').textContent = timeString;
+        }
+
+        function countFixtures() {
+            const fixturesDiv = document.getElementById('gmsFixtures');
+            const fixtures = fixturesDiv.querySelectorAll('.gms-card');
+            return fixtures.length;
+        }
+
+        let leftColumnSelections = new Set();
+
+        function generateLeftDropdowns(count) {
+            const container = document.getElementById('dynamicDropdownsLeft');
+            container.innerHTML = '';
+            leftColumnSelections.clear();
+
+            for (let i = 1; i <= count; i++) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'dropdown-wrapper';
+                
+                const select = document.createElement('select');
+                select.className = 'dropdown-options';
+                select.id = `dropdownLeft${i}`;
+                select.onchange = saveDropdownSelection;
+
+                for (let j = 1; j <= 6; j++) {
+                    const option = document.createElement('option');
+                    option.value = j.toString();
+                    option.textContent = j.toString();
+                    select.appendChild(option);
+                }
+
+                wrapper.appendChild(select);
+                container.appendChild(wrapper);
+
+                select.value = '1';
+                leftColumnSelections.add(1);
+            }
+
+            loadDropdownSelections('Left');
+        }
+
+        function generateRightDropdowns(count) {
+            const container = document.getElementById('dynamicDropdownsRight');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= count; i++) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'dropdown-wrapper';
+                
+                const select = document.createElement('select');
+                select.className = 'dropdown-options';
+                select.id = `dropdownRight${i}`;
+                select.onchange = saveDropdownSelection;
+
+                for (let j = 1; j <= 6; j++) {
+                    const option = document.createElement('option');
+                    option.value = j.toString();
+                    option.textContent = j.toString();
+                    select.appendChild(option);
+                }
+
+                wrapper.appendChild(select);
+                container.appendChild(wrapper);
+
+                select.value = '1';
+            }
+
+            loadDropdownSelections('Right');
+        }
+
+        function saveDropdownSelection(event) {
+            const dropdown = event.target;
+            const selectedValue = dropdown.value;
+            const dropdownId = dropdown.id;
+
+            if (dropdownId.startsWith('dropdownLeft')) {
+                leftColumnSelections.clear();
+                document.querySelectorAll('[id^="dropdownLeft"]').forEach(select => {
+                    leftColumnSelections.add(parseInt(select.value));
+                });
+            }
+        }
+
+        function loadDropdownSelections(side) {
+            // Memory-based implementation
+        }
+
+        const observer = new MutationObserver((mutations) => {
+            for (let mutation of mutations) {
+                if (mutation.type === 'childList') {
+                    for (let node of mutation.addedNodes) {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            const fixtureCount = countFixtures();
+                            generateLeftDropdowns(fixtureCount);
+                            generateRightDropdowns(fixtureCount);
+                            return;
+                        }
+                    }
+                }
+            }
+        });
+
+        const config = { childList: true, subtree: true };
+        observer.observe(document.getElementById('gmsFixtures'), config);
+
+        setTimeout(() => {
+            observer.disconnect();
+            console.log('Stopped observing after 30 seconds');
+            if (document.getElementById('dynamicDropdownsLeft').children.length === 0 || 
+                document.getElementById('dynamicDropdownsRight').children.length === 0) {
+                console.log('No fixtures found');
+            }
+        }, 30000);
+
+        displayTime();
+        setInterval(displayTime, 60000);
+
+        const refreshInterval = 48 * 60 * 60 * 1000;
+        const pageLoadTime = Date.now();
+        const refreshTime = pageLoadTime + refreshInterval;
+
+        function updateRefreshTimer() {
+            const now = Date.now();
+            const timeRemaining = refreshTime - now;
+
+            if (timeRemaining <= 0) {
+                window.location.reload();
+                return;
+            }
+
+            const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            const timerElement = document.getElementById('refreshTimer');
+            timerElement.textContent = `Next refresh in: ${hours}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        updateRefreshTimer();
+        setInterval(updateRefreshTimer, 1000);
+
+        let lastApiCall = null;
+        
+        function canMakeApiCall() {
+            if (!lastApiCall) return true;
+            
+            const now = new Date();
+            const lastCall = new Date(lastApiCall);
+            
+            return now.toDateString() !== lastCall.toDateString();
+        }
+
+        $(document).ready(function() {
+            $('section').on('change', '.dropdown-options', function() {
+                var selectId = $(this).attr('id');
+                var roomNumber = $(this).val();
+                
+                if (!canMakeApiCall()) {
+                    console.log('API call already made today. Skipping.');
+                    return;
+                }
+                
+                $.ajax({
+                    url: 'https://fixtures.chelmsfordhc.org.uk/changing/updategms',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'select_id': selectId, 
+                        'room_number': roomNumber
+                    },
+                    success: function(output_string) {
+                        alert('success');
+                        lastApiCall = new Date().toISOString();
+                    }
+                });
+            });
+
+            var selects = {
+                "dropdownLeft1": "1",
+                "dropdownLeft2": "1",
+                "dropdownLeft3": "5",
+                "dropdownLeft4": "3",
+                "dropdownLeft5": "1",
+                "dropdownLeft6": "5",
+                "dropdownLeft7": "3",
+                "dropdownLeft8": "1",
+                "dropdownLeft9": "3",
+                "dropdownRight1": "2",
+                "dropdownRight2": "2",
+                "dropdownRight3": "6",
+                "dropdownRight4": "4",
+                "dropdownRight5": "2",
+                "dropdownRight6": "6",
+                "dropdownRight7": "4",
+                "dropdownRight8": "2",
+                "dropdownRight9": "4",
+                "dropdownRight10": "2"
+            };
+
+            setTimeout(function() {
+                $('.dropdown-options').each(function() {
+                    if ($(this).attr('id') in selects) {
+                        $(this).val(selects[$(this).attr('id')]);
+                    }
+                });
+                $('.dropdown-options').css('visibility', 'visible');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
